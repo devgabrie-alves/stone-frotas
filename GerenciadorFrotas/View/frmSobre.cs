@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GerenciadorFrotas
+namespace GerenciadorFrotas.View
 {
-    public partial class Form1 : Form
+    public partial class frmSobre : Form
     {
-        public Form1()
+        public frmSobre()
         {
             InitializeComponent();
         }

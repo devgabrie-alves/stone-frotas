@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GerenciadorFrotas.Utils;
+using GerenciadorFrotas.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,15 +10,21 @@ namespace GerenciadorFrotas
 {
     internal static class Program
     {
-        /// <summary>
-        /// Ponto de entrada principal para o aplicativo.
-        /// </summary>
         [STAThread]
         static void Main()
         {
+            DatabaseUtils.LerAppConfig();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            frmLogin form = new frmLogin();
+            form.ShowDialog();
+
+            if (form.DialogResult == DialogResult.OK)
+            {
+                Application.Run(new frmPrincipal());
+            }
         }
     }
 }
