@@ -85,5 +85,10 @@ namespace GerenciadorFrotas
                 $"{ts.Minutes.ToString("00")}:" +
                 $"{ts.Seconds.ToString("00")}";
         }
+
+        private void mnuUsuario_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmUsuario());
+        }
     }
 }

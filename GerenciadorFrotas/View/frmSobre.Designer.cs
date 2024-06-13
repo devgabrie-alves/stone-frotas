@@ -36,9 +36,9 @@
             this.teste123.AutoSize = true;
             this.teste123.Location = new System.Drawing.Point(75, 92);
             this.teste123.Name = "teste123";
-            this.teste123.Size = new System.Drawing.Size(35, 13);
+            this.teste123.Size = new System.Drawing.Size(109, 13);
             this.teste123.TabIndex = 0;
-            this.teste123.Text = "label1";
+            this.teste123.Text = "Pro senac blablabla...";
             // 
             // frmSobre
             // 
