@@ -86,26 +86,26 @@
             // mnuUsuario
             // 
             this.mnuUsuario.Name = "mnuUsuario";
-            this.mnuUsuario.Size = new System.Drawing.Size(180, 22);
+            this.mnuUsuario.Size = new System.Drawing.Size(140, 22);
             this.mnuUsuario.Text = "Usuário";
             this.mnuUsuario.Click += new System.EventHandler(this.mnuUsuario_Click);
             // 
             // mnuColaborador
             // 
             this.mnuColaborador.Name = "mnuColaborador";
-            this.mnuColaborador.Size = new System.Drawing.Size(180, 22);
+            this.mnuColaborador.Size = new System.Drawing.Size(140, 22);
             this.mnuColaborador.Text = "Colaborador";
             // 
             // mnuVeiculos
             // 
             this.mnuVeiculos.Name = "mnuVeiculos";
-            this.mnuVeiculos.Size = new System.Drawing.Size(180, 22);
+            this.mnuVeiculos.Size = new System.Drawing.Size(140, 22);
             this.mnuVeiculos.Text = "Veículo";
             // 
             // mnuOficina
             // 
             this.mnuOficina.Name = "mnuOficina";
-            this.mnuOficina.Size = new System.Drawing.Size(180, 22);
+            this.mnuOficina.Size = new System.Drawing.Size(140, 22);
             this.mnuOficina.Text = "Oficina";
             // 
             // mnuControle
@@ -224,9 +224,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::GerenciadorFrotas.Properties.Resources._1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";

@@ -50,6 +50,8 @@
     <Compile Include="Data\AcessoDAO.cs" />
     <Compile Include="Model\Colaborador.cs" />
     <Compile Include="Model\Controle.cs" />
+    <Compile Include="Model\Endereco.cs" />
+    <Compile Include="Model\enums\StatusFuncionario.cs" />
     <Compile Include="Model\Manutencao.cs" />
     <Compile Include="Model\Oficina.cs" />
     <Compile Include="Model\Usuario.cs" />
@@ -90,6 +92,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -116,6 +119,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\check.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eraser2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capa-seguro-de-frota.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

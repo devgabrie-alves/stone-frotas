@@ -47,9 +47,9 @@
             this.grpAtivo = new System.Windows.Forms.GroupBox();
             this.rdpSim = new System.Windows.Forms.RadioButton();
             this.rdpNao = new System.Windows.Forms.RadioButton();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnLimpar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.grpPesquisa.SuspendLayout();
             this.grpDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDados)).BeginInit();
@@ -83,6 +83,7 @@
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(338, 20);
             this.txtPesquisa.TabIndex = 1;
+            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
             // grpDados
             // 
@@ -221,13 +222,13 @@
             this.rdpSim.Name = "rdpSim";
             this.rdpSim.Size = new System.Drawing.Size(42, 17);
             this.rdpSim.TabIndex = 0;
-            this.rdpSim.TabStop = true;
             this.rdpSim.Text = "Sim";
             this.rdpSim.UseVisualStyleBackColor = true;
             // 
             // rdpNao
             // 
             this.rdpNao.AutoSize = true;
+            this.rdpNao.Checked = true;
             this.rdpNao.Location = new System.Drawing.Point(7, 44);
             this.rdpNao.Name = "rdpNao";
             this.rdpNao.Size = new System.Drawing.Size(45, 17);
@@ -235,30 +236,6 @@
             this.rdpNao.TabStop = true;
             this.rdpNao.Text = "Não";
             this.rdpNao.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Image = global::GerenciadorFrotas.Properties.Resources.delete;
-            this.btnCancelar.Location = new System.Drawing.Point(66, 471);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(106, 45);
-            this.btnCancelar.TabIndex = 3;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.Image = global::GerenciadorFrotas.Properties.Resources.eraser2;
-            this.btnLimpar.Location = new System.Drawing.Point(295, 471);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(106, 45);
-            this.btnLimpar.TabIndex = 4;
-            this.btnLimpar.Text = "Limpar";
-            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLimpar.UseVisualStyleBackColor = true;
             // 
             // btnCadastrar
             // 
@@ -271,6 +248,32 @@
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Image = global::GerenciadorFrotas.Properties.Resources.eraser2;
+            this.btnLimpar.Location = new System.Drawing.Point(295, 471);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(106, 45);
+            this.btnLimpar.TabIndex = 4;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Image = global::GerenciadorFrotas.Properties.Resources.delete;
+            this.btnCancelar.Location = new System.Drawing.Point(66, 471);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(106, 45);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmUsuario
             // 
@@ -285,6 +288,7 @@
             this.Controls.Add(this.grpPesquisa);
             this.Name = "frmUsuario";
             this.Text = "Usuário";
+            this.Load += new System.EventHandler(this.frmUsuario_Load);
             this.grpPesquisa.ResumeLayout(false);
             this.grpPesquisa.PerformLayout();
             this.grpDados.ResumeLayout(false);

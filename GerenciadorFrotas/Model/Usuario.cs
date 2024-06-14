@@ -11,6 +11,7 @@ namespace GerenciadorFrotas.Model
         public int Id { get; set; }
         public string Login { get; set; }
         public string Nome { get; set; }
+        public string Email { get; set; }
         public string Password { get; set; }
         public bool Ativo { get; set; }
 
@@ -33,7 +34,7 @@ namespace GerenciadorFrotas.Model
             try
             {
                 parameters.Clear();
-                sql = "select id, login, nome, password, ativo \n";
+                sql = "select id, login, nome, email, password, ativo \n";
                 sql += "from tblUsuario \n";
                 if (Id != 0)
                 {
@@ -53,6 +54,7 @@ namespace GerenciadorFrotas.Model
                 {
                     Id = Convert.ToInt32(dt.Rows[0]["id"]);
                     Login = dt.Rows[0]["login"].ToString();
+                    Login = dt.Rows[0]["email"].ToString();
                     Nome = dt.Rows[0]["nome"].ToString();
                     Password = dt.Rows[0]["password"].ToString();
                     Ativo = Convert.ToBoolean(dt.Rows[0]["ativo"]);
@@ -78,15 +80,16 @@ namespace GerenciadorFrotas.Model
                 if (Id == 0)
                 {
                     sql = "INSERT INTO tblUsuario \n";
-                    sql += "(login, nome, password, ativo) \n";
+                    sql += "(login, nome, email, password, ativo) \n";
                     sql += "VALUES \n";
-                    sql += "(@login, @nome, @password, @ativo) \n";
+                    sql += "(@login, @nome, @email, @password, @ativo) \n";
                 } else
                 {
                     sql = "UPDATE tblUsuario \n";
                     sql += "SET \n";
                     sql += "login       = @login, \n";
                     sql += "nome        = @nome, \n";
+                    sql += "email       = @email, \n";
                     sql += "password    = @password, \n";
                     sql += "ativo       = @ativo \n";
                     sql += "WHERE id = @id \n";
@@ -96,6 +99,7 @@ namespace GerenciadorFrotas.Model
 
                 parameters.Add(new SqlParameter("@login", Login));
                 parameters.Add(new SqlParameter("@nome", Nome));
+                parameters.Add(new SqlParameter("@email", Email));
                 parameters.Add(new SqlParameter("@password", Password));
                 parameters.Add(new SqlParameter("@ativo", Ativo));
 
