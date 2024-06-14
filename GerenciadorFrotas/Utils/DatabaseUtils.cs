@@ -14,6 +14,15 @@ namespace GerenciadorFrotas.Utils
         public static string Banco = string.Empty;
         public static int IdUsuarioLogado = 0;
 
+        public static void LerAppConfig()
+        {
+            Servidor = ConfigurationManager.AppSettings.Get("servidor");
+            Banco = ConfigurationManager.AppSettings.Get("banco");
+
+            Conexao = $"Data Source={Servidor};Initial Catalog={Banco};Integrated Security=true;";
+            //Conexao = $"Server=localhost;Database=GerenciadorFrotas;User Id=sa; Password=teste@123; Encrypt=False";
+        }
+
         public static DataTable ConsultarCidades(int estadoId)
         {
             try
@@ -70,16 +79,5 @@ namespace GerenciadorFrotas.Utils
                 throw new Exception(ex.Message);
             }
         }
-
-        public static void LerAppConfig()
-        {
-            Servidor = ConfigurationManager.AppSettings.Get("servidor");
-            Banco = ConfigurationManager.AppSettings.Get("banco");
-
-            Conexao = $"Data Source={Servidor};Initial Catalog={Banco};Integrated Security=true;";
-            //Conexao = $"Server=localhost;Database=GerenciadorFrotas;User Id=sa; Password=teste@123; Encrypt=False";
-        }
-
-
     }
 }

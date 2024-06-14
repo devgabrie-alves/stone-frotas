@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -31,31 +31,21 @@ namespace GerenciadorFrotas.Utils
             return false;
         }
 
-        public static void LimparFormulario(Form form)
+        public static void LimparFormulario(Control control)
         {
-            foreach (Control control in form.Controls)
+            foreach (Control c in control.Controls)
             {
-                if (control is TextBox)
+                if (c is TextBox)
                 {
-                    TextBox txtbox = (TextBox)control;
-                    txtbox.Text = string.Empty;
+                    ((TextBox)c).Text = String.Empty;
                 }
-                else if (control is CheckBox)
+
+                if (c.Controls.Count > 0)
                 {
-                    CheckBox chkbox = (CheckBox)control;
-                    chkbox.Checked = false;
-                }
-                else if (control is RadioButton)
-                {
-                    RadioButton rdbtn = (RadioButton)control;
-                    rdbtn.Checked = false;
-                }
-                else if (control is DateTimePicker)
-                {
-                    DateTimePicker dtp = (DateTimePicker)control;
-                    dtp.Value = DateTime.Now;
+                    LimparFormulario(c);
                 }
             }
         }
+
     }
 }

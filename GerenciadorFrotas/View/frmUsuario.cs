@@ -1,32 +1,51 @@
 ﻿using GerenciadorFrotas.Model;
 using GerenciadorFrotas.Utils;
 using System;
-using System.Net.Http.Headers;
+using System.Net.Mail;
 using System.Windows.Forms;
 
 namespace GerenciadorFrotas.View
 {
     public partial class frmUsuario : Form
     {
+
+        //Atributos
+        Usuario usuario = new Usuario();
+
+        //Construtor
         public frmUsuario()
         {
             InitializeComponent();
         }
 
-        //Atributos
-        Usuario usuario = new Usuario();
-
-        //Métodos
-        private void btnCancelar_Click(object sender, System.EventArgs e)
+        //Metodos
+        private void PreencherClasse()
         {
-            Close();
+            usuario.Login = txtLogin.Text;
+            usuario.Nome = txtNome.Text;
+            usuario.Email = txtEmail.Text;
+            usuario.Senha = ApplicationUtils.Criptografar(txtSenha.Text);
+            usuario.Ativo = rdbAtivo.Checked;
         }
 
-        private void btnLimpar_Click(object sender, System.EventArgs e)
+        private void PreencherFormulario()
+        {
+            txtLogin.Text = usuario.Login;
+            txtNome.Text = usuario.Nome;
+            txtEmail.Text = usuario.Email;
+            txtSenha.Text = usuario.Senha;
+            txtRepetirSenha.Text = usuario.Senha;
+            rdbAtivo.Checked = usuario.Ativo;
+            rdbInativo.Checked = !usuario.Ativo;
+        }
+
+        private void LimparCampos()
         {
             usuario = new Usuario();
             ApplicationUtils.LimparFormulario(this);
-            rdpNao.Checked = true;
+            rdbInativo.Checked = true;
+            btnCadastrar.Text = "Cadastrar";
+            txtPesquisa.Focus();
         }
 
         private void CarregarGridUsuario()
@@ -37,18 +56,72 @@ namespace GerenciadorFrotas.View
                 grdDados.Columns[0].Visible = false;
                 grdDados.Columns[4].Visible = false;
                 grdDados.Columns[5].Visible = false;
+
                 //Cabeçalho das colunas
                 grdDados.Columns[1].HeaderText = "Usuário";
                 grdDados.Columns[2].HeaderText = "Nome";
-                grdDados.Columns[2].HeaderText = "E-mail";
+                grdDados.Columns[3].HeaderText = "E-mail";
+
                 //Largura das colunas
                 grdDados.Columns[1].Width = 100;
                 grdDados.Columns[2].Width = 250;
-            }
-            catch (Exception ex)
+                grdDados.Columns[3].Width = 303;
+            } catch (Exception ex)
             {
                 MessageBox.Show("Erro-->" + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private string ValidarCampos()
+        {
+            try
+            {
+                string mensagemErro = string.Empty;
+
+                if (txtLogin.Text == string.Empty)
+                {
+                    mensagemErro += "O campo LOGIN não pode ser vazio.\n";
+                } else
+                {
+                    Usuario u = new Usuario();
+                    u.Login = txtLogin.Text;
+                    u.Consultar();
+
+                    if (usuario.Id == 0 && u.Id != 0 ||
+                        usuario.Id != 0 && u.Id != 0 && usuario.Id != u.Id)
+                    {
+                        mensagemErro += "Usuario já existente.\n";
+                    }
+                }
+
+                if (txtNome.Text == string.Empty)
+                {
+                    mensagemErro += "O campo NOME não pode ser vazio.\n";
+                }
+
+                try
+                {
+                    MailAddress ma = new MailAddress(txtEmail.Text);
+
+                } catch (Exception)
+                {
+                    mensagemErro += "Campo E-MAIL inválido \n";
+                }
+
+                if (txtSenha.Text == string.Empty)
+                {
+                    mensagemErro += "O campo SENHA não pode ser vazio.\n";
+                } else if (txtSenha.Text != txtRepetirSenha.Text)
+                {
+                    mensagemErro += "Confirmação da senha não confere.\n";
+                
+                }
+
+                return mensagemErro;
+            } catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
 
@@ -71,13 +144,67 @@ namespace GerenciadorFrotas.View
                 usuario = new Usuario();
                 usuario.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
                 usuario.Consultar();
-                //PreencherFormulario();
-            }
-            catch (Exception ex)
+                PreencherFormulario();
+            } catch (Exception ex)
             {
                 MessageBox.Show("Erro-->" + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void grdDados_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                usuario = new Usuario();
+                usuario.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
+                usuario.Consultar();
+                PreencherFormulario();
+                btnCadastrar.Text = "Atualizar";
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Erro-->" + ex.Message, "Erro",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string mensagemErro = ValidarCampos();
+
+                if (mensagemErro != string.Empty)
+                {
+                    MessageBox.Show(mensagemErro, "Erro de Preenchimento",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                PreencherClasse();
+                usuario.Gravar();
+
+                MessageBox.Show("Usuário gravado com sucesso!", "Cadastro de Usuários",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LimparCampos();
+                CarregarGridUsuario();
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Erro-->" + ex.Message, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCancelar_Click(object sender, System.EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnLimpar_Click(object sender, System.EventArgs e)
+        {
+            LimparCampos();
+            
         }
     }
 }

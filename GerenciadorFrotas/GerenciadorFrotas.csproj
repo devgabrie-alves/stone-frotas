@@ -51,16 +51,38 @@
     <Compile Include="Model\Colaborador.cs" />
     <Compile Include="Model\Controle.cs" />
     <Compile Include="Model\Endereco.cs" />
-    <Compile Include="Model\enums\StatusFuncionario.cs" />
     <Compile Include="Model\Manutencao.cs" />
     <Compile Include="Model\Oficina.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Model\Veiculo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmColaborador.Designer.cs">
+      <DependentUpon>frmColaborador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmControle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmControle.Designer.cs">
+      <DependentUpon>frmControle.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmOficina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmOficina.Designer.cs">
+      <DependentUpon>frmOficina.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -84,16 +106,17 @@
     <Compile Include="View\frmUsuario.Designer.cs">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmVeiculo.Designer.cs">
+      <DependentUpon>frmVeiculo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="View\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,12 +150,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eraser2.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Capa-seguro-de-frota.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

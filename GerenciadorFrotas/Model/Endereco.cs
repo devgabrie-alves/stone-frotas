@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GerenciadorFrotas.Model
+﻿namespace GerenciadorFrotas.Model
 {
     public class Endereco
     {
@@ -17,7 +11,7 @@ namespace GerenciadorFrotas.Model
         public int CidadeId { get; set; }
         public int ClienteId { get; set; }
         public int UsuarioId { get; set; }
-        
+
         public Endereco()
         {
             Id = 0;

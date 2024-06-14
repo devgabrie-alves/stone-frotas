@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
-            this.lblPesquisa = new System.Windows.Forms.Label();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.lblPesquisa = new System.Windows.Forms.Label();
             this.grpDados = new System.Windows.Forms.GroupBox();
             this.grdDados = new System.Windows.Forms.DataGridView();
             this.grpUsuario = new System.Windows.Forms.GroupBox();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.txtLogin = new System.Windows.Forms.TextBox();
-            this.lblLogin = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblSenha = new System.Windows.Forms.Label();
+            this.grpStatus = new System.Windows.Forms.GroupBox();
+            this.rdbInativo = new System.Windows.Forms.RadioButton();
+            this.rdbAtivo = new System.Windows.Forms.RadioButton();
             this.txtRepetirSenha = new System.Windows.Forms.TextBox();
             this.lblRepetirSenha = new System.Windows.Forms.Label();
-            this.grpAtivo = new System.Windows.Forms.GroupBox();
-            this.rdpSim = new System.Windows.Forms.RadioButton();
-            this.rdpNao = new System.Windows.Forms.RadioButton();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.lblSenha = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtLogin = new System.Windows.Forms.TextBox();
+            this.lblLogin = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.lblNome = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -54,7 +54,7 @@
             this.grpDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDados)).BeginInit();
             this.grpUsuario.SuspendLayout();
-            this.grpAtivo.SuspendLayout();
+            this.grpStatus.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpPesquisa
@@ -68,6 +68,14 @@
             this.grpPesquisa.TabStop = false;
             this.grpPesquisa.Text = "Pesquisa";
             // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Location = new System.Drawing.Point(180, 19);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(338, 20);
+            this.txtPesquisa.TabIndex = 0;
+            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
+            // 
             // lblPesquisa
             // 
             this.lblPesquisa.AutoSize = true;
@@ -76,14 +84,6 @@
             this.lblPesquisa.Size = new System.Drawing.Size(35, 13);
             this.lblPesquisa.TabIndex = 0;
             this.lblPesquisa.Text = "Nome";
-            // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.Location = new System.Drawing.Point(180, 19);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(338, 20);
-            this.txtPesquisa.TabIndex = 1;
-            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
             // grpDados
             // 
@@ -97,19 +97,27 @@
             // 
             // grdDados
             // 
+            this.grdDados.AllowUserToAddRows = false;
+            this.grdDados.AllowUserToDeleteRows = false;
+            this.grdDados.AllowUserToResizeColumns = false;
+            this.grdDados.AllowUserToResizeRows = false;
             this.grdDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdDados.Location = new System.Drawing.Point(7, 20);
+            this.grdDados.MultiSelect = false;
             this.grdDados.Name = "grdDados";
             this.grdDados.ReadOnly = true;
+            this.grdDados.RowHeadersVisible = false;
+            this.grdDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdDados.Size = new System.Drawing.Size(656, 170);
             this.grdDados.TabIndex = 0;
+            this.grdDados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDados_CellClick_1);
             // 
             // grpUsuario
             // 
-            this.grpUsuario.Controls.Add(this.grpAtivo);
+            this.grpUsuario.Controls.Add(this.grpStatus);
             this.grpUsuario.Controls.Add(this.txtRepetirSenha);
             this.grpUsuario.Controls.Add(this.lblRepetirSenha);
-            this.grpUsuario.Controls.Add(this.textBox1);
+            this.grpUsuario.Controls.Add(this.txtSenha);
             this.grpUsuario.Controls.Add(this.lblSenha);
             this.grpUsuario.Controls.Add(this.txtEmail);
             this.grpUsuario.Controls.Add(this.lblEmail);
@@ -124,76 +132,46 @@
             this.grpUsuario.TabStop = false;
             this.grpUsuario.Text = "Usuário";
             // 
-            // txtNome
+            // grpStatus
             // 
-            this.txtNome.Location = new System.Drawing.Point(102, 32);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(333, 20);
-            this.txtNome.TabIndex = 3;
+            this.grpStatus.Controls.Add(this.rdbInativo);
+            this.grpStatus.Controls.Add(this.rdbAtivo);
+            this.grpStatus.Location = new System.Drawing.Point(572, 19);
+            this.grpStatus.Name = "grpStatus";
+            this.grpStatus.Size = new System.Drawing.Size(82, 71);
+            this.grpStatus.TabIndex = 5;
+            this.grpStatus.TabStop = false;
+            this.grpStatus.Text = "Status";
             // 
-            // lblNome
+            // rdbInativo
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(14, 35);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(82, 13);
-            this.lblNome.TabIndex = 2;
-            this.lblNome.Text = "Nome Completo";
+            this.rdbInativo.AutoSize = true;
+            this.rdbInativo.Checked = true;
+            this.rdbInativo.Location = new System.Drawing.Point(7, 44);
+            this.rdbInativo.Name = "rdbInativo";
+            this.rdbInativo.Size = new System.Drawing.Size(57, 17);
+            this.rdbInativo.TabIndex = 1;
+            this.rdbInativo.TabStop = true;
+            this.rdbInativo.Text = "Inativo";
+            this.rdbInativo.UseVisualStyleBackColor = true;
             // 
-            // txtLogin
+            // rdbAtivo
             // 
-            this.txtLogin.Location = new System.Drawing.Point(102, 96);
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(199, 20);
-            this.txtLogin.TabIndex = 5;
-            // 
-            // lblLogin
-            // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(50, 103);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(33, 13);
-            this.lblLogin.TabIndex = 4;
-            this.lblLogin.Text = "Login";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(102, 63);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(333, 20);
-            this.txtEmail.TabIndex = 7;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(50, 70);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(35, 13);
-            this.lblEmail.TabIndex = 6;
-            this.lblEmail.Text = "E-mail";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(102, 131);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 20);
-            this.textBox1.TabIndex = 9;
-            // 
-            // lblSenha
-            // 
-            this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(50, 134);
-            this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(38, 13);
-            this.lblSenha.TabIndex = 8;
-            this.lblSenha.Text = "Senha";
+            this.rdbAtivo.AutoSize = true;
+            this.rdbAtivo.Location = new System.Drawing.Point(7, 20);
+            this.rdbAtivo.Name = "rdbAtivo";
+            this.rdbAtivo.Size = new System.Drawing.Size(49, 17);
+            this.rdbAtivo.TabIndex = 0;
+            this.rdbAtivo.Text = "Ativo";
+            this.rdbAtivo.UseVisualStyleBackColor = true;
             // 
             // txtRepetirSenha
             // 
             this.txtRepetirSenha.Location = new System.Drawing.Point(367, 131);
             this.txtRepetirSenha.Name = "txtRepetirSenha";
             this.txtRepetirSenha.Size = new System.Drawing.Size(157, 20);
-            this.txtRepetirSenha.TabIndex = 11;
+            this.txtRepetirSenha.TabIndex = 4;
+            this.txtRepetirSenha.UseSystemPasswordChar = true;
             // 
             // lblRepetirSenha
             // 
@@ -204,38 +182,70 @@
             this.lblRepetirSenha.TabIndex = 10;
             this.lblRepetirSenha.Text = "Repita a Senha";
             // 
-            // grpAtivo
+            // txtSenha
             // 
-            this.grpAtivo.Controls.Add(this.rdpNao);
-            this.grpAtivo.Controls.Add(this.rdpSim);
-            this.grpAtivo.Location = new System.Drawing.Point(572, 19);
-            this.grpAtivo.Name = "grpAtivo";
-            this.grpAtivo.Size = new System.Drawing.Size(82, 71);
-            this.grpAtivo.TabIndex = 12;
-            this.grpAtivo.TabStop = false;
-            this.grpAtivo.Text = "Ativo";
+            this.txtSenha.Location = new System.Drawing.Point(102, 131);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(157, 20);
+            this.txtSenha.TabIndex = 3;
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
-            // rdpSim
+            // lblSenha
             // 
-            this.rdpSim.AutoSize = true;
-            this.rdpSim.Location = new System.Drawing.Point(7, 20);
-            this.rdpSim.Name = "rdpSim";
-            this.rdpSim.Size = new System.Drawing.Size(42, 17);
-            this.rdpSim.TabIndex = 0;
-            this.rdpSim.Text = "Sim";
-            this.rdpSim.UseVisualStyleBackColor = true;
+            this.lblSenha.AutoSize = true;
+            this.lblSenha.Location = new System.Drawing.Point(50, 134);
+            this.lblSenha.Name = "lblSenha";
+            this.lblSenha.Size = new System.Drawing.Size(38, 13);
+            this.lblSenha.TabIndex = 8;
+            this.lblSenha.Text = "Senha";
             // 
-            // rdpNao
+            // txtEmail
             // 
-            this.rdpNao.AutoSize = true;
-            this.rdpNao.Checked = true;
-            this.rdpNao.Location = new System.Drawing.Point(7, 44);
-            this.rdpNao.Name = "rdpNao";
-            this.rdpNao.Size = new System.Drawing.Size(45, 17);
-            this.rdpNao.TabIndex = 1;
-            this.rdpNao.TabStop = true;
-            this.rdpNao.Text = "Não";
-            this.rdpNao.UseVisualStyleBackColor = true;
+            this.txtEmail.Location = new System.Drawing.Point(102, 63);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(333, 20);
+            this.txtEmail.TabIndex = 1;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(50, 70);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.TabIndex = 6;
+            this.lblEmail.Text = "E-mail";
+            // 
+            // txtLogin
+            // 
+            this.txtLogin.Location = new System.Drawing.Point(102, 96);
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(199, 20);
+            this.txtLogin.TabIndex = 2;
+            // 
+            // lblLogin
+            // 
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Location = new System.Drawing.Point(50, 103);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(33, 13);
+            this.lblLogin.TabIndex = 4;
+            this.lblLogin.Text = "Login";
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(102, 32);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(333, 20);
+            this.txtNome.TabIndex = 0;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(14, 35);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(82, 13);
+            this.lblNome.TabIndex = 2;
+            this.lblNome.Text = "Nome Completo";
             // 
             // btnCadastrar
             // 
@@ -248,6 +258,7 @@
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnLimpar
             // 
@@ -295,8 +306,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdDados)).EndInit();
             this.grpUsuario.ResumeLayout(false);
             this.grpUsuario.PerformLayout();
-            this.grpAtivo.ResumeLayout(false);
-            this.grpAtivo.PerformLayout();
+            this.grpStatus.ResumeLayout(false);
+            this.grpStatus.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -313,12 +324,12 @@
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.GroupBox grpAtivo;
-        private System.Windows.Forms.RadioButton rdpNao;
-        private System.Windows.Forms.RadioButton rdpSim;
+        private System.Windows.Forms.GroupBox grpStatus;
+        private System.Windows.Forms.RadioButton rdbInativo;
+        private System.Windows.Forms.RadioButton rdbAtivo;
         private System.Windows.Forms.TextBox txtRepetirSenha;
         private System.Windows.Forms.Label lblRepetirSenha;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;

@@ -15,30 +15,16 @@ namespace GerenciadorFrotas
 {
     public partial class frmPrincipal : Form
     {
+        //Atributos
+        DateTime Login;
+
+        //Construtor
         public frmPrincipal()
         {
             InitializeComponent();
         }
 
-        //Atributos
-        DateTime Login;
-
-        //Métodos (dev)
-        private void AbrirForm(Form form)
-        {
-            foreach (Form filho in this.MdiChildren)
-            {
-                if (filho.Name == form.Name)
-                {
-                    filho.Activate();
-                    return;
-                }
-            }
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        //Métodos (forms)
+        //Metodos
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             Login = DateTime.Now;
@@ -73,11 +59,6 @@ namespace GerenciadorFrotas
             Close();
         }
 
-        private void mnuSobre_Click(object sender, EventArgs e)
-        {
-            AbrirForm(new frmSobre());
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             TimeSpan ts = DateTime.Now - Login;
@@ -86,9 +67,51 @@ namespace GerenciadorFrotas
                 $"{ts.Seconds.ToString("00")}";
         }
 
+        //Abrir Forms
+        private void AbrirForm(Form form)
+        {
+            foreach (Form filho in this.MdiChildren)
+            {
+                if (filho.Name == form.Name)
+                {
+                    filho.Activate();
+                    return;
+                }
+            }
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        //Cadastro
+        private void mnuSobre_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmSobre());
+        }
+
         private void mnuUsuario_Click(object sender, EventArgs e)
         {
             AbrirForm(new frmUsuario());
+        }
+
+        private void mnuColaborador_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmColaborador());
+        }
+
+        private void mnuVeiculo_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmVeiculo());
+        }
+
+        private void mnuOficina_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmOficina());
+        }
+
+        //Manutencao
+        private void mnuEntradaSaida_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmControle());
         }
     }
 }

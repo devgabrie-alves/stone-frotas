@@ -40,13 +40,16 @@ namespace GerenciadorFrotas.Data
             {
                 Conectar();
                 SqlCommand command = new SqlCommand(sqlCommand, conn);
+
                 foreach (SqlParameter p in lista)
                 {
                     command.Parameters.Add(p);
                 }
+
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
+
                 return dt;
             } catch (Exception ex)
             {

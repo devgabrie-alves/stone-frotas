@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GerenciadorFrotas.Model
+﻿namespace GerenciadorFrotas.Model
 {
     public class Oficina
     {
@@ -14,5 +8,15 @@ namespace GerenciadorFrotas.Model
         public string Contato { get; set; }
         public string Telefone { get; set; }
         public Endereco Endereco { get; set; }
+
+        public Oficina()
+        {
+            Id = 0;
+            Nome = string.Empty;
+            Cnpj = string.Empty;
+            Contato = string.Empty;
+            Telefone = string.Empty;
+            Endereco = new Endereco();
+        }
     }
 }
