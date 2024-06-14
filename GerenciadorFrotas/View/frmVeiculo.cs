@@ -1,20 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GerenciadorFrotas.Model;
 using System.Windows.Forms;
 
 namespace GerenciadorFrotas.View
 {
     public partial class frmVeiculo : Form
     {
+        //Atributos
+        Veiculo veiculo = new Veiculo();
+
+        //Construtor
         public frmVeiculo()
         {
             InitializeComponent();
+        }
+
+        //Metodos
+        private void txtPesquisa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void grdDados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtPesquisa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Tab)
+            {
+                MessageBox.Show("teste", "teste",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

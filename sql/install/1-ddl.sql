@@ -22,10 +22,23 @@ CREATE TABLE tblUsuario (
     login       VARCHAR(20),
     nome        VARCHAR(255),
     email       VARCHAR(255),
-    senha       VARCHAR(20),
+    senha       VARCHAR(255),
     ativo       BIT,
 
     CONSTRAINT pk_tarefa            PRIMARY KEY(ID)
+)
+
+CREATE TABLE tblVeiculo (
+    id	                    INT IDENTITY,
+    modelo                  VARCHAR(15),
+    marca                   VARCHAR(15),
+    placa                   VARCHAR(15),
+    chassi                  VARCHAR(15),
+    quilometragemInicial    INT,
+    quilometragemAtual      INT,
+    ativo                   BIT,
+
+    CONSTRAINT pk_veiculo           PRIMARY KEY(id)
 )
 
 CREATE TABLE tblEndereco (
@@ -37,9 +50,9 @@ CREATE TABLE tblEndereco (
     cep	            VARCHAR(9),
     referencia	    VARCHAR(50),
     cidadeId	    INT,
-    usuarioId       INT,
+    oficinaId       INT,
 
     CONSTRAINT pk_endereco          PRIMARY KEY(id),
 	CONSTRAINT fk_enderecoCidade    FOREIGN KEY(cidadeId) REFERENCES tblCidade,
-    CONSTRAINT fk_enderecoUsuario   FOREIGN KEY(usuarioId) REFERENCES tblUsuario
+    CONSTRAINT fk_enderecoOficina   FOREIGN KEY(oficinaId) REFERENCES tblOficina
 )

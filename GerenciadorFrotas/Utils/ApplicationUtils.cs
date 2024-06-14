@@ -22,7 +22,7 @@ namespace GerenciadorFrotas.Utils
             return Regex.Replace(BitConverter.ToString(criptografado), "-", "").ToLower();
         }
 
-        public static bool SomenteNumeros(char tecla, string texto)
+        public static bool SomenteNumeros(char tecla)
         {
             if ((!char.IsDigit(tecla) && tecla != (char)Keys.Back))
             {

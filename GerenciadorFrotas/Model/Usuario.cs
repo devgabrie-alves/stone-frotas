@@ -26,7 +26,7 @@ namespace GerenciadorFrotas.Model
         }
 
         AcessoDAO acessoDAO = new AcessoDAO();
-        DataTable dt = new DataTable();
+        DataTable dataTable = new DataTable();
         List<SqlParameter> parameters = new List<SqlParameter>();
         string sql = string.Empty;
 
@@ -53,19 +53,19 @@ namespace GerenciadorFrotas.Model
                     sql += "where nome like @nome \n";
                     parameters.Add(new SqlParameter("@nome", '%' + Nome + '%'));
                 }
-                dt = acessoDAO.Consultar(sql, parameters);
+                dataTable = acessoDAO.Consultar(sql, parameters);
 
-                if (Id != 0 || Login != string.Empty && dt.Rows.Count == 1)
+                if (Id != 0 || Login != string.Empty && dataTable.Rows.Count == 1)
                 {
-                    Id = Convert.ToInt32(dt.Rows[0]["id"]);
-                    Login = dt.Rows[0]["login"].ToString();
-                    Email = dt.Rows[0]["email"].ToString();
-                    Nome = dt.Rows[0]["nome"].ToString();
-                    Senha = dt.Rows[0]["Senha"].ToString();
-                    Ativo = Convert.ToBoolean(dt.Rows[0]["ativo"]);
+                    Id = Convert.ToInt32(dataTable.Rows[0]["id"]);
+                    Login = dataTable.Rows[0]["login"].ToString();
+                    Email = dataTable.Rows[0]["email"].ToString();
+                    Nome = dataTable.Rows[0]["nome"].ToString();
+                    Senha = dataTable.Rows[0]["Senha"].ToString();
+                    Ativo = Convert.ToBoolean(dataTable.Rows[0]["ativo"]);
                 }
 
-                return dt;
+                return dataTable;
             } catch (Exception ex)
             {
 
