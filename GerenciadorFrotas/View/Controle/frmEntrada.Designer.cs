@@ -1,6 +1,6 @@
-﻿namespace GerenciadorFrotas.View
+﻿namespace GerenciadorFrotas.View.Controle
 {
-    partial class frmControle
+    partial class frmEntrada
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frmControle";
+            this.Text = "frmEntrada";
         }
 
         #endregion

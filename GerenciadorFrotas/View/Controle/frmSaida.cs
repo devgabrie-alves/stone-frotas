@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GerenciadorFrotas.View
 {
-    public partial class frmControle : Form
+    public partial class frmSaida : Form
     {
-        public frmControle()
+        public frmSaida()
         {
             InitializeComponent();
         }

@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GerenciadorFrotas.View
+namespace GerenciadorFrotas.View.Manutencao
 {
-    public partial class frmColaborador : Form
+    public partial class frmConsultaVeiculos : Form
     {
-        public frmColaborador()
+        public frmConsultaVeiculos()
         {
             InitializeComponent();
         }
+
+        
     }
 }

@@ -1,10 +1,19 @@
 USE GerenciadorFrotas
 GO
 
-DROP TABLE tblEndereco
-
-DROP TABLE tblUsuario
-
+DROP TABLE tblManutencao
+DROP TABLE tblTelefoneOficina
+DROP TABLE tblControle
+DROP TABLE tblEnderecoOficina
+DROP TABLE tblVeiculo
+DROP TABLE tblColaborador
 DROP TABLE tblCidade
-
+DROP TABLE tblTipoTelefone
+DROP TABLE tblStatus
+DROP TABLE tblModelo
+DROP TABLE tblCategoria
+DROP TABLE tblMarca
 DROP TABLE tblEstado
+DROP TABLE tblOficina
+DROP TABLE tblSexo
+DROP TABLE tblUsuario

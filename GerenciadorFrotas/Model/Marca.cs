@@ -8,23 +8,17 @@ using System.Text;
 
 namespace GerenciadorFrotas.Model
 {
-    public class Usuario
+    public class Marca
     {
         public int Id { get; set; }
-        public string Login { get; set; }
         public string Nome { get; set; }
-        public string Email { get; set; }
-        public string Senha { get; set; }
-        public bool Ativo { get; set; }
+        public DateTime DataCadastro { get; set; }
 
-        public Usuario()
+        public Marca()
         {
             Id = 0;
-            Login = string.Empty;
             Nome = string.Empty;
-            Email = string.Empty;
-            Senha = string.Empty;
-            Ativo = false;
+            DataCadastro = DateTime.MinValue;
         }
 
         AcessoDAO acessoDAO = new AcessoDAO();
@@ -39,47 +33,35 @@ namespace GerenciadorFrotas.Model
             try
             {
                 parameters.Clear();
-                sql.Append("SELECT id, login, nome, email, senha, ativo \n");
-                sql.Append("FROM tblUsuario \n");
+                sql.Append("SELECT id, nome, dataCadastro \n");
+                sql.Append("FROM tblMarca \n");
 
                 if (Id != 0)
                 {
                     sql.Append("WHERE id = @id \n");
                     parameters.Add(new SqlParameter("@id", Id));
 
-                } else if (Login != string.Empty)
-                {
-                    sql.Append("WHERE login = @Login \n");
-                    parameters.Add(new SqlParameter("@Login", Login));
-
                 } else if (Nome != string.Empty)
                 {
-                    sql.Append("WHERE nome like @nome \n");
+                    sql.Append("WHERE nome LIKE @nome \n");
                     parameters.Add(new SqlParameter("@nome", DatabaseUtils.LikeFormatter(Nome)));
                 }
+
                 dataTable = acessoDAO.Consultar(sql.ToString(), parameters);
 
-                if (Id != 0 || Login != string.Empty && dataTable.Rows.Count == 1)
+                if (Id != 0)
                 {
                     Id = Convert.ToInt32(dataTable.Rows[0]["id"]);
-                    Login = dataTable.Rows[0]["login"].ToString();
-                    Email = dataTable.Rows[0]["email"].ToString();
                     Nome = dataTable.Rows[0]["nome"].ToString();
-                    Senha = dataTable.Rows[0]["Senha"].ToString();
-                    Ativo = Convert.ToBoolean(dataTable.Rows[0]["ativo"]);
+                    DataCadastro = Convert.ToDateTime(dataTable.Rows[0]["dataCadastro"]);
                 }
 
                 return dataTable;
+
             } catch (Exception ex)
             {
-
                 throw new Exception(ex.Message);
             }
-        }
-
-        public bool Autenticar(string senha)
-        {
-            return senha == Senha;
         }
 
         public void Gravar()
@@ -92,32 +74,47 @@ namespace GerenciadorFrotas.Model
 
                 if (Id == 0)
                 {
-                    sql.Append("INSERT INTO tblUsuario \n");
-                    sql.Append("(login, nome, email, senha, ativo) \n");
+                    sql.Append("INSERT INTO tblMarca \n");
+                    sql.Append("(nome, dataCadastro) \n");
                     sql.Append("VALUES \n");
-                    sql.Append("(@login, @nome, @email, @senha, @ativo) \n");
+                    sql.Append("(@nome, @dataCadastro) \n");
+
+                    parameters.Add(new SqlParameter("@dataCadastro", DateTime.Now));
 
                 } else
                 {
-                    sql.Append("UPDATE tblUsuario \n");
+                    sql.Append("UPDATE tblMarca \n");
                     sql.Append("SET \n");
-                    sql.Append("login       = @login, \n");
-                    sql.Append("nome        = @nome, \n");
-                    sql.Append("email       = @email, \n");
-                    sql.Append("senha       = @senha, \n");
-                    sql.Append("ativo       = @ativo \n");
+                    sql.Append("nome            = @nome \n");
                     sql.Append("WHERE id = @id \n");
 
                     parameters.Add(new SqlParameter("@id", Id));
                 }
 
-                parameters.Add(new SqlParameter("@login", Login));
                 parameters.Add(new SqlParameter("@nome", Nome));
-                parameters.Add(new SqlParameter("@email", Email));
-                parameters.Add(new SqlParameter("@senha", Senha));
-                parameters.Add(new SqlParameter("@ativo", Ativo));
 
                 acessoDAO.Executar(sql.ToString(), parameters);
+            } catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void Excluir()
+        {
+            sql = new StringBuilder();
+
+            try
+            {
+                parameters.Clear();
+
+                sql.Append("DELETE FROM tblMarca \n");
+                sql.Append("WHERE id = @id \n");
+
+                parameters.Add(new SqlParameter("@id", Id));
+
+                acessoDAO.Executar(sql.ToString(), parameters);
+
             } catch (Exception ex)
             {
                 throw new Exception(ex.Message);

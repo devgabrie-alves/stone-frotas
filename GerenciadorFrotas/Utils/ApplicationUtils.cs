@@ -40,6 +40,11 @@ namespace GerenciadorFrotas.Utils
                     ((TextBox)c).Text = String.Empty;
                 }
 
+                if (c is ComboBox)
+                {
+                    ((ComboBox)c).SelectedIndex = -1;
+                }
+
                 if (c.Controls.Count > 0)
                 {
                     LimparFormulario(c);

@@ -35,9 +35,16 @@
             this.mnuUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuColaborador = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuVeiculo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuVeiculoPrincipal = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuModelo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMarca = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCategoria = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOficina = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuControle = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuEntradaSaida = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSaida = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuEntrada = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuManutencao = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuConsultaVeiculos = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSobre = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSair = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -60,6 +67,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuCadastro,
             this.mnuControle,
+            this.mnuManutencao,
             this.mnuSobre,
             this.mnuSair});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -95,10 +103,42 @@
             // 
             // mnuVeiculo
             // 
+            this.mnuVeiculo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuVeiculoPrincipal,
+            this.mnuModelo,
+            this.mnuMarca,
+            this.mnuCategoria});
             this.mnuVeiculo.Name = "mnuVeiculo";
             this.mnuVeiculo.Size = new System.Drawing.Size(180, 22);
             this.mnuVeiculo.Text = "Veículo";
-            this.mnuVeiculo.Click += new System.EventHandler(this.mnuVeiculo_Click);
+            // 
+            // mnuVeiculoPrincipal
+            // 
+            this.mnuVeiculoPrincipal.Name = "mnuVeiculoPrincipal";
+            this.mnuVeiculoPrincipal.Size = new System.Drawing.Size(125, 22);
+            this.mnuVeiculoPrincipal.Text = "Principal";
+            this.mnuVeiculoPrincipal.Click += new System.EventHandler(this.mnuVeiculoPrincipal_Click);
+            // 
+            // mnuModelo
+            // 
+            this.mnuModelo.Name = "mnuModelo";
+            this.mnuModelo.Size = new System.Drawing.Size(125, 22);
+            this.mnuModelo.Text = "Modelo";
+            this.mnuModelo.Click += new System.EventHandler(this.mnuModelo_Click);
+            // 
+            // mnuMarca
+            // 
+            this.mnuMarca.Name = "mnuMarca";
+            this.mnuMarca.Size = new System.Drawing.Size(125, 22);
+            this.mnuMarca.Text = "Marca";
+            this.mnuMarca.Click += new System.EventHandler(this.mnuMarca_Click);
+            // 
+            // mnuCategoria
+            // 
+            this.mnuCategoria.Name = "mnuCategoria";
+            this.mnuCategoria.Size = new System.Drawing.Size(125, 22);
+            this.mnuCategoria.Text = "Categoria";
+            this.mnuCategoria.Click += new System.EventHandler(this.mnuCategoria_Click);
             // 
             // mnuOficina
             // 
@@ -110,17 +150,37 @@
             // mnuControle
             // 
             this.mnuControle.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuEntradaSaida});
+            this.mnuSaida,
+            this.mnuEntrada});
             this.mnuControle.Name = "mnuControle";
             this.mnuControle.Size = new System.Drawing.Size(65, 20);
             this.mnuControle.Text = "Controle";
             // 
-            // mnuEntradaSaida
+            // mnuSaida
             // 
-            this.mnuEntradaSaida.Name = "mnuEntradaSaida";
-            this.mnuEntradaSaida.Size = new System.Drawing.Size(180, 22);
-            this.mnuEntradaSaida.Text = "Entrada/Saída";
-            this.mnuEntradaSaida.Click += new System.EventHandler(this.mnuEntradaSaida_Click);
+            this.mnuSaida.Name = "mnuSaida";
+            this.mnuSaida.Size = new System.Drawing.Size(180, 22);
+            this.mnuSaida.Text = "Saída";
+            // 
+            // mnuEntrada
+            // 
+            this.mnuEntrada.Name = "mnuEntrada";
+            this.mnuEntrada.Size = new System.Drawing.Size(180, 22);
+            this.mnuEntrada.Text = "Entrada";
+            // 
+            // mnuManutencao
+            // 
+            this.mnuManutencao.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuConsultaVeiculos});
+            this.mnuManutencao.Name = "mnuManutencao";
+            this.mnuManutencao.Size = new System.Drawing.Size(86, 20);
+            this.mnuManutencao.Text = "Manutenção";
+            // 
+            // mnuConsultaVeiculos
+            // 
+            this.mnuConsultaVeiculos.Name = "mnuConsultaVeiculos";
+            this.mnuConsultaVeiculos.Size = new System.Drawing.Size(180, 22);
+            this.mnuConsultaVeiculos.Text = "Consulta Veículos";
             // 
             // mnuSobre
             // 
@@ -224,7 +284,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuColaborador;
         private System.Windows.Forms.ToolStripMenuItem mnuVeiculo;
         private System.Windows.Forms.ToolStripMenuItem mnuControle;
-        private System.Windows.Forms.ToolStripMenuItem mnuEntradaSaida;
         private System.Windows.Forms.ToolStripMenuItem mnuOficina;
         private System.Windows.Forms.ToolStripMenuItem mnuSobre;
         private System.Windows.Forms.ToolStripMenuItem mnuSair;
@@ -235,6 +294,14 @@
         private System.Windows.Forms.ToolStripStatusLabel lblBanco;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ToolStripMenuItem mnuVeiculoPrincipal;
+        private System.Windows.Forms.ToolStripMenuItem mnuModelo;
+        private System.Windows.Forms.ToolStripMenuItem mnuMarca;
+        private System.Windows.Forms.ToolStripMenuItem mnuCategoria;
+        private System.Windows.Forms.ToolStripMenuItem mnuSaida;
+        private System.Windows.Forms.ToolStripMenuItem mnuEntrada;
+        private System.Windows.Forms.ToolStripMenuItem mnuManutencao;
+        private System.Windows.Forms.ToolStripMenuItem mnuConsultaVeiculos;
     }
 }
 

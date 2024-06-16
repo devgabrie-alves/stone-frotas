@@ -49,10 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\AcessoDAO.cs" />
+    <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\Colaborador.cs" />
     <Compile Include="Model\Controle.cs" />
     <Compile Include="Model\Endereco.cs" />
     <Compile Include="Model\Manutencao.cs" />
+    <Compile Include="Model\Marca.cs" />
+    <Compile Include="Model\Modelo.cs" />
     <Compile Include="Model\Oficina.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Model\Veiculo.cs" />
@@ -61,17 +64,41 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="View\frmColaborador.cs">
+    <Compile Include="View\Cadastro\frmColaborador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmColaborador.Designer.cs">
+    <Compile Include="View\Cadastro\frmColaborador.Designer.cs">
       <DependentUpon>frmColaborador.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmControle.cs">
+    <Compile Include="View\Cadastro\Veiculo\frmCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmControle.Designer.cs">
-      <DependentUpon>frmControle.cs</DependentUpon>
+    <Compile Include="View\Cadastro\Veiculo\frmCategoria.Designer.cs">
+      <DependentUpon>frmCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cadastro\Veiculo\frmMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cadastro\Veiculo\frmMarca.Designer.cs">
+      <DependentUpon>frmMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cadastro\Veiculo\frmModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cadastro\Veiculo\frmModelo.Designer.cs">
+      <DependentUpon>frmModelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controle\frmEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Controle\frmEntrada.Designer.cs">
+      <DependentUpon>frmEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controle\frmSaida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Controle\frmSaida.Designer.cs">
+      <DependentUpon>frmSaida.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmLogin.cs">
       <SubType>Form</SubType>
@@ -79,10 +106,10 @@
     <Compile Include="View\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmOficina.cs">
+    <Compile Include="View\Cadastro\frmOficina.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmOficina.Designer.cs">
+    <Compile Include="View\Cadastro\frmOficina.Designer.cs">
       <DependentUpon>frmOficina.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmPrincipal.cs">
@@ -101,27 +128,45 @@
     <Compile Include="View\frmSobre.Designer.cs">
       <DependentUpon>frmSobre.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmUsuario.cs">
+    <Compile Include="View\Cadastro\frmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmUsuario.Designer.cs">
+    <Compile Include="View\Cadastro\frmUsuario.Designer.cs">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmVeiculo.cs">
+    <Compile Include="View\Cadastro\Veiculo\frmVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmVeiculo.Designer.cs">
+    <Compile Include="View\Cadastro\Veiculo\frmVeiculo.Designer.cs">
       <DependentUpon>frmVeiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manutencao\frmConsultaVeiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manutencao\frmConsultaVeiculos.Designer.cs">
+      <DependentUpon>frmConsultaVeiculos.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\frmColaborador.resx">
+      <DependentUpon>frmColaborador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\Veiculo\frmCategoria.resx">
+      <DependentUpon>frmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\Veiculo\frmMarca.resx">
+      <DependentUpon>frmMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\Veiculo\frmModelo.resx">
+      <DependentUpon>frmModelo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmOficina.resx">
+    <EmbeddedResource Include="View\Cadastro\frmOficina.resx">
       <DependentUpon>frmOficina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmPrincipal.resx">
@@ -130,11 +175,14 @@
     <EmbeddedResource Include="View\frmSobre.resx">
       <DependentUpon>frmSobre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmUsuario.resx">
+    <EmbeddedResource Include="View\Cadastro\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmVeiculo.resx">
+    <EmbeddedResource Include="View\Cadastro\Veiculo\frmVeiculo.resx">
       <DependentUpon>frmVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Manutencao\frmConsultaVeiculos.resx">
+      <DependentUpon>frmConsultaVeiculos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -158,5 +206,6 @@
   <ItemGroup>
     <None Include="Resources\eraser2.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

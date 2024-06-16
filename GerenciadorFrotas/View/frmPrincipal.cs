@@ -1,6 +1,7 @@
 ﻿using GerenciadorFrotas.Model;
 using GerenciadorFrotas.Utils;
 using GerenciadorFrotas.View;
+using GerenciadorFrotas.View.Cadastro.Veiculo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -98,20 +99,31 @@ namespace GerenciadorFrotas
             AbrirForm(new frmColaborador());
         }
 
-        private void mnuVeiculo_Click(object sender, EventArgs e)
+        //Veiculo
+        private void mnuVeiculoPrincipal_Click(object sender, EventArgs e)
         {
             AbrirForm(new frmVeiculo());
         }
 
+        private void mnuModelo_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmModelo());
+        }
+
+        private void mnuMarca_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmMarca());
+        }
+
+        private void mnuCategoria_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmCategoria());
+        }
+        //
+
         private void mnuOficina_Click(object sender, EventArgs e)
         {
             AbrirForm(new frmOficina());
-        }
-
-        //Manutencao
-        private void mnuEntradaSaida_Click(object sender, EventArgs e)
-        {
-            AbrirForm(new frmControle());
         }
     }
 }

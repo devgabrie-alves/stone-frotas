@@ -19,6 +19,31 @@ namespace GerenciadorFrotas.View
         }
 
         //Metodos
+        private void CarregarGrid()
+        {
+            try
+            {
+                grdDados.DataSource = usuario.Consultar();
+                grdDados.Columns[0].Visible = false;
+                grdDados.Columns[4].Visible = false;
+                grdDados.Columns[5].Visible = false;
+
+                //Cabeçalho das colunas
+                grdDados.Columns[1].HeaderText = "Usuário";
+                grdDados.Columns[2].HeaderText = "Nome";
+                grdDados.Columns[3].HeaderText = "E-mail";
+
+                //Largura das colunas
+                grdDados.Columns[1].Width = 100;
+                grdDados.Columns[2].Width = 250;
+                grdDados.Columns[3].Width = 303;
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Erro-->" + ex.Message, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void PreencherClasse()
         {
             usuario.Login = txtLogin.Text;
@@ -43,34 +68,14 @@ namespace GerenciadorFrotas.View
         {
             usuario = new Usuario();
             ApplicationUtils.LimparFormulario(this);
+            GetFormDefault();
+        }
+
+        private void GetFormDefault()
+        {
             rdbInativo.Checked = true;
             btnCadastrar.Text = "Cadastrar";
             txtPesquisa.Focus();
-        }
-
-        private void CarregarGridUsuario()
-        {
-            try
-            {
-                grdDados.DataSource = usuario.Consultar();
-                grdDados.Columns[0].Visible = false;
-                grdDados.Columns[4].Visible = false;
-                grdDados.Columns[5].Visible = false;
-
-                //Cabeçalho das colunas
-                grdDados.Columns[1].HeaderText = "Usuário";
-                grdDados.Columns[2].HeaderText = "Nome";
-                grdDados.Columns[3].HeaderText = "E-mail";
-
-                //Largura das colunas
-                grdDados.Columns[1].Width = 100;
-                grdDados.Columns[2].Width = 250;
-                grdDados.Columns[3].Width = 303;
-            } catch (Exception ex)
-            {
-                MessageBox.Show("Erro-->" + ex.Message, "Erro",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private string ValidarCampos()
@@ -127,14 +132,14 @@ namespace GerenciadorFrotas.View
 
         private void frmUsuario_Load(object sender, EventArgs e)
         {
-            CarregarGridUsuario();
+            CarregarGrid();
         }
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
             usuario = new Usuario();
             usuario.Nome = txtPesquisa.Text;
-            CarregarGridUsuario();
+            CarregarGrid();
         }
 
         private void grdDados_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -188,7 +193,7 @@ namespace GerenciadorFrotas.View
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 LimparCampos();
-                CarregarGridUsuario();
+                CarregarGrid();
             } catch (Exception ex)
             {
                 MessageBox.Show("Erro-->" + ex.Message, "Erro",
