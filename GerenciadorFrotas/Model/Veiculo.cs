@@ -147,8 +147,6 @@ namespace GerenciadorFrotas.Model
                     sql.Append("VALUES \n");
                     sql.Append("(@placa, @chassi, @quilometragemInicial, @quilometragemAtual, @ativo, @usuarioId, @modeloId) \n");
 
-                    parameters.Add(new SqlParameter("@quilometragemInicial", QuilometragemInicial));
-                    parameters.Add(new SqlParameter("@quilometragemAtual", QuilometragemAtual));
                     parameters.Add(new SqlParameter("@usuarioId", UsuarioId));
 
                 } else
@@ -157,6 +155,8 @@ namespace GerenciadorFrotas.Model
                     sql.Append("SET \n");
                     sql.Append("placa                   = @placa, \n");
                     sql.Append("chassi                  = @chassi, \n");
+                    sql.Append("quilometragemInicial    = @quilometragemInicial, \n");
+                    sql.Append("quilometragemAtual      = @quilometragemAtual, \n");
                     sql.Append("ativo                   = @ativo, \n");
                     sql.Append("modeloId                = @modeloId \n");
                     sql.Append("WHERE id = @id \n");
@@ -166,8 +166,10 @@ namespace GerenciadorFrotas.Model
 
                 parameters.Add(new SqlParameter("@placa", Placa));
                 parameters.Add(new SqlParameter("@chassi", Chassi));
+                parameters.Add(new SqlParameter("@quilometragemInicial", QuilometragemInicial));
+                parameters.Add(new SqlParameter("@quilometragemAtual", QuilometragemAtual));
                 parameters.Add(new SqlParameter("@ativo", Ativo));
-                
+
                 parameters.Add(new SqlParameter("@modeloId", ModeloId));
 
                 acessoDAO.Executar(sql.ToString(), parameters);
