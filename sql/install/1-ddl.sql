@@ -38,13 +38,6 @@ CREATE TABLE tblStatus (
     CONSTRAINT pk_status        PRIMARY KEY(id)
 )
 
-CREATE TABLE tblTipoTelefone (
-    id          INT IDENTITY,
-    descricao   VARCHAR(15),
-
-    CONSTRAINT pk_tipoTelefone  PRIMARY KEY(id),
-)
-
 CREATE TABLE tblCidade (
     id          INT IDENTITY,
     cidade      VARCHAR(100),
@@ -131,6 +124,7 @@ CREATE TABLE tblOficina (
     cnpj            VARCHAR(14),
     email           VARCHAR(100),
     urlSite         VARCHAR(100),
+    telefone        VARCHAR(20),
     usuarioId       INT,
 
     CONSTRAINT pk_oficina           PRIMARY KEY(id),
@@ -151,17 +145,6 @@ CREATE TABLE tblEnderecoOficina (
     CONSTRAINT pk_enderecoOficina           PRIMARY KEY(id),
 	CONSTRAINT fk_enderecoOficina_cidade    FOREIGN KEY(cidadeId)  REFERENCES tblCidade,
     CONSTRAINT fk_enderecoOficina_oficina   FOREIGN KEY(oficinaId) REFERENCES tblOficina
-)
-
-CREATE TABLE tblTelefoneOficina (
-    id              INT IDENTITY,
-    numero          VARCHAR(20), --REVISAR
-    tipoId          INT,
-    oficinaId       INT,
-
-    CONSTRAINT pk_telefoneOficina           PRIMARY KEY(id),
-    CONSTRAINT fk_telefoneOficina_tipo      FOREIGN KEY(tipoId)     REFERENCES tblTipoTelefone,
-    CONSTRAINT fk_telefoneOficina_oficina   FOREIGN KEY(oficinaId)  REFERENCES tblOficina
 )
 
 --REVISAR
