@@ -10,14 +10,14 @@ CREATE TABLE tblEstado (
 
 CREATE TABLE tblSexo (
     id              INT IDENTITY,
-    descricao       VARCHAR(15),
+    descricao       VARCHAR(30),
 
     CONSTRAINT pk_sexo         PRIMARY KEY(id)
 )
 
 CREATE TABLE tblMarca (
     id              INT IDENTITY,
-    nome            VARCHAR(15),
+    nome            VARCHAR(30),
     dataCadastro    DATETIME,
 
     CONSTRAINT pk_marca         PRIMARY KEY(id)
@@ -25,7 +25,7 @@ CREATE TABLE tblMarca (
 
 CREATE TABLE tblCategoria (
     id              INT IDENTITY,
-    descricao       VARCHAR(15),
+    descricao       VARCHAR(30),
     dataCadastro    DATETIME,
 
     CONSTRAINT pk_categoria     PRIMARY KEY(id)
@@ -33,7 +33,7 @@ CREATE TABLE tblCategoria (
 
 CREATE TABLE tblStatus (
     id          INT IDENTITY,
-    descricao   VARCHAR(15),
+    descricao   VARCHAR(30),
 
     CONSTRAINT pk_status        PRIMARY KEY(id)
 )
@@ -49,7 +49,8 @@ CREATE TABLE tblCidade (
 
 CREATE TABLE tblModelo (
     id              INT IDENTITY,
-    nome            VARCHAR(15),
+    nome            VARCHAR(30),
+    ano             INT,
     dataCadastro    DATETIME,
     marcaId         INT,
     categoriaId     INT,
@@ -89,8 +90,8 @@ CREATE TABLE tblColaborador (
 
 CREATE TABLE tblVeiculo (
     id	                    INT IDENTITY,
-    placa                   VARCHAR(15),
-    chassi                  VARCHAR(15),
+    placa                   VARCHAR(9),
+    chassi                  VARCHAR(17),
     quilometragemInicial    INT,
     quilometragemAtual      INT,
     ativo                   BIT,
@@ -122,9 +123,9 @@ CREATE TABLE tblOficina (
     razaoSocial     VARCHAR(50),
     nomeFantasia    VARCHAR(50),
     cnpj            VARCHAR(14),
-    email           VARCHAR(100),
+    email           VARCHAR(70),
     urlSite         VARCHAR(100),
-    telefone        VARCHAR(20),
+    telefone        VARCHAR(11),
     usuarioId       INT,
 
     CONSTRAINT pk_oficina           PRIMARY KEY(id),
@@ -137,7 +138,7 @@ CREATE TABLE tblEnderecoOficina (
     numero	        INT,
     complemento	    VARCHAR(50),
     bairro	        VARCHAR(50),
-    cep	            VARCHAR(9),
+    cep	            VARCHAR(8),
     referencia	    VARCHAR(50),
     cidadeId	    INT,
     oficinaId       INT,

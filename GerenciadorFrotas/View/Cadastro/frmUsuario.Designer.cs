@@ -146,28 +146,29 @@
             // rdbInativo
             // 
             this.rdbInativo.AutoSize = true;
-            this.rdbInativo.Checked = true;
             this.rdbInativo.Location = new System.Drawing.Point(7, 44);
             this.rdbInativo.Name = "rdbInativo";
             this.rdbInativo.Size = new System.Drawing.Size(57, 17);
             this.rdbInativo.TabIndex = 1;
-            this.rdbInativo.TabStop = true;
             this.rdbInativo.Text = "Inativo";
             this.rdbInativo.UseVisualStyleBackColor = true;
             // 
             // rdbAtivo
             // 
             this.rdbAtivo.AutoSize = true;
+            this.rdbAtivo.Checked = true;
             this.rdbAtivo.Location = new System.Drawing.Point(7, 20);
             this.rdbAtivo.Name = "rdbAtivo";
             this.rdbAtivo.Size = new System.Drawing.Size(49, 17);
             this.rdbAtivo.TabIndex = 0;
+            this.rdbAtivo.TabStop = true;
             this.rdbAtivo.Text = "Ativo";
             this.rdbAtivo.UseVisualStyleBackColor = true;
             // 
             // txtRepetirSenha
             // 
             this.txtRepetirSenha.Location = new System.Drawing.Point(367, 131);
+            this.txtRepetirSenha.MaxLength = 20;
             this.txtRepetirSenha.Name = "txtRepetirSenha";
             this.txtRepetirSenha.Size = new System.Drawing.Size(157, 20);
             this.txtRepetirSenha.TabIndex = 4;
@@ -185,6 +186,7 @@
             // txtSenha
             // 
             this.txtSenha.Location = new System.Drawing.Point(102, 131);
+            this.txtSenha.MaxLength = 20;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(157, 20);
             this.txtSenha.TabIndex = 3;
@@ -202,6 +204,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(102, 63);
+            this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(333, 20);
             this.txtEmail.TabIndex = 1;
@@ -218,6 +221,7 @@
             // txtLogin
             // 
             this.txtLogin.Location = new System.Drawing.Point(102, 96);
+            this.txtLogin.MaxLength = 20;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(199, 20);
             this.txtLogin.TabIndex = 2;
@@ -234,6 +238,7 @@
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(102, 32);
+            this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(333, 20);
             this.txtNome.TabIndex = 0;

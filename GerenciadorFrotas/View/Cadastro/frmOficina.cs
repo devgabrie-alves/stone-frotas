@@ -310,5 +310,10 @@ namespace GerenciadorFrotas.View
                 CarregarGrid();
             }
         }
+
+        private void txtCNPJ_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = ApplicationUtils.SomenteNumeros(e.KeyChar);
+        }
     }
 }

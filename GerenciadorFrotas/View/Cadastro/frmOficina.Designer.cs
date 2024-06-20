@@ -145,6 +145,7 @@
             // txtSite
             // 
             this.txtSite.Location = new System.Drawing.Point(96, 62);
+            this.txtSite.MaxLength = 100;
             this.txtSite.Name = "txtSite";
             this.txtSite.Size = new System.Drawing.Size(251, 20);
             this.txtSite.TabIndex = 26;
@@ -161,6 +162,7 @@
             // txtNomeFantasia
             // 
             this.txtNomeFantasia.Location = new System.Drawing.Point(353, 26);
+            this.txtNomeFantasia.MaxLength = 50;
             this.txtNomeFantasia.Name = "txtNomeFantasia";
             this.txtNomeFantasia.Size = new System.Drawing.Size(166, 20);
             this.txtNomeFantasia.TabIndex = 24;
@@ -326,9 +328,11 @@
             // txtCNPJ
             // 
             this.txtCNPJ.Location = new System.Drawing.Point(48, 94);
+            this.txtCNPJ.MaxLength = 14;
             this.txtCNPJ.Name = "txtCNPJ";
             this.txtCNPJ.Size = new System.Drawing.Size(154, 20);
             this.txtCNPJ.TabIndex = 2;
+            this.txtCNPJ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCNPJ_KeyPress);
             // 
             // lblCNPJ
             // 
@@ -342,6 +346,7 @@
             // txtRazaoSocial
             // 
             this.txtRazaoSocial.Location = new System.Drawing.Point(96, 26);
+            this.txtRazaoSocial.MaxLength = 50;
             this.txtRazaoSocial.Name = "txtRazaoSocial";
             this.txtRazaoSocial.Size = new System.Drawing.Size(166, 20);
             this.txtRazaoSocial.TabIndex = 0;

@@ -30,6 +30,8 @@
         {
             this.btnExcluir = new System.Windows.Forms.Button();
             this.grpMarca = new System.Windows.Forms.GroupBox();
+            this.txtAno = new System.Windows.Forms.TextBox();
+            this.lblAno = new System.Windows.Forms.Label();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.cboMarca = new System.Windows.Forms.ComboBox();
             this.lblCategoria = new System.Windows.Forms.Label();
@@ -53,7 +55,7 @@
             // btnExcluir
             // 
             this.btnExcluir.Enabled = false;
-            this.btnExcluir.Location = new System.Drawing.Point(257, 397);
+            this.btnExcluir.Location = new System.Drawing.Point(256, 434);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(106, 45);
             this.btnExcluir.TabIndex = 19;
@@ -64,6 +66,8 @@
             // 
             // grpMarca
             // 
+            this.grpMarca.Controls.Add(this.txtAno);
+            this.grpMarca.Controls.Add(this.lblAno);
             this.grpMarca.Controls.Add(this.cboCategoria);
             this.grpMarca.Controls.Add(this.cboMarca);
             this.grpMarca.Controls.Add(this.lblCategoria);
@@ -72,16 +76,33 @@
             this.grpMarca.Controls.Add(this.lblModelo);
             this.grpMarca.Location = new System.Drawing.Point(12, 278);
             this.grpMarca.Name = "grpMarca";
-            this.grpMarca.Size = new System.Drawing.Size(482, 113);
+            this.grpMarca.Size = new System.Drawing.Size(482, 138);
             this.grpMarca.TabIndex = 15;
             this.grpMarca.TabStop = false;
             this.grpMarca.Text = "Marca";
+            // 
+            // txtAno
+            // 
+            this.txtAno.Location = new System.Drawing.Point(159, 45);
+            this.txtAno.Name = "txtAno";
+            this.txtAno.Size = new System.Drawing.Size(182, 20);
+            this.txtAno.TabIndex = 9;
+            this.txtAno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAno_KeyPress);
+            // 
+            // lblAno
+            // 
+            this.lblAno.AutoSize = true;
+            this.lblAno.Location = new System.Drawing.Point(114, 48);
+            this.lblAno.Name = "lblAno";
+            this.lblAno.Size = new System.Drawing.Size(42, 13);
+            this.lblAno.TabIndex = 10;
+            this.lblAno.Text = "Modelo";
             // 
             // cboCategoria
             // 
             this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(193, 81);
+            this.cboCategoria.Location = new System.Drawing.Point(192, 101);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(121, 21);
             this.cboCategoria.TabIndex = 8;
@@ -90,7 +111,7 @@
             // 
             this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMarca.FormattingEnabled = true;
-            this.cboMarca.Location = new System.Drawing.Point(193, 54);
+            this.cboMarca.Location = new System.Drawing.Point(192, 74);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(121, 21);
             this.cboMarca.TabIndex = 7;
@@ -98,7 +119,7 @@
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(135, 84);
+            this.lblCategoria.Location = new System.Drawing.Point(134, 104);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(52, 13);
             this.lblCategoria.TabIndex = 6;
@@ -107,7 +128,7 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(141, 62);
+            this.lblMarca.Location = new System.Drawing.Point(140, 82);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(37, 13);
             this.lblMarca.TabIndex = 4;
@@ -187,7 +208,7 @@
             // btnCadastrar
             // 
             this.btnCadastrar.Image = global::GerenciadorFrotas.Properties.Resources.check;
-            this.btnCadastrar.Location = new System.Drawing.Point(383, 397);
+            this.btnCadastrar.Location = new System.Drawing.Point(382, 434);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(106, 45);
             this.btnCadastrar.TabIndex = 18;
@@ -200,7 +221,7 @@
             // btnLimpar
             // 
             this.btnLimpar.Image = global::GerenciadorFrotas.Properties.Resources.eraser2;
-            this.btnLimpar.Location = new System.Drawing.Point(145, 397);
+            this.btnLimpar.Location = new System.Drawing.Point(144, 434);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(106, 45);
             this.btnLimpar.TabIndex = 17;
@@ -213,7 +234,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Image = global::GerenciadorFrotas.Properties.Resources.delete;
-            this.btnCancelar.Location = new System.Drawing.Point(19, 397);
+            this.btnCancelar.Location = new System.Drawing.Point(18, 434);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(106, 45);
             this.btnCancelar.TabIndex = 16;
@@ -227,7 +248,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 457);
+            this.ClientSize = new System.Drawing.Size(504, 491);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnLimpar);
@@ -266,5 +287,7 @@
         private System.Windows.Forms.ComboBox cboMarca;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.TextBox txtAno;
+        private System.Windows.Forms.Label lblAno;
     }
 }

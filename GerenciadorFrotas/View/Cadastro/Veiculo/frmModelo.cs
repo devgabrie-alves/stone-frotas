@@ -255,5 +255,10 @@ namespace GerenciadorFrotas.View.Cadastro.Veiculo
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void txtAno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = ApplicationUtils.SomenteNumeros(e.KeyChar);
+        }
     }
 }
