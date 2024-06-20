@@ -52,7 +52,7 @@
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\Colaborador.cs" />
     <Compile Include="Model\Controle.cs" />
-    <Compile Include="Model\Endereco.cs" />
+    <Compile Include="Model\EnderecoOficina.cs" />
     <Compile Include="Model\Manutencao.cs" />
     <Compile Include="Model\Marca.cs" />
     <Compile Include="Model\Modelo.cs" />
@@ -206,6 +206,14 @@
   <ItemGroup>
     <None Include="Resources\eraser2.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app-logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

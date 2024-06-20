@@ -63,6 +63,16 @@ namespace GerenciadorFrotas.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap app_logo {
+            get {
+                object obj = ResourceManager.GetObject("app-logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap check {
             get {
                 object obj = ResourceManager.GetObject("check", resourceCulture);
@@ -86,6 +96,26 @@ namespace GerenciadorFrotas.Properties {
         internal static System.Drawing.Bitmap eraser2 {
             get {
                 object obj = ResourceManager.GetObject("eraser2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_1 {
+            get {
+                object obj = ResourceManager.GetObject("logo-1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

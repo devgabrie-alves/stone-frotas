@@ -51,7 +51,7 @@ namespace GerenciadorFrotas.Utils
 
             try
             {
-                sql.Append("SELECT id, estado FROM tblEstado \n");
+                sql.Append("SELECT id, uf FROM tblEstado \n");
                 return new AcessoDAO().Consultar(sql.ToString(), new List<SqlParameter>());
             } catch (Exception ex)
             {

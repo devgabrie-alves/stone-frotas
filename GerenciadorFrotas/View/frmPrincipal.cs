@@ -3,13 +3,6 @@ using GerenciadorFrotas.Utils;
 using GerenciadorFrotas.View;
 using GerenciadorFrotas.View.Cadastro.Veiculo;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GerenciadorFrotas
@@ -84,11 +77,6 @@ namespace GerenciadorFrotas
         }
 
         //Cadastro
-        private void mnuSobre_Click(object sender, EventArgs e)
-        {
-            AbrirForm(new frmSobre());
-        }
-
         private void mnuUsuario_Click(object sender, EventArgs e)
         {
             AbrirForm(new frmUsuario());

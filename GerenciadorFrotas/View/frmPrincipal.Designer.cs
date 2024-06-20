@@ -45,7 +45,6 @@
             this.mnuEntrada = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuManutencao = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuConsultaVeiculos = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuSobre = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSair = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblServidor = new System.Windows.Forms.ToolStripStatusLabel();
@@ -68,7 +67,6 @@
             this.mnuCadastro,
             this.mnuControle,
             this.mnuManutencao,
-            this.mnuSobre,
             this.mnuSair});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -90,14 +88,14 @@
             // mnuUsuario
             // 
             this.mnuUsuario.Name = "mnuUsuario";
-            this.mnuUsuario.Size = new System.Drawing.Size(180, 22);
+            this.mnuUsuario.Size = new System.Drawing.Size(140, 22);
             this.mnuUsuario.Text = "Usuário";
             this.mnuUsuario.Click += new System.EventHandler(this.mnuUsuario_Click);
             // 
             // mnuColaborador
             // 
             this.mnuColaborador.Name = "mnuColaborador";
-            this.mnuColaborador.Size = new System.Drawing.Size(180, 22);
+            this.mnuColaborador.Size = new System.Drawing.Size(140, 22);
             this.mnuColaborador.Text = "Colaborador";
             this.mnuColaborador.Click += new System.EventHandler(this.mnuColaborador_Click);
             // 
@@ -109,7 +107,7 @@
             this.mnuMarca,
             this.mnuCategoria});
             this.mnuVeiculo.Name = "mnuVeiculo";
-            this.mnuVeiculo.Size = new System.Drawing.Size(180, 22);
+            this.mnuVeiculo.Size = new System.Drawing.Size(140, 22);
             this.mnuVeiculo.Text = "Veículo";
             // 
             // mnuVeiculoPrincipal
@@ -143,7 +141,7 @@
             // mnuOficina
             // 
             this.mnuOficina.Name = "mnuOficina";
-            this.mnuOficina.Size = new System.Drawing.Size(180, 22);
+            this.mnuOficina.Size = new System.Drawing.Size(140, 22);
             this.mnuOficina.Text = "Oficina";
             this.mnuOficina.Click += new System.EventHandler(this.mnuOficina_Click);
             // 
@@ -159,13 +157,13 @@
             // mnuSaida
             // 
             this.mnuSaida.Name = "mnuSaida";
-            this.mnuSaida.Size = new System.Drawing.Size(180, 22);
+            this.mnuSaida.Size = new System.Drawing.Size(114, 22);
             this.mnuSaida.Text = "Saída";
             // 
             // mnuEntrada
             // 
             this.mnuEntrada.Name = "mnuEntrada";
-            this.mnuEntrada.Size = new System.Drawing.Size(180, 22);
+            this.mnuEntrada.Size = new System.Drawing.Size(114, 22);
             this.mnuEntrada.Text = "Entrada";
             // 
             // mnuManutencao
@@ -179,15 +177,8 @@
             // mnuConsultaVeiculos
             // 
             this.mnuConsultaVeiculos.Name = "mnuConsultaVeiculos";
-            this.mnuConsultaVeiculos.Size = new System.Drawing.Size(180, 22);
+            this.mnuConsultaVeiculos.Size = new System.Drawing.Size(167, 22);
             this.mnuConsultaVeiculos.Text = "Consulta Veículos";
-            // 
-            // mnuSobre
-            // 
-            this.mnuSobre.Name = "mnuSobre";
-            this.mnuSobre.Size = new System.Drawing.Size(49, 20);
-            this.mnuSobre.Text = "Sobre";
-            this.mnuSobre.Click += new System.EventHandler(this.mnuSobre_Click);
             // 
             // mnuSair
             // 
@@ -255,6 +246,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::GerenciadorFrotas.Properties.Resources.app_logo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.statusStrip1);
@@ -285,7 +277,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuVeiculo;
         private System.Windows.Forms.ToolStripMenuItem mnuControle;
         private System.Windows.Forms.ToolStripMenuItem mnuOficina;
-        private System.Windows.Forms.ToolStripMenuItem mnuSobre;
         private System.Windows.Forms.ToolStripMenuItem mnuSair;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblServidor;
