@@ -60,7 +60,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(256, 434);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(106, 45);
-            this.btnExcluir.TabIndex = 19;
+            this.btnExcluir.TabIndex = 5;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -79,7 +79,7 @@
             this.grpMarca.Location = new System.Drawing.Point(12, 278);
             this.grpMarca.Name = "grpMarca";
             this.grpMarca.Size = new System.Drawing.Size(482, 138);
-            this.grpMarca.TabIndex = 15;
+            this.grpMarca.TabIndex = 2;
             this.grpMarca.TabStop = false;
             this.grpMarca.Text = "Marca";
             // 
@@ -89,7 +89,7 @@
             this.txtAno.MaxLength = 4;
             this.txtAno.Name = "txtAno";
             this.txtAno.Size = new System.Drawing.Size(182, 20);
-            this.txtAno.TabIndex = 9;
+            this.txtAno.TabIndex = 1;
             this.txtAno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAno_KeyPress);
             // 
             // lblAno
@@ -108,7 +108,7 @@
             this.cboCategoria.Location = new System.Drawing.Point(192, 101);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(121, 21);
-            this.cboCategoria.TabIndex = 8;
+            this.cboCategoria.TabIndex = 3;
             // 
             // cboMarca
             // 
@@ -117,7 +117,7 @@
             this.cboMarca.Location = new System.Drawing.Point(192, 74);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(121, 21);
-            this.cboMarca.TabIndex = 7;
+            this.cboMarca.TabIndex = 2;
             // 
             // lblCategoria
             // 
@@ -160,7 +160,7 @@
             this.grpDados.Location = new System.Drawing.Point(12, 74);
             this.grpDados.Name = "grpDados";
             this.grpDados.Size = new System.Drawing.Size(482, 197);
-            this.grpDados.TabIndex = 14;
+            this.grpDados.TabIndex = 1;
             this.grpDados.TabStop = false;
             this.grpDados.Text = "Dados";
             // 
@@ -188,7 +188,7 @@
             this.grpPesquisa.Location = new System.Drawing.Point(12, 12);
             this.grpPesquisa.Name = "grpPesquisa";
             this.grpPesquisa.Size = new System.Drawing.Size(482, 55);
-            this.grpPesquisa.TabIndex = 13;
+            this.grpPesquisa.TabIndex = 0;
             this.grpPesquisa.TabStop = false;
             this.grpPesquisa.Text = "Pesquisa";
             // 
@@ -216,7 +216,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(382, 434);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(106, 45);
-            this.btnCadastrar.TabIndex = 18;
+            this.btnCadastrar.TabIndex = 6;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -229,7 +229,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(144, 434);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(106, 45);
-            this.btnLimpar.TabIndex = 17;
+            this.btnLimpar.TabIndex = 4;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -242,7 +242,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(18, 434);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(106, 45);
-            this.btnCancelar.TabIndex = 16;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

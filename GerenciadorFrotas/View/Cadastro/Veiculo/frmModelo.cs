@@ -77,6 +77,10 @@ namespace GerenciadorFrotas.View.Cadastro.Veiculo
                 else if(Convert.ToInt32(txtAno.Text) >  DateTime.Now.Year)
                 {
                     mensagemErro += "O ano não pode ser maior que o atual.\n";
+                
+                }else if (txtAno.Text.Length != 4)
+                {
+                    mensagemErro += "O campo ANO é inválido.\n";
                 }
 
                 if (cboMarca.SelectedIndex == -1)

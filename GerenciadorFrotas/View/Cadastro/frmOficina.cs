@@ -10,7 +10,6 @@ namespace GerenciadorFrotas.View
     {
         //Atributos
         Oficina oficina = new Oficina();
-        bool isTelefoneFixo = true;
         bool load = false;
 
         //Construtor
@@ -219,7 +218,7 @@ namespace GerenciadorFrotas.View
                 {
                     mensagemErro += "O campo TELEFONE não pode ser vazio. \n";
                 
-                }else if(mskTelefone.Text.Length != 15)
+                }else if(mskTelefone.Text.Length != 14)
                 {
                     mensagemErro += "Campo TELEFONE inválido. \n";
                 }

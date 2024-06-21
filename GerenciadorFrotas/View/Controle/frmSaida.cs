@@ -8,13 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GerenciadorFrotas.View
+namespace GerenciadorFrotas.View.Controle
 {
     public partial class frmSaida : Form
     {
         public frmSaida()
         {
             InitializeComponent();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLiberar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

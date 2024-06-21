@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GerenciadorFrotas.View.Manutencao
 {
-    public partial class frmRecepcao : Form
+    public partial class frmRecepcaoManutencao : Form
     {
-        public frmRecepcao()
+        public frmRecepcaoManutencao()
         {
             InitializeComponent();
         }

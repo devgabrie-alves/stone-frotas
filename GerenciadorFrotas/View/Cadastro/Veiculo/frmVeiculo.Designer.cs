@@ -79,7 +79,7 @@
             this.grpVeículo.Location = new System.Drawing.Point(12, 273);
             this.grpVeículo.Name = "grpVeículo";
             this.grpVeículo.Size = new System.Drawing.Size(581, 131);
-            this.grpVeículo.TabIndex = 14;
+            this.grpVeículo.TabIndex = 2;
             this.grpVeículo.TabStop = false;
             this.grpVeículo.Text = "Veículo";
             // 
@@ -91,7 +91,7 @@
             this.cboModelo.Location = new System.Drawing.Point(325, 97);
             this.cboModelo.Name = "cboModelo";
             this.cboModelo.Size = new System.Drawing.Size(235, 21);
-            this.cboModelo.TabIndex = 17;
+            this.cboModelo.TabIndex = 5;
             // 
             // cboCategoria
             // 
@@ -100,7 +100,7 @@
             this.cboCategoria.Location = new System.Drawing.Point(265, 60);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(121, 21);
-            this.cboCategoria.TabIndex = 16;
+            this.cboCategoria.TabIndex = 3;
             this.cboCategoria.SelectedIndexChanged += new System.EventHandler(this.cboCategoria_SelectedIndexChanged);
             // 
             // lblCategoria
@@ -128,7 +128,7 @@
             this.cboMarca.Location = new System.Drawing.Point(71, 60);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(121, 21);
-            this.cboMarca.TabIndex = 12;
+            this.cboMarca.TabIndex = 2;
             this.cboMarca.SelectedIndexChanged += new System.EventHandler(this.cboMarca_SelectedIndexChanged);
             // 
             // txtQuilometragem
@@ -137,7 +137,7 @@
             this.txtQuilometragem.MaxLength = 10;
             this.txtQuilometragem.Name = "txtQuilometragem";
             this.txtQuilometragem.Size = new System.Drawing.Size(97, 20);
-            this.txtQuilometragem.TabIndex = 10;
+            this.txtQuilometragem.TabIndex = 4;
             this.txtQuilometragem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuilometragem_KeyPress);
             // 
             // lblQuilometragem
@@ -152,16 +152,16 @@
             // txtChassi
             // 
             this.txtChassi.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtChassi.Location = new System.Drawing.Point(265, 28);
+            this.txtChassi.Location = new System.Drawing.Point(219, 28);
             this.txtChassi.MaxLength = 17;
             this.txtChassi.Name = "txtChassi";
-            this.txtChassi.Size = new System.Drawing.Size(120, 20);
-            this.txtChassi.TabIndex = 8;
+            this.txtChassi.Size = new System.Drawing.Size(167, 20);
+            this.txtChassi.TabIndex = 1;
             // 
             // lblChassi
             // 
             this.lblChassi.AutoSize = true;
-            this.lblChassi.Location = new System.Drawing.Point(210, 31);
+            this.lblChassi.Location = new System.Drawing.Point(165, 31);
             this.lblChassi.Name = "lblChassi";
             this.lblChassi.Size = new System.Drawing.Size(38, 13);
             this.lblChassi.TabIndex = 9;
@@ -173,8 +173,8 @@
             this.txtPlaca.Location = new System.Drawing.Point(69, 28);
             this.txtPlaca.MaxLength = 7;
             this.txtPlaca.Name = "txtPlaca";
-            this.txtPlaca.Size = new System.Drawing.Size(125, 20);
-            this.txtPlaca.TabIndex = 6;
+            this.txtPlaca.Size = new System.Drawing.Size(75, 20);
+            this.txtPlaca.TabIndex = 0;
             // 
             // lblPlaca
             // 
@@ -192,7 +192,7 @@
             this.grpStatus.Location = new System.Drawing.Point(411, 28);
             this.grpStatus.Name = "grpStatus";
             this.grpStatus.Size = new System.Drawing.Size(149, 50);
-            this.grpStatus.TabIndex = 5;
+            this.grpStatus.TabIndex = 6;
             this.grpStatus.TabStop = false;
             this.grpStatus.Text = "Status";
             // 
@@ -233,7 +233,7 @@
             this.grpDados.Location = new System.Drawing.Point(12, 69);
             this.grpDados.Name = "grpDados";
             this.grpDados.Size = new System.Drawing.Size(581, 197);
-            this.grpDados.TabIndex = 13;
+            this.grpDados.TabIndex = 1;
             this.grpDados.TabStop = false;
             this.grpDados.Text = "Dados";
             // 
@@ -262,7 +262,7 @@
             this.grpPesquisa.Location = new System.Drawing.Point(12, 12);
             this.grpPesquisa.Name = "grpPesquisa";
             this.grpPesquisa.Size = new System.Drawing.Size(581, 51);
-            this.grpPesquisa.TabIndex = 12;
+            this.grpPesquisa.TabIndex = 0;
             this.grpPesquisa.TabStop = false;
             this.grpPesquisa.Text = "Pesquisa";
             // 
@@ -273,14 +273,14 @@
             this.cboPesquisa.Location = new System.Drawing.Point(17, 22);
             this.cboPesquisa.Name = "cboPesquisa";
             this.cboPesquisa.Size = new System.Drawing.Size(94, 21);
-            this.cboPesquisa.TabIndex = 2;
+            this.cboPesquisa.TabIndex = 0;
             // 
             // btnPesquisar
             // 
             this.btnPesquisar.Location = new System.Drawing.Point(469, 19);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(87, 23);
-            this.btnPesquisar.TabIndex = 1;
+            this.btnPesquisar.TabIndex = 2;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
@@ -290,7 +290,7 @@
             this.txtPesquisa.Location = new System.Drawing.Point(117, 22);
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(333, 20);
-            this.txtPesquisa.TabIndex = 0;
+            this.txtPesquisa.TabIndex = 1;
             // 
             // btnCadastrar
             // 
@@ -298,7 +298,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(462, 420);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(106, 45);
-            this.btnCadastrar.TabIndex = 17;
+            this.btnCadastrar.TabIndex = 5;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -311,7 +311,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(255, 422);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(106, 45);
-            this.btnLimpar.TabIndex = 16;
+            this.btnLimpar.TabIndex = 4;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -324,7 +324,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(31, 420);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(106, 45);
-            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

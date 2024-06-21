@@ -122,7 +122,7 @@ namespace GerenciadorFrotas
 
         private void mnuEntrada_Click(object sender, EventArgs e)
         {
-            AbrirForm(new frmEntrada());
+            AbrirForm(new frmSaida());
         }
 
         //MENU MANUTENCAO
@@ -133,7 +133,7 @@ namespace GerenciadorFrotas
 
         private void mnuRecepcao_Click(object sender, EventArgs e)
         {
-            AbrirForm(new frmRecepcao());
+            AbrirForm(new frmRecepcaoManutencao());
         }
     }
 }

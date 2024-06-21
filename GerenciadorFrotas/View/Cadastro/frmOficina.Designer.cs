@@ -78,7 +78,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(12, 577);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(143, 47);
-            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -91,7 +91,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(197, 577);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(143, 47);
-            this.btnLimpar.TabIndex = 9;
+            this.btnLimpar.TabIndex = 4;
             this.btnLimpar.Text = "&Limpar";
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -104,7 +104,7 @@
             this.btnGravar.Location = new System.Drawing.Point(395, 577);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(143, 47);
-            this.btnGravar.TabIndex = 8;
+            this.btnGravar.TabIndex = 5;
             this.btnGravar.Text = "&Gravar";
             this.btnGravar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -142,7 +142,7 @@
             this.grpOficina.Location = new System.Drawing.Point(12, 306);
             this.grpOficina.Name = "grpOficina";
             this.grpOficina.Size = new System.Drawing.Size(526, 252);
-            this.grpOficina.TabIndex = 6;
+            this.grpOficina.TabIndex = 2;
             this.grpOficina.TabStop = false;
             this.grpOficina.Text = "Dados para Cadastro";
             // 
@@ -151,24 +151,24 @@
             this.mskTelefone.Location = new System.Drawing.Point(408, 221);
             this.mskTelefone.Mask = "(00) 0000-0000";
             this.mskTelefone.Name = "mskTelefone";
-            this.mskTelefone.Size = new System.Drawing.Size(111, 20);
-            this.mskTelefone.TabIndex = 30;
+            this.mskTelefone.Size = new System.Drawing.Size(91, 20);
+            this.mskTelefone.TabIndex = 12;
             // 
             // mskCEP
             // 
             this.mskCEP.Location = new System.Drawing.Point(297, 189);
             this.mskCEP.Mask = "00000-000";
             this.mskCEP.Name = "mskCEP";
-            this.mskCEP.Size = new System.Drawing.Size(131, 20);
-            this.mskCEP.TabIndex = 29;
+            this.mskCEP.Size = new System.Drawing.Size(77, 20);
+            this.mskCEP.TabIndex = 9;
             // 
             // mskCNPJ
             // 
             this.mskCNPJ.Location = new System.Drawing.Point(67, 94);
             this.mskCNPJ.Mask = "00,000,000/0000-00";
             this.mskCNPJ.Name = "mskCNPJ";
-            this.mskCNPJ.Size = new System.Drawing.Size(131, 20);
-            this.mskCNPJ.TabIndex = 28;
+            this.mskCNPJ.Size = new System.Drawing.Size(115, 20);
+            this.mskCNPJ.TabIndex = 3;
             // 
             // txtSite
             // 
@@ -176,7 +176,7 @@
             this.txtSite.MaxLength = 100;
             this.txtSite.Name = "txtSite";
             this.txtSite.Size = new System.Drawing.Size(251, 20);
-            this.txtSite.TabIndex = 26;
+            this.txtSite.TabIndex = 2;
             // 
             // lblUrlSite
             // 
@@ -193,7 +193,7 @@
             this.txtNomeFantasia.MaxLength = 50;
             this.txtNomeFantasia.Name = "txtNomeFantasia";
             this.txtNomeFantasia.Size = new System.Drawing.Size(166, 20);
-            this.txtNomeFantasia.TabIndex = 24;
+            this.txtNomeFantasia.TabIndex = 1;
             // 
             // lblNomeFantasia
             // 
@@ -220,7 +220,7 @@
             this.cboEstado.Location = new System.Drawing.Point(297, 221);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(50, 21);
-            this.cboEstado.TabIndex = 11;
+            this.cboEstado.TabIndex = 10;
             this.cboEstado.SelectedIndexChanged += new System.EventHandler(this.cboEstado_SelectedIndexChanged);
             // 
             // lblEstado
@@ -239,7 +239,7 @@
             this.cboCidade.Location = new System.Drawing.Point(55, 221);
             this.cboCidade.Name = "cboCidade";
             this.cboCidade.Size = new System.Drawing.Size(190, 21);
-            this.cboCidade.TabIndex = 10;
+            this.cboCidade.TabIndex = 11;
             // 
             // lblCidade
             // 
@@ -265,7 +265,7 @@
             this.txtBairro.MaxLength = 50;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(190, 20);
-            this.txtBairro.TabIndex = 7;
+            this.txtBairro.TabIndex = 8;
             // 
             // lblBairro
             // 
@@ -282,7 +282,7 @@
             this.txtComplemento.MaxLength = 50;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(261, 20);
-            this.txtComplemento.TabIndex = 6;
+            this.txtComplemento.TabIndex = 7;
             // 
             // lblComplemento
             // 
@@ -299,7 +299,7 @@
             this.txtNumero.MaxLength = 100;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(41, 20);
-            this.txtNumero.TabIndex = 5;
+            this.txtNumero.TabIndex = 6;
             this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // lblNumero
@@ -317,7 +317,7 @@
             this.txtEndereco.MaxLength = 100;
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(327, 20);
-            this.txtEndereco.TabIndex = 4;
+            this.txtEndereco.TabIndex = 5;
             // 
             // lblEndereco
             // 
@@ -334,7 +334,7 @@
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(274, 20);
-            this.txtEmail.TabIndex = 3;
+            this.txtEmail.TabIndex = 4;
             // 
             // lblEmail
             // 
@@ -377,7 +377,7 @@
             this.grpDados.Location = new System.Drawing.Point(12, 73);
             this.grpDados.Name = "grpDados";
             this.grpDados.Size = new System.Drawing.Size(526, 227);
-            this.grpDados.TabIndex = 7;
+            this.grpDados.TabIndex = 1;
             this.grpDados.TabStop = false;
             this.grpDados.Text = "Oficinas";
             // 
@@ -395,7 +395,7 @@
             this.grdDados.RowHeadersVisible = false;
             this.grdDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdDados.Size = new System.Drawing.Size(514, 202);
-            this.grdDados.TabIndex = 10;
+            this.grdDados.TabIndex = 0;
             this.grdDados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDados_CellClick);
             // 
             // grpPesquisa
@@ -407,7 +407,7 @@
             this.grpPesquisa.Location = new System.Drawing.Point(12, 12);
             this.grpPesquisa.Name = "grpPesquisa";
             this.grpPesquisa.Size = new System.Drawing.Size(526, 54);
-            this.grpPesquisa.TabIndex = 5;
+            this.grpPesquisa.TabIndex = 0;
             this.grpPesquisa.TabStop = false;
             this.grpPesquisa.Text = "Dados para Pesquisa";
             // 
@@ -416,7 +416,7 @@
             this.mskPesquisa.Location = new System.Drawing.Point(68, 19);
             this.mskPesquisa.Name = "mskPesquisa";
             this.mskPesquisa.Size = new System.Drawing.Size(306, 20);
-            this.mskPesquisa.TabIndex = 3;
+            this.mskPesquisa.TabIndex = 0;
             this.mskPesquisa.TextChanged += new System.EventHandler(this.mskPesquisa_TextChanged);
             // 
             // rdbCNPJ

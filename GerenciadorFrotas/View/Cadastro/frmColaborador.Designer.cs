@@ -32,7 +32,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
-            this.grpCliente = new System.Windows.Forms.GroupBox();
+            this.grpColaborador = new System.Windows.Forms.GroupBox();
             this.mskCelular = new System.Windows.Forms.MaskedTextBox();
             this.mskCPF = new System.Windows.Forms.MaskedTextBox();
             this.cboSexo = new System.Windows.Forms.ComboBox();
@@ -54,7 +54,7 @@
             this.rdbCPF = new System.Windows.Forms.RadioButton();
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.lblPesquisa = new System.Windows.Forms.Label();
-            this.grpCliente.SuspendLayout();
+            this.grpColaborador.SuspendLayout();
             this.grpDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDados)).BeginInit();
             this.grpPesquisa.SuspendLayout();
@@ -63,10 +63,10 @@
             // btnCancelar
             // 
             this.btnCancelar.Image = global::GerenciadorFrotas.Properties.Resources.delete;
-            this.btnCancelar.Location = new System.Drawing.Point(12, 466);
+            this.btnCancelar.Location = new System.Drawing.Point(12, 441);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(143, 47);
-            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -76,10 +76,10 @@
             // btnLimpar
             // 
             this.btnLimpar.Image = global::GerenciadorFrotas.Properties.Resources.eraser2;
-            this.btnLimpar.Location = new System.Drawing.Point(197, 466);
+            this.btnLimpar.Location = new System.Drawing.Point(197, 441);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(143, 47);
-            this.btnLimpar.TabIndex = 9;
+            this.btnLimpar.TabIndex = 4;
             this.btnLimpar.Text = "&Limpar";
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -89,54 +89,54 @@
             // btnGravar
             // 
             this.btnGravar.Image = global::GerenciadorFrotas.Properties.Resources.check;
-            this.btnGravar.Location = new System.Drawing.Point(395, 466);
+            this.btnGravar.Location = new System.Drawing.Point(395, 441);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(143, 47);
-            this.btnGravar.TabIndex = 8;
+            this.btnGravar.TabIndex = 5;
             this.btnGravar.Text = "&Gravar";
             this.btnGravar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGravar.UseVisualStyleBackColor = true;
             this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
-            // grpCliente
+            // grpColaborador
             // 
-            this.grpCliente.Controls.Add(this.mskCelular);
-            this.grpCliente.Controls.Add(this.mskCPF);
-            this.grpCliente.Controls.Add(this.cboSexo);
-            this.grpCliente.Controls.Add(this.lblSexo);
-            this.grpCliente.Controls.Add(this.cboStatus);
-            this.grpCliente.Controls.Add(this.lblStatus);
-            this.grpCliente.Controls.Add(this.lblCelular);
-            this.grpCliente.Controls.Add(this.dtpDataAdmissao);
-            this.grpCliente.Controls.Add(this.txtEmail);
-            this.grpCliente.Controls.Add(this.lblEmail);
-            this.grpCliente.Controls.Add(this.lblCPF);
-            this.grpCliente.Controls.Add(this.lblDataAdmissao);
-            this.grpCliente.Controls.Add(this.txtNome);
-            this.grpCliente.Controls.Add(this.lblNome);
-            this.grpCliente.Location = new System.Drawing.Point(12, 302);
-            this.grpCliente.Name = "grpCliente";
-            this.grpCliente.Size = new System.Drawing.Size(526, 158);
-            this.grpCliente.TabIndex = 6;
-            this.grpCliente.TabStop = false;
-            this.grpCliente.Text = "Dados para Cadastro";
+            this.grpColaborador.Controls.Add(this.mskCelular);
+            this.grpColaborador.Controls.Add(this.mskCPF);
+            this.grpColaborador.Controls.Add(this.cboSexo);
+            this.grpColaborador.Controls.Add(this.lblSexo);
+            this.grpColaborador.Controls.Add(this.cboStatus);
+            this.grpColaborador.Controls.Add(this.lblStatus);
+            this.grpColaborador.Controls.Add(this.lblCelular);
+            this.grpColaborador.Controls.Add(this.dtpDataAdmissao);
+            this.grpColaborador.Controls.Add(this.txtEmail);
+            this.grpColaborador.Controls.Add(this.lblEmail);
+            this.grpColaborador.Controls.Add(this.lblCPF);
+            this.grpColaborador.Controls.Add(this.lblDataAdmissao);
+            this.grpColaborador.Controls.Add(this.txtNome);
+            this.grpColaborador.Controls.Add(this.lblNome);
+            this.grpColaborador.Location = new System.Drawing.Point(12, 302);
+            this.grpColaborador.Name = "grpColaborador";
+            this.grpColaborador.Size = new System.Drawing.Size(526, 133);
+            this.grpColaborador.TabIndex = 2;
+            this.grpColaborador.TabStop = false;
+            this.grpColaborador.Text = "Dados para Cadastro";
             // 
             // mskCelular
             // 
-            this.mskCelular.Location = new System.Drawing.Point(54, 131);
+            this.mskCelular.Location = new System.Drawing.Point(208, 58);
             this.mskCelular.Mask = "(00) 00000-0000";
             this.mskCelular.Name = "mskCelular";
-            this.mskCelular.Size = new System.Drawing.Size(153, 20);
-            this.mskCelular.TabIndex = 29;
+            this.mskCelular.Size = new System.Drawing.Size(89, 20);
+            this.mskCelular.TabIndex = 3;
             // 
             // mskCPF
             // 
             this.mskCPF.Location = new System.Drawing.Point(53, 57);
             this.mskCPF.Mask = "000,000,000-00";
             this.mskCPF.Name = "mskCPF";
-            this.mskCPF.Size = new System.Drawing.Size(154, 20);
-            this.mskCPF.TabIndex = 28;
+            this.mskCPF.Size = new System.Drawing.Size(90, 20);
+            this.mskCPF.TabIndex = 2;
             // 
             // cboSexo
             // 
@@ -145,7 +145,7 @@
             this.cboSexo.Location = new System.Drawing.Point(383, 26);
             this.cboSexo.Name = "cboSexo";
             this.cboSexo.Size = new System.Drawing.Size(121, 21);
-            this.cboSexo.TabIndex = 27;
+            this.cboSexo.TabIndex = 1;
             // 
             // lblSexo
             // 
@@ -163,7 +163,7 @@
             this.cboStatus.Location = new System.Drawing.Point(386, 61);
             this.cboStatus.Name = "cboStatus";
             this.cboStatus.Size = new System.Drawing.Size(118, 21);
-            this.cboStatus.TabIndex = 25;
+            this.cboStatus.TabIndex = 4;
             // 
             // lblStatus
             // 
@@ -177,7 +177,7 @@
             // lblCelular
             // 
             this.lblCelular.AutoSize = true;
-            this.lblCelular.Location = new System.Drawing.Point(8, 134);
+            this.lblCelular.Location = new System.Drawing.Point(162, 61);
             this.lblCelular.Name = "lblCelular";
             this.lblCelular.Size = new System.Drawing.Size(39, 13);
             this.lblCelular.TabIndex = 23;
@@ -189,7 +189,7 @@
             this.dtpDataAdmissao.Location = new System.Drawing.Point(416, 94);
             this.dtpDataAdmissao.Name = "dtpDataAdmissao";
             this.dtpDataAdmissao.Size = new System.Drawing.Size(88, 20);
-            this.dtpDataAdmissao.TabIndex = 1;
+            this.dtpDataAdmissao.TabIndex = 6;
             this.dtpDataAdmissao.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             // 
             // txtEmail
@@ -198,7 +198,7 @@
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(244, 20);
-            this.txtEmail.TabIndex = 3;
+            this.txtEmail.TabIndex = 5;
             // 
             // lblEmail
             // 
@@ -250,7 +250,7 @@
             this.grpDados.Location = new System.Drawing.Point(12, 69);
             this.grpDados.Name = "grpDados";
             this.grpDados.Size = new System.Drawing.Size(526, 227);
-            this.grpDados.TabIndex = 7;
+            this.grpDados.TabIndex = 1;
             this.grpDados.TabStop = false;
             this.grpDados.Text = "Colaboradores";
             // 
@@ -268,7 +268,7 @@
             this.grdDados.RowHeadersVisible = false;
             this.grdDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdDados.Size = new System.Drawing.Size(514, 202);
-            this.grdDados.TabIndex = 10;
+            this.grdDados.TabIndex = 0;
             this.grdDados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDados_CellClick);
             // 
             // grpPesquisa
@@ -280,7 +280,7 @@
             this.grpPesquisa.Location = new System.Drawing.Point(12, 8);
             this.grpPesquisa.Name = "grpPesquisa";
             this.grpPesquisa.Size = new System.Drawing.Size(526, 54);
-            this.grpPesquisa.TabIndex = 5;
+            this.grpPesquisa.TabIndex = 0;
             this.grpPesquisa.TabStop = false;
             this.grpPesquisa.Text = "Dados para Pesquisa";
             // 
@@ -289,7 +289,7 @@
             this.mskPesquisa.Location = new System.Drawing.Point(68, 19);
             this.mskPesquisa.Name = "mskPesquisa";
             this.mskPesquisa.Size = new System.Drawing.Size(308, 20);
-            this.mskPesquisa.TabIndex = 3;
+            this.mskPesquisa.TabIndex = 0;
             this.mskPesquisa.TextChanged += new System.EventHandler(this.mskPesquisa_TextChanged);
             // 
             // rdbCPF
@@ -329,11 +329,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 533);
+            this.ClientSize = new System.Drawing.Size(556, 498);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnGravar);
-            this.Controls.Add(this.grpCliente);
+            this.Controls.Add(this.grpColaborador);
             this.Controls.Add(this.grpDados);
             this.Controls.Add(this.grpPesquisa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -343,8 +343,8 @@
             this.Name = "frmColaborador";
             this.Text = "Cadastro de Colaborador";
             this.Load += new System.EventHandler(this.frmColaborador_Load);
-            this.grpCliente.ResumeLayout(false);
-            this.grpCliente.PerformLayout();
+            this.grpColaborador.ResumeLayout(false);
+            this.grpColaborador.PerformLayout();
             this.grpDados.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdDados)).EndInit();
             this.grpPesquisa.ResumeLayout(false);
@@ -358,7 +358,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnGravar;
-        private System.Windows.Forms.GroupBox grpCliente;
+        private System.Windows.Forms.GroupBox grpColaborador;
         private System.Windows.Forms.Label lblCelular;
         private System.Windows.Forms.DateTimePicker dtpDataAdmissao;
         private System.Windows.Forms.TextBox txtEmail;
