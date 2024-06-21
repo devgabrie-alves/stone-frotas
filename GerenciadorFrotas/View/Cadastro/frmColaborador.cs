@@ -72,16 +72,16 @@ namespace GerenciadorFrotas.View
         {
             ApplicationUtils.LimparFormulario(this);
             dtpDataAdmissao.Value = DateTime.Parse("01/01/1900");
-            txtPesquisa.Focus();
+            mskPesquisa.Focus();
         }
 
         private void PreencherClasse()
         {
             colaborador.Nome = txtNome.Text;
-            colaborador.CPF = txtCPF.Text;
+            colaborador.CPF = mskCPF.Text;
             colaborador.Email = txtEmail.Text;
             colaborador.DataAdmissao = dtpDataAdmissao.Value;
-            colaborador.Celular = txtCelular.Text;
+            colaborador.Celular = mskCelular.Text;
             colaborador.SexoId = Convert.ToInt32(cboSexo.SelectedValue);
             colaborador.StatusId = Convert.ToInt32(cboStatus.SelectedValue);
             colaborador.UsuarioId = DatabaseUtils.IdUsuarioLogado;
@@ -90,10 +90,10 @@ namespace GerenciadorFrotas.View
         private void PreencherFormulario()
         {
             txtNome.Text = colaborador.Nome;
-            txtCPF.Text = colaborador.CPF;
+            mskCPF.Text = colaborador.CPF;
             txtEmail.Text = colaborador.Email;
             dtpDataAdmissao.Value = colaborador.DataAdmissao;
-            txtCelular.Text = colaborador.Celular;
+            mskCelular.Text = colaborador.Celular;
 
             //Combobox
             cboSexo.SelectedValue = colaborador.SexoId;
@@ -116,13 +116,18 @@ namespace GerenciadorFrotas.View
                     mensagemErro += "O campo DATA DE ADMISSÃO não pode ser vazio.\n";
                 }
 
-                if (txtCPF.Text == string.Empty)
+                if (mskCPF.Text == string.Empty)
                 {
                     mensagemErro += "O campo CPF não pode ser vazio.\n";
+
+                } else if (mskCPF.Text.Length != 14) //usar ApplicationUtils.isCPFValido para uma validacao melhor (se quiser)
+                {
+                    mensagemErro += "O campo CPF está inválido.\n";
+
                 } else
                 {
                     Colaborador col = new Colaborador();
-                    col.CPF = txtCPF.Text;
+                    col.CPF = mskCPF.Text;
                     col.Consultar();
                     if (colaborador.Id == 0 && col.Id != 0 ||
                         colaborador.Id != 0 && col.Id != 0 && colaborador.Id != col.Id)
@@ -130,6 +135,8 @@ namespace GerenciadorFrotas.View
                         mensagemErro += "Colaborador já existente.\n";
                     }
                 }
+
+                string teste = mskCelular.Text.Substring(1, 2);
 
                 try
                 {
@@ -139,9 +146,15 @@ namespace GerenciadorFrotas.View
                     mensagemErro += "Campo E-MAIL inválido.\n";
                 }
 
-                if (txtCelular.Text == string.Empty)
+                if (mskCelular.Text == string.Empty)
                 {
                     mensagemErro += "O campo CELULAR não pode ser vazio.\n";
+
+                } else if(mskCelular.Text.Length != 15 
+                        || mskCelular.Text.Substring(5, 1) != "9"
+                        || mskCelular.Text.Substring(1,2).Contains("0"))
+                {
+                    mensagemErro += "O campo TELEFONE está inválido.";
                 }
 
                 if (cboSexo.SelectedIndex == -1)
@@ -216,49 +229,34 @@ namespace GerenciadorFrotas.View
             }
         }
 
-        private void txtPesquisa_KeyPress(object sender, KeyPressEventArgs e)
+
+
+        private void rdbCPF_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdbCPF.Checked)
-            {
-                e.Handled = ApplicationUtils.SomenteNumeros(e.KeyChar);
-            }
+            mskPesquisa.Clear();
+            mskPesquisa.Mask = "000,000,000-00";
         }
 
-        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        private void rdbNome_CheckedChanged(object sender, EventArgs e)
+        {
+            mskPesquisa.Mask = "";
+            mskPesquisa.MaxLength = 100;
+            mskPesquisa.Clear();
+        }
+
+        private void mskPesquisa_TextChanged(object sender, EventArgs e)
         {
             colaborador = new Colaborador();
 
             if (rdbNome.Checked)
             {
-                colaborador.Nome = txtPesquisa.Text;
+                colaborador.Nome = mskPesquisa.Text;
                 CarregarGrid();
-            } else if (rdbCPF.Checked && txtPesquisa.Text.Length == 11)
+            } else if (rdbCPF.Checked && mskPesquisa.Text.Length == 14)
             {
-                colaborador.CPF = txtPesquisa.Text;
+                colaborador.CPF = mskPesquisa.Text;
                 CarregarGrid();
             }
-        }
-
-        private void rdbCPF_CheckedChanged(object sender, EventArgs e)
-        {
-            txtPesquisa.MaxLength = 11;
-            txtPesquisa.Clear();
-        }
-
-        private void rdbNome_CheckedChanged(object sender, EventArgs e)
-        {
-            txtPesquisa.MaxLength = 100;
-            txtPesquisa.Clear();
-        }
-
-        private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = ApplicationUtils.SomenteNumeros(e.KeyChar);
-        }
-
-        private void txtCelular_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = ApplicationUtils.SomenteNumeros(e.KeyChar);
         }
     }
 }

@@ -10,6 +10,7 @@ namespace GerenciadorFrotas.View
     {
         //Atributos
         Oficina oficina = new Oficina();
+        bool isTelefoneFixo = true;
         bool load = false;
 
         //Construtor
@@ -35,11 +36,10 @@ namespace GerenciadorFrotas.View
                 grdDados.Columns[4].HeaderText = "E-mail";
 
                 grdDados.Columns[2].Width = 200;
-                grdDados.Columns[3].Width = 100;
-                grdDados.Columns[4].Width = 200;
+                grdDados.Columns[3].Width = 150;
+                grdDados.Columns[4].Width = 150;
 
-            }
-            catch (Exception ex)
+            } catch (Exception ex)
             {
                 MessageBox.Show("Erro --> " + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -60,8 +60,7 @@ namespace GerenciadorFrotas.View
                 cboCidade.DisplayMember = "cidade";
                 cboCidade.ValueMember = "id";
                 cboCidade.SelectedIndex = -1;
-            }
-            catch (Exception ex)
+            } catch (Exception ex)
             {
                 MessageBox.Show("Erro --> " + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -76,8 +75,7 @@ namespace GerenciadorFrotas.View
                 cboEstado.DisplayMember = "uf";
                 cboEstado.ValueMember = "id";
                 cboEstado.SelectedIndex = -1;
-            }
-            catch (Exception ex)
+            } catch (Exception ex)
             {
                 MessageBox.Show("Erro --> " + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -95,10 +93,10 @@ namespace GerenciadorFrotas.View
         {
             oficina.RazaoSocial = txtRazaoSocial.Text;
             oficina.NomeFantasia = txtNomeFantasia.Text;
-            oficina.CNPJ = txtCNPJ.Text;
+            oficina.CNPJ = mskCNPJ.Text;
             oficina.Email = txtEmail.Text;
             oficina.UrlSite = txtSite.Text;
-            oficina.Telefone = txtTelefone.Text;
+            oficina.Telefone = mskTelefone.Text;
             oficina.UsuarioId = DatabaseUtils.IdUsuarioLogado;
 
             //endereco oficina
@@ -106,7 +104,7 @@ namespace GerenciadorFrotas.View
             oficina.Endereco.Complemento = txtComplemento.Text;
             oficina.Endereco.Numero = txtNumero.Text;
             oficina.Endereco.Bairro = txtBairro.Text;
-            oficina.Endereco.CEP = txtCEP.Text;
+            oficina.Endereco.CEP = mskCEP.Text;
             oficina.Endereco.CidadeId = Convert.ToInt32(cboCidade.SelectedValue);
         }
 
@@ -117,24 +115,23 @@ namespace GerenciadorFrotas.View
                 //Informacoes Pessoais
                 txtRazaoSocial.Text = oficina.RazaoSocial;
                 txtNomeFantasia.Text = oficina.NomeFantasia;
-                txtCNPJ.Text = oficina.CNPJ;
+                mskCNPJ.Text = oficina.CNPJ;
                 txtEmail.Text = oficina.Email;
                 txtSite.Text = oficina.UrlSite;
-                txtTelefone.Text = oficina.Telefone;
+                mskTelefone.Text = oficina.Telefone;
 
                 //Endereco
                 txtEndereco.Text = oficina.Endereco.Logradouro;
                 txtComplemento.Text = oficina.Endereco.Complemento;
                 txtNumero.Text = oficina.Endereco.Numero;
                 txtBairro.Text = oficina.Endereco.Bairro;
-                txtCEP.Text = oficina.Endereco.CEP;
+                mskCEP.Text = oficina.Endereco.CEP;
 
                 //Combobox
                 int codigoEstado = DatabaseUtils.ConsultarEstado(oficina.Endereco.CidadeId);
                 cboEstado.SelectedValue = codigoEstado;
                 cboCidade.SelectedValue = oficina.Endereco.CidadeId;
-            }
-            catch (Exception ex)
+            } catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
@@ -155,14 +152,18 @@ namespace GerenciadorFrotas.View
                     mensagemErro += "O campo NOME FANTASIA não pode ser vazio. \n";
                 }
 
-                if (txtCNPJ.Text == string.Empty)
+                if (mskCNPJ.Text == string.Empty)
                 {
                     mensagemErro += "O campo CNPJ não pode ser vazio. \n";
-                }
-                else
+
+                } else if (mskCNPJ.Text.Length != 18) //usar ApplicationUtils.isCNPJValido para uma validacao melhor (se quiser)
+                {
+                    mensagemErro += "Campo CNPJ inválido. \n";
+
+                } else
                 {
                     Oficina of = new Oficina();
-                    of.CNPJ = txtCNPJ.Text;
+                    of.CNPJ = mskCNPJ.Text;
                     of.Consultar();
                     if (oficina.Id == 0 && of.Id != 0 ||
                         oficina.Id != 0 && of.Id != 0 && oficina.Id != of.Id)
@@ -174,8 +175,7 @@ namespace GerenciadorFrotas.View
                 try
                 {
                     MailAddress ma = new MailAddress(txtEmail.Text);
-                }
-                catch (Exception)
+                } catch (Exception)
                 {
                     mensagemErro += "O campo E-MAIL é inválido. \n";
                 }
@@ -196,9 +196,13 @@ namespace GerenciadorFrotas.View
                     mensagemErro += "O campo BAIRRO não pode ser vazio. \n";
                 }
 
-                if (txtCEP.Text == string.Empty)
+                if (mskCEP.Text == string.Empty)
                 {
                     mensagemErro += "O campo CEP não pode ser vazio. \n";
+
+                } else if (mskCEP.Text.Length != 9)
+                {
+                    mensagemErro += "Campo CEP inválido. \n";
                 }
 
                 if (cboCidade.SelectedIndex == -1)
@@ -211,12 +215,16 @@ namespace GerenciadorFrotas.View
                     mensagemErro += "O campo ESTADO não pode ser vazio. \n";
                 }
 
-                if (txtTelefone.Text == string.Empty)
+                if (mskTelefone.Text == string.Empty)
                 {
                     mensagemErro += "O campo TELEFONE não pode ser vazio. \n";
+                
+                }else if(mskTelefone.Text.Length != 15)
+                {
+                    mensagemErro += "Campo TELEFONE inválido. \n";
                 }
-            }
-            catch (Exception ex)
+
+            } catch (Exception ex)
             {
                 MessageBox.Show("Erro --> " + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -263,8 +271,7 @@ namespace GerenciadorFrotas.View
 
                 LimparCampos();
                 CarregarGrid();
-            }
-            catch (Exception ex)
+            } catch (Exception ex)
             {
                 MessageBox.Show("Erro --> " + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -285,8 +292,7 @@ namespace GerenciadorFrotas.View
                 oficina.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
                 oficina.Consultar();
                 PreencherFormulario();
-            }
-            catch (Exception ex)
+            } catch (Exception ex)
             {
                 MessageBox.Show("Erro --> " + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -295,33 +301,18 @@ namespace GerenciadorFrotas.View
 
         private void rdbNome_CheckedChanged(object sender, EventArgs e)
         {
-            txtPesquisa.Clear();
-            txtPesquisa.MaxLength = 50;
+            mskPesquisa.Clear();
+            mskPesquisa.Mask = "";
+            mskPesquisa.MaxLength = 50;
         }
 
         private void rdbCNPJ_CheckedChanged(object sender, EventArgs e)
         {
-            txtPesquisa.Clear();
-            txtPesquisa.MaxLength = 14;
+            mskPesquisa.Clear();
+            mskPesquisa.Mask = "00,000,000/0000-00";
         }
 
-        private void txtPesquisa_TextChanged(object sender, EventArgs e)
-        {
-            oficina = new Oficina();
-
-            if (rdbNome.Checked)
-            {
-                oficina.NomeFantasia = txtPesquisa.Text;
-                CarregarGrid();
-            }
-            else if (rdbCNPJ.Checked && txtPesquisa.Text.Length == 14)
-            {
-                oficina.CNPJ = txtPesquisa.Text;
-                CarregarGrid();
-            }
-        }
-
-        private void txtCNPJ_KeyPress(object sender, KeyPressEventArgs e)
+        private void mskCNPJ_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = ApplicationUtils.SomenteNumeros(e.KeyChar);
         }
@@ -329,6 +320,22 @@ namespace GerenciadorFrotas.View
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = ApplicationUtils.SomenteNumeros(e.KeyChar);
+        }
+
+        private void mskPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            oficina = new Oficina();
+
+            if (rdbNome.Checked)
+            {
+                oficina.NomeFantasia = mskPesquisa.Text;
+                CarregarGrid();
+
+            } else if (rdbCNPJ.Checked && mskPesquisa.Text.Length == 18)
+            {
+                oficina.CNPJ = mskPesquisa.Text;
+                CarregarGrid();
+            }
         }
     }
 }

@@ -118,8 +118,12 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.grpLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.grpLogin.ResumeLayout(false);
             this.grpLogin.PerformLayout();

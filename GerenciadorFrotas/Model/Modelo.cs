@@ -159,10 +159,12 @@ namespace GerenciadorFrotas.Model
                 sql.Append(" INNER JOIN tblMarca ma ON ma.id = mo.marcaId \n");
                 sql.Append(" INNER JOIN tblCategoria ca ON ca.id = mo.categoriaId \n");
                 sql.Append(" WHERE mo.nome = @nome \n");
-                sql.Append("   AND ma.id = @marcaId \n");
-                sql.Append("   AND ca.id = @categoriaId \n");
+                sql.Append("   AND mo.ano  = @ano \n");
+                sql.Append("   AND ma.id   = @marcaId \n");
+                sql.Append("   AND ca.id   = @categoriaId \n");
 
                 parameters.Add(new SqlParameter("@nome", Nome));
+                parameters.Add(new SqlParameter("@ano", Ano));
                 parameters.Add(new SqlParameter("@marcaId", MarcaId));
                 parameters.Add(new SqlParameter("@categoriaId", CategoriaId));
 

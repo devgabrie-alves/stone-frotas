@@ -33,17 +33,18 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
             this.grpOficina = new System.Windows.Forms.GroupBox();
+            this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.mskCEP = new System.Windows.Forms.MaskedTextBox();
+            this.mskCNPJ = new System.Windows.Forms.MaskedTextBox();
             this.txtSite = new System.Windows.Forms.TextBox();
             this.lblUrlSite = new System.Windows.Forms.Label();
             this.txtNomeFantasia = new System.Windows.Forms.TextBox();
             this.lblNomeFantasia = new System.Windows.Forms.Label();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.cboEstado = new System.Windows.Forms.ComboBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.cboCidade = new System.Windows.Forms.ComboBox();
             this.lblCidade = new System.Windows.Forms.Label();
-            this.txtCEP = new System.Windows.Forms.TextBox();
             this.lblCEP = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.lblBairro = new System.Windows.Forms.Label();
@@ -55,16 +56,15 @@
             this.lblEndereco = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.txtCNPJ = new System.Windows.Forms.TextBox();
             this.lblCNPJ = new System.Windows.Forms.Label();
             this.txtRazaoSocial = new System.Windows.Forms.TextBox();
             this.lblRazaoSocial = new System.Windows.Forms.Label();
             this.grpDados = new System.Windows.Forms.GroupBox();
             this.grdDados = new System.Windows.Forms.DataGridView();
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
+            this.mskPesquisa = new System.Windows.Forms.MaskedTextBox();
             this.rdbCNPJ = new System.Windows.Forms.RadioButton();
             this.rdbNome = new System.Windows.Forms.RadioButton();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.lblPesquisa = new System.Windows.Forms.Label();
             this.grpOficina.SuspendLayout();
             this.grpDados.SuspendLayout();
@@ -113,17 +113,18 @@
             // 
             // grpOficina
             // 
+            this.grpOficina.Controls.Add(this.mskTelefone);
+            this.grpOficina.Controls.Add(this.mskCEP);
+            this.grpOficina.Controls.Add(this.mskCNPJ);
             this.grpOficina.Controls.Add(this.txtSite);
             this.grpOficina.Controls.Add(this.lblUrlSite);
             this.grpOficina.Controls.Add(this.txtNomeFantasia);
             this.grpOficina.Controls.Add(this.lblNomeFantasia);
-            this.grpOficina.Controls.Add(this.txtTelefone);
             this.grpOficina.Controls.Add(this.lblTelefone);
             this.grpOficina.Controls.Add(this.cboEstado);
             this.grpOficina.Controls.Add(this.lblEstado);
             this.grpOficina.Controls.Add(this.cboCidade);
             this.grpOficina.Controls.Add(this.lblCidade);
-            this.grpOficina.Controls.Add(this.txtCEP);
             this.grpOficina.Controls.Add(this.lblCEP);
             this.grpOficina.Controls.Add(this.txtBairro);
             this.grpOficina.Controls.Add(this.lblBairro);
@@ -135,7 +136,6 @@
             this.grpOficina.Controls.Add(this.lblEndereco);
             this.grpOficina.Controls.Add(this.txtEmail);
             this.grpOficina.Controls.Add(this.lblEmail);
-            this.grpOficina.Controls.Add(this.txtCNPJ);
             this.grpOficina.Controls.Add(this.lblCNPJ);
             this.grpOficina.Controls.Add(this.txtRazaoSocial);
             this.grpOficina.Controls.Add(this.lblRazaoSocial);
@@ -145,6 +145,30 @@
             this.grpOficina.TabIndex = 6;
             this.grpOficina.TabStop = false;
             this.grpOficina.Text = "Dados para Cadastro";
+            // 
+            // mskTelefone
+            // 
+            this.mskTelefone.Location = new System.Drawing.Point(408, 221);
+            this.mskTelefone.Mask = "(00) 0000-0000";
+            this.mskTelefone.Name = "mskTelefone";
+            this.mskTelefone.Size = new System.Drawing.Size(111, 20);
+            this.mskTelefone.TabIndex = 30;
+            // 
+            // mskCEP
+            // 
+            this.mskCEP.Location = new System.Drawing.Point(297, 189);
+            this.mskCEP.Mask = "00000-000";
+            this.mskCEP.Name = "mskCEP";
+            this.mskCEP.Size = new System.Drawing.Size(131, 20);
+            this.mskCEP.TabIndex = 29;
+            // 
+            // mskCNPJ
+            // 
+            this.mskCNPJ.Location = new System.Drawing.Point(67, 94);
+            this.mskCNPJ.Mask = "00,000,000/0000-00";
+            this.mskCNPJ.Name = "mskCNPJ";
+            this.mskCNPJ.Size = new System.Drawing.Size(131, 20);
+            this.mskCNPJ.TabIndex = 28;
             // 
             // txtSite
             // 
@@ -179,14 +203,6 @@
             this.lblNomeFantasia.Size = new System.Drawing.Size(78, 13);
             this.lblNomeFantasia.TabIndex = 25;
             this.lblNomeFantasia.Text = "Nome Fantasia";
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(402, 221);
-            this.txtTelefone.MaxLength = 11;
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(118, 20);
-            this.txtTelefone.TabIndex = 12;
             // 
             // lblTelefone
             // 
@@ -234,14 +250,6 @@
             this.lblCidade.TabIndex = 19;
             this.lblCidade.Text = "Cidade";
             // 
-            // txtCEP
-            // 
-            this.txtCEP.Location = new System.Drawing.Point(297, 189);
-            this.txtCEP.MaxLength = 8;
-            this.txtCEP.Name = "txtCEP";
-            this.txtCEP.Size = new System.Drawing.Size(97, 20);
-            this.txtCEP.TabIndex = 8;
-            // 
             // lblCEP
             // 
             this.lblCEP.AutoSize = true;
@@ -253,10 +261,10 @@
             // 
             // txtBairro
             // 
-            this.txtBairro.Location = new System.Drawing.Point(48, 189);
+            this.txtBairro.Location = new System.Drawing.Point(55, 189);
             this.txtBairro.MaxLength = 50;
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(197, 20);
+            this.txtBairro.Size = new System.Drawing.Size(190, 20);
             this.txtBairro.TabIndex = 7;
             // 
             // lblBairro
@@ -273,7 +281,7 @@
             this.txtComplemento.Location = new System.Drawing.Point(86, 161);
             this.txtComplemento.MaxLength = 50;
             this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(308, 20);
+            this.txtComplemento.Size = new System.Drawing.Size(261, 20);
             this.txtComplemento.TabIndex = 6;
             // 
             // lblComplemento
@@ -288,6 +296,7 @@
             // txtNumero
             // 
             this.txtNumero.Location = new System.Drawing.Point(428, 129);
+            this.txtNumero.MaxLength = 100;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(41, 20);
             this.txtNumero.TabIndex = 5;
@@ -335,15 +344,6 @@
             this.lblEmail.Size = new System.Drawing.Size(35, 13);
             this.lblEmail.TabIndex = 6;
             this.lblEmail.Text = "E-mail";
-            // 
-            // txtCNPJ
-            // 
-            this.txtCNPJ.Location = new System.Drawing.Point(48, 94);
-            this.txtCNPJ.MaxLength = 14;
-            this.txtCNPJ.Name = "txtCNPJ";
-            this.txtCNPJ.Size = new System.Drawing.Size(154, 20);
-            this.txtCNPJ.TabIndex = 2;
-            this.txtCNPJ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCNPJ_KeyPress);
             // 
             // lblCNPJ
             // 
@@ -400,9 +400,9 @@
             // 
             // grpPesquisa
             // 
+            this.grpPesquisa.Controls.Add(this.mskPesquisa);
             this.grpPesquisa.Controls.Add(this.rdbCNPJ);
             this.grpPesquisa.Controls.Add(this.rdbNome);
-            this.grpPesquisa.Controls.Add(this.txtPesquisa);
             this.grpPesquisa.Controls.Add(this.lblPesquisa);
             this.grpPesquisa.Location = new System.Drawing.Point(12, 12);
             this.grpPesquisa.Name = "grpPesquisa";
@@ -410,6 +410,14 @@
             this.grpPesquisa.TabIndex = 5;
             this.grpPesquisa.TabStop = false;
             this.grpPesquisa.Text = "Dados para Pesquisa";
+            // 
+            // mskPesquisa
+            // 
+            this.mskPesquisa.Location = new System.Drawing.Point(68, 19);
+            this.mskPesquisa.Name = "mskPesquisa";
+            this.mskPesquisa.Size = new System.Drawing.Size(306, 20);
+            this.mskPesquisa.TabIndex = 3;
+            this.mskPesquisa.TextChanged += new System.EventHandler(this.mskPesquisa_TextChanged);
             // 
             // rdbCNPJ
             // 
@@ -435,15 +443,6 @@
             this.rdbNome.UseVisualStyleBackColor = true;
             this.rdbNome.CheckedChanged += new System.EventHandler(this.rdbNome_CheckedChanged);
             // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.Location = new System.Drawing.Point(68, 19);
-            this.txtPesquisa.MaxLength = 50;
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(308, 20);
-            this.txtPesquisa.TabIndex = 0;
-            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
-            // 
             // lblPesquisa
             // 
             this.lblPesquisa.AutoSize = true;
@@ -464,7 +463,10 @@
             this.Controls.Add(this.grpOficina);
             this.Controls.Add(this.grpDados);
             this.Controls.Add(this.grpPesquisa);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmOficina";
             this.Text = "Cadastro de Oficina";
             this.Load += new System.EventHandler(this.frmOficina_Load);
@@ -484,13 +486,11 @@
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.GroupBox grpOficina;
-        private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.ComboBox cboEstado;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.ComboBox cboCidade;
         private System.Windows.Forms.Label lblCidade;
-        private System.Windows.Forms.TextBox txtCEP;
         private System.Windows.Forms.Label lblCEP;
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.Label lblBairro;
@@ -502,7 +502,6 @@
         private System.Windows.Forms.Label lblEndereco;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.TextBox txtCNPJ;
         private System.Windows.Forms.Label lblCNPJ;
         private System.Windows.Forms.TextBox txtRazaoSocial;
         private System.Windows.Forms.Label lblRazaoSocial;
@@ -511,11 +510,14 @@
         private System.Windows.Forms.GroupBox grpPesquisa;
         private System.Windows.Forms.RadioButton rdbCNPJ;
         private System.Windows.Forms.RadioButton rdbNome;
-        private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Label lblPesquisa;
         private System.Windows.Forms.TextBox txtNomeFantasia;
         private System.Windows.Forms.Label lblNomeFantasia;
         private System.Windows.Forms.TextBox txtSite;
         private System.Windows.Forms.Label lblUrlSite;
+        private System.Windows.Forms.MaskedTextBox mskCNPJ;
+        private System.Windows.Forms.MaskedTextBox mskTelefone;
+        private System.Windows.Forms.MaskedTextBox mskCEP;
+        private System.Windows.Forms.MaskedTextBox mskPesquisa;
     }
 }

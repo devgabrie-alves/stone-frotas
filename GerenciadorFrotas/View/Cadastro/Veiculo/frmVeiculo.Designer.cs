@@ -88,9 +88,9 @@
             this.cboModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboModelo.Enabled = false;
             this.cboModelo.FormattingEnabled = true;
-            this.cboModelo.Location = new System.Drawing.Point(324, 98);
+            this.cboModelo.Location = new System.Drawing.Point(325, 97);
             this.cboModelo.Name = "cboModelo";
-            this.cboModelo.Size = new System.Drawing.Size(125, 21);
+            this.cboModelo.Size = new System.Drawing.Size(235, 21);
             this.cboModelo.TabIndex = 17;
             // 
             // cboCategoria
@@ -134,6 +134,7 @@
             // txtQuilometragem
             // 
             this.txtQuilometragem.Location = new System.Drawing.Point(127, 98);
+            this.txtQuilometragem.MaxLength = 10;
             this.txtQuilometragem.Name = "txtQuilometragem";
             this.txtQuilometragem.Size = new System.Drawing.Size(97, 20);
             this.txtQuilometragem.TabIndex = 10;
@@ -150,7 +151,9 @@
             // 
             // txtChassi
             // 
+            this.txtChassi.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtChassi.Location = new System.Drawing.Point(265, 28);
+            this.txtChassi.MaxLength = 17;
             this.txtChassi.Name = "txtChassi";
             this.txtChassi.Size = new System.Drawing.Size(120, 20);
             this.txtChassi.TabIndex = 8;
@@ -166,7 +169,9 @@
             // 
             // txtPlaca
             // 
+            this.txtPlaca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPlaca.Location = new System.Drawing.Point(69, 28);
+            this.txtPlaca.MaxLength = 7;
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(125, 20);
             this.txtPlaca.TabIndex = 6;
@@ -337,7 +342,10 @@
             this.Controls.Add(this.grpVeículo);
             this.Controls.Add(this.grpDados);
             this.Controls.Add(this.grpPesquisa);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmVeiculo";
             this.Text = "frmVeiculo";
             this.Load += new System.EventHandler(this.frmVeiculo_Load);

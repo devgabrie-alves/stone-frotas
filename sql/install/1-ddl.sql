@@ -74,10 +74,10 @@ CREATE TABLE tblUsuario (
 CREATE TABLE tblColaborador (
     id              INT IDENTITY,
     nome            VARCHAR(100), 
-    cpf             VARCHAR(11),
+    cpf             VARCHAR(14),
     email           VARCHAR(100),
     dataAdmissao    DATE,
-    celular         VARCHAR(11),
+    celular         VARCHAR(15),
     sexoId          INT,
     statusId        INT,
     usuarioId       INT,
@@ -90,7 +90,7 @@ CREATE TABLE tblColaborador (
 
 CREATE TABLE tblVeiculo (
     id	                    INT IDENTITY,
-    placa                   VARCHAR(9),
+    placa                   VARCHAR(7),
     chassi                  VARCHAR(17),
     quilometragemInicial    INT,
     quilometragemAtual      INT,
@@ -122,10 +122,10 @@ CREATE TABLE tblOficina (
     id              INT IDENTITY,
     razaoSocial     VARCHAR(50),
     nomeFantasia    VARCHAR(50),
-    cnpj            VARCHAR(14),
+    cnpj            VARCHAR(18),
     email           VARCHAR(100),
     urlSite         VARCHAR(100),
-    telefone        VARCHAR(11),
+    telefone        VARCHAR(15),
     usuarioId       INT,
 
     CONSTRAINT pk_oficina           PRIMARY KEY(id),
@@ -138,7 +138,7 @@ CREATE TABLE tblEnderecoOficina (
     numero	        INT,
     complemento	    VARCHAR(50),
     bairro	        VARCHAR(50),
-    cep	            VARCHAR(8),
+    cep	            VARCHAR(9),
     referencia	    VARCHAR(50),
     cidadeId	    INT,
     oficinaId       INT,
@@ -151,6 +151,8 @@ CREATE TABLE tblEnderecoOficina (
 --REVISAR
 CREATE TABLE tblManutencao (
     id          INT IDENTITY,
+    descricao   VARCHAR(255),
+    orcamento   MONEY,
     oficinaId   INT,
     veiculoId   INT, 
 

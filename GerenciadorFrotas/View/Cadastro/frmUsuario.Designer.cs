@@ -282,6 +282,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Image = global::GerenciadorFrotas.Properties.Resources.delete;
             this.btnCancelar.Location = new System.Drawing.Point(66, 471);
             this.btnCancelar.Name = "btnCancelar";
@@ -295,8 +296,10 @@
             // 
             // frmUsuario
             // 
+            this.AcceptButton = this.btnCadastrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(693, 538);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnLimpar);
@@ -304,7 +307,10 @@
             this.Controls.Add(this.grpUsuario);
             this.Controls.Add(this.grpDados);
             this.Controls.Add(this.grpPesquisa);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmUsuario";
             this.Text = "Cadastro de Usuários";
             this.Load += new System.EventHandler(this.frmUsuario_Load);

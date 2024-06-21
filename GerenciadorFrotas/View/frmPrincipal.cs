@@ -2,6 +2,8 @@
 using GerenciadorFrotas.Utils;
 using GerenciadorFrotas.View;
 using GerenciadorFrotas.View.Cadastro.Veiculo;
+using GerenciadorFrotas.View.Controle;
+using GerenciadorFrotas.View.Manutencao;
 using System;
 using System.Windows.Forms;
 
@@ -76,7 +78,7 @@ namespace GerenciadorFrotas
             form.Show();
         }
 
-        //Cadastro
+        // MENU CADASTRO
         private void mnuUsuario_Click(object sender, EventArgs e)
         {
             AbrirForm(new frmUsuario());
@@ -87,7 +89,6 @@ namespace GerenciadorFrotas
             AbrirForm(new frmColaborador());
         }
 
-        //Veiculo
         private void mnuVeiculoPrincipal_Click(object sender, EventArgs e)
         {
             AbrirForm(new frmVeiculo());
@@ -107,11 +108,32 @@ namespace GerenciadorFrotas
         {
             AbrirForm(new frmCategoria());
         }
-        //
 
         private void mnuOficina_Click(object sender, EventArgs e)
         {
             AbrirForm(new frmOficina());
+        }
+
+        //MENU CONTROLE
+        private void mnuSaida_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmSaida());
+        }
+
+        private void mnuEntrada_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmEntrada());
+        }
+
+        //MENU MANUTENCAO
+        private void mnuEnviar_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmEnviarManutencao());
+        }
+
+        private void mnuRecepcao_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmRecepcao());
         }
     }
 }

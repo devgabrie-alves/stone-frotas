@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace GerenciadorFrotas.View.Manutencao
 {
-    public partial class frmConsultaVeiculos : Form
+    public partial class frmEnviarManutencao : Form
     {
-        public frmConsultaVeiculos()
+        public frmEnviarManutencao()
         {
             InitializeComponent();
         }
-
-        
     }
 }

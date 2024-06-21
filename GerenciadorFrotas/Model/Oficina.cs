@@ -105,6 +105,8 @@ namespace GerenciadorFrotas.Model
                         sql.Append("VALUES \n");
                         sql.Append("(@razaoSocial, @nomeFantasia, @cnpj, @email, @urlSite, @telefone, @usuarioId); \n");
                         sql.Append("SELECT @@IDENTITY ");
+
+                        parameters.Add(new SqlParameter("@usuarioId", DatabaseUtils.IdUsuarioLogado));
                     }
                     else
                     {
@@ -115,8 +117,7 @@ namespace GerenciadorFrotas.Model
                         sql.Append("cnpj                = @cnpj, \n");
                         sql.Append("email               = @email, \n");
                         sql.Append("urlSite             = @urlSite, \n");
-                        sql.Append("telefone            = @telefone, \n");
-                        sql.Append("usuarioId           = @usuarioId \n");
+                        sql.Append("telefone            = @telefone \n");
                         sql.Append("WHERE id = @id \n");
 
                         parameters.Add(new SqlParameter("@id", Id));
@@ -128,7 +129,6 @@ namespace GerenciadorFrotas.Model
                     parameters.Add(new SqlParameter("@email", Email));
                     parameters.Add(new SqlParameter("@urlSite", UrlSite));
                     parameters.Add(new SqlParameter("@telefone", Telefone));
-                    parameters.Add(new SqlParameter("@usuarioId", DatabaseUtils.IdUsuarioLogado));
 
                     if (Id == 0)
                     {

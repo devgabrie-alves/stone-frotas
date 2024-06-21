@@ -45,7 +45,8 @@
             this.mnuSaida = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEntrada = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuManutencao = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuConsultaVeiculos = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuEnviar = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRecepcao = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSair = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblServidor = new System.Windows.Forms.ToolStripStatusLabel();
@@ -168,26 +169,37 @@
             this.mnuSaida.Name = "mnuSaida";
             this.mnuSaida.Size = new System.Drawing.Size(114, 22);
             this.mnuSaida.Text = "Saída";
+            this.mnuSaida.Click += new System.EventHandler(this.mnuSaida_Click);
             // 
             // mnuEntrada
             // 
             this.mnuEntrada.Name = "mnuEntrada";
             this.mnuEntrada.Size = new System.Drawing.Size(114, 22);
             this.mnuEntrada.Text = "Entrada";
+            this.mnuEntrada.Click += new System.EventHandler(this.mnuEntrada_Click);
             // 
             // mnuManutencao
             // 
             this.mnuManutencao.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuConsultaVeiculos});
+            this.mnuEnviar,
+            this.mnuRecepcao});
             this.mnuManutencao.Name = "mnuManutencao";
             this.mnuManutencao.Size = new System.Drawing.Size(86, 20);
             this.mnuManutencao.Text = "Manutenção";
             // 
-            // mnuConsultaVeiculos
+            // mnuEnviar
             // 
-            this.mnuConsultaVeiculos.Name = "mnuConsultaVeiculos";
-            this.mnuConsultaVeiculos.Size = new System.Drawing.Size(167, 22);
-            this.mnuConsultaVeiculos.Text = "Consulta Veículos";
+            this.mnuEnviar.Name = "mnuEnviar";
+            this.mnuEnviar.Size = new System.Drawing.Size(125, 22);
+            this.mnuEnviar.Text = "Enviar";
+            this.mnuEnviar.Click += new System.EventHandler(this.mnuEnviar_Click);
+            // 
+            // mnuRecepcao
+            // 
+            this.mnuRecepcao.Name = "mnuRecepcao";
+            this.mnuRecepcao.Size = new System.Drawing.Size(125, 22);
+            this.mnuRecepcao.Text = "Recepção";
+            this.mnuRecepcao.Click += new System.EventHandler(this.mnuRecepcao_Click);
             // 
             // mnuSair
             // 
@@ -302,7 +314,8 @@
         private System.Windows.Forms.ToolStripMenuItem mnuSaida;
         private System.Windows.Forms.ToolStripMenuItem mnuEntrada;
         private System.Windows.Forms.ToolStripMenuItem mnuManutencao;
-        private System.Windows.Forms.ToolStripMenuItem mnuConsultaVeiculos;
+        private System.Windows.Forms.ToolStripMenuItem mnuEnviar;
+        private System.Windows.Forms.ToolStripMenuItem mnuRecepcao;
     }
 }
 

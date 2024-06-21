@@ -169,7 +169,6 @@ namespace GerenciadorFrotas.Model
                 parameters.Add(new SqlParameter("@quilometragemInicial", QuilometragemInicial));
                 parameters.Add(new SqlParameter("@quilometragemAtual", QuilometragemAtual));
                 parameters.Add(new SqlParameter("@ativo", Ativo));
-
                 parameters.Add(new SqlParameter("@modeloId", ModeloId));
 
                 acessoDAO.Executar(sql.ToString(), parameters);

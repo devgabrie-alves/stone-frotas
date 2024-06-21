@@ -60,12 +60,12 @@ namespace GerenciadorFrotas.View
             veiculo.Chassi = txtChassi.Text;
             veiculo.QuilometragemInicial = Convert.ToInt32(txtQuilometragem.Text);
             veiculo.QuilometragemAtual = veiculo.QuilometragemInicial;
-            
-            if(rdbAtivo.Checked)
+
+            if (rdbAtivo.Checked)
             {
                 veiculo.Ativo = true;
-            
-            }else
+
+            } else
             {
                 veiculo.Ativo = false;
             }
@@ -105,7 +105,7 @@ namespace GerenciadorFrotas.View
 
         private void GetFormDefault()
         {
-            rdbInativo.Checked = true;
+            rdbAtivo.Checked = true;
             btnCadastrar.Text = "Cadastrar";
             cboPesquisa.SelectedIndex = 0;
             cboModelo.Enabled = false;
@@ -119,11 +119,15 @@ namespace GerenciadorFrotas.View
             {
                 string mensagemErro = string.Empty;
 
-                if(txtPlaca.Text == string.Empty)
+                if (txtPlaca.Text == string.Empty)
                 {
                     mensagemErro += "O campo PLACA não pode ser vazio.\n";
-                }
-                else
+
+                } else if (txtPlaca.Text.Length != 7)
+                {
+                    mensagemErro += "O campo PLACA é inválido.\n";
+
+                } else
                 {
                     Veiculo v = new Veiculo();
                     v.Placa = txtPlaca.Text;
@@ -135,9 +139,13 @@ namespace GerenciadorFrotas.View
                     }
                 }
 
-                if (txtPlaca.Text == string.Empty)
+                if (txtChassi.Text == string.Empty)
                 {
                     mensagemErro += "O campo CHASSI não pode ser vazio.\n";
+                
+                } else if (txtChassi.Text.Length != 17) 
+                {
+                    mensagemErro += "O campo CHASSI é inválido.\n";
                 }
 
                 if (cboMarca.SelectedIndex == -1)

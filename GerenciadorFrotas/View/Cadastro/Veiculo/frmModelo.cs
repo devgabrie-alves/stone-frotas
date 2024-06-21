@@ -70,6 +70,15 @@ namespace GerenciadorFrotas.View.Cadastro.Veiculo
                     mensagemErro += "O campo MODELO não pode ser vazio.\n";
                 }
 
+                if(txtAno.Text == string.Empty)
+                {
+                    mensagemErro += "O campo ANO não pode ser vazio.\n";
+                }
+                else if(Convert.ToInt32(txtAno.Text) >  DateTime.Now.Year)
+                {
+                    mensagemErro += "O ano não pode ser maior que o atual.\n";
+                }
+
                 if (cboMarca.SelectedIndex == -1)
                 {
                     mensagemErro += "O campo MARCA não pode ser vazio.\n";
