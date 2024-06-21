@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmColaborador));
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
@@ -61,31 +62,40 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Image = global::GerenciadorFrotas.Properties.Resources.delete;
             this.btnCancelar.Location = new System.Drawing.Point(12, 466);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(143, 47);
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnLimpar
             // 
+            this.btnLimpar.Image = global::GerenciadorFrotas.Properties.Resources.eraser2;
             this.btnLimpar.Location = new System.Drawing.Point(197, 466);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(143, 47);
             this.btnLimpar.TabIndex = 9;
             this.btnLimpar.Text = "&Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnGravar
             // 
+            this.btnGravar.Image = global::GerenciadorFrotas.Properties.Resources.check;
             this.btnGravar.Location = new System.Drawing.Point(395, 466);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(143, 47);
             this.btnGravar.TabIndex = 8;
             this.btnGravar.Text = "&Gravar";
+            this.btnGravar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGravar.UseVisualStyleBackColor = true;
             this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
@@ -151,9 +161,11 @@
             // txtCelular
             // 
             this.txtCelular.Location = new System.Drawing.Point(53, 131);
+            this.txtCelular.MaxLength = 11;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(154, 20);
             this.txtCelular.TabIndex = 12;
+            this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
             // 
             // lblCelular
             // 
@@ -176,6 +188,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(53, 97);
+            this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(244, 20);
             this.txtEmail.TabIndex = 3;
@@ -192,9 +205,11 @@
             // txtCPF
             // 
             this.txtCPF.Location = new System.Drawing.Point(53, 58);
+            this.txtCPF.MaxLength = 11;
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(154, 20);
             this.txtCPF.TabIndex = 2;
+            this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_KeyPress);
             // 
             // lblCPF
             // 
@@ -217,6 +232,7 @@
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(53, 26);
+            this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(275, 20);
             this.txtNome.TabIndex = 0;
@@ -297,6 +313,7 @@
             // txtPesquisa
             // 
             this.txtPesquisa.Location = new System.Drawing.Point(68, 19);
+            this.txtPesquisa.MaxLength = 100;
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(308, 20);
             this.txtPesquisa.TabIndex = 0;
@@ -323,8 +340,9 @@
             this.Controls.Add(this.grpCliente);
             this.Controls.Add(this.grpDados);
             this.Controls.Add(this.grpPesquisa);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmColaborador";
-            this.Text = "frmColaborador";
+            this.Text = "Cadastro de Colaborador";
             this.Load += new System.EventHandler(this.frmColaborador_Load);
             this.grpCliente.ResumeLayout(false);
             this.grpCliente.PerformLayout();

@@ -25,10 +25,18 @@ namespace GerenciadorFrotas.View
             {
                 grdDados.DataSource = oficina.Consultar();
                 grdDados.Columns[0].Visible = false;
+                grdDados.Columns[1].Visible = false;
+                grdDados.Columns[5].Visible = false;
+                grdDados.Columns[6].Visible = false;
+                grdDados.Columns[7].Visible = false;
 
-                grdDados.Columns[1].HeaderText = "Nome";
+                grdDados.Columns[2].HeaderText = "Nome Fantasia";
+                grdDados.Columns[3].HeaderText = "CNPJ";
+                grdDados.Columns[4].HeaderText = "E-mail";
 
-                grdDados.Columns[1].Width = 311;
+                grdDados.Columns[2].Width = 200;
+                grdDados.Columns[3].Width = 100;
+                grdDados.Columns[4].Width = 200;
 
             }
             catch (Exception ex)
@@ -288,11 +296,13 @@ namespace GerenciadorFrotas.View
         private void rdbNome_CheckedChanged(object sender, EventArgs e)
         {
             txtPesquisa.Clear();
+            txtPesquisa.MaxLength = 50;
         }
 
         private void rdbCNPJ_CheckedChanged(object sender, EventArgs e)
         {
             txtPesquisa.Clear();
+            txtPesquisa.MaxLength = 14;
         }
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
@@ -312,6 +322,11 @@ namespace GerenciadorFrotas.View
         }
 
         private void txtCNPJ_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = ApplicationUtils.SomenteNumeros(e.KeyChar);
+        }
+
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = ApplicationUtils.SomenteNumeros(e.KeyChar);
         }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuCadastro = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,6 +88,7 @@
             // 
             // mnuUsuario
             // 
+            this.mnuUsuario.Image = global::GerenciadorFrotas.Properties.Resources.businessman;
             this.mnuUsuario.Name = "mnuUsuario";
             this.mnuUsuario.Size = new System.Drawing.Size(140, 22);
             this.mnuUsuario.Text = "Usuário";
@@ -94,6 +96,7 @@
             // 
             // mnuColaborador
             // 
+            this.mnuColaborador.Image = global::GerenciadorFrotas.Properties.Resources.businesspeople2;
             this.mnuColaborador.Name = "mnuColaborador";
             this.mnuColaborador.Size = new System.Drawing.Size(140, 22);
             this.mnuColaborador.Text = "Colaborador";
@@ -106,12 +109,14 @@
             this.mnuModelo,
             this.mnuMarca,
             this.mnuCategoria});
+            this.mnuVeiculo.Image = global::GerenciadorFrotas.Properties.Resources.car_13260;
             this.mnuVeiculo.Name = "mnuVeiculo";
             this.mnuVeiculo.Size = new System.Drawing.Size(140, 22);
             this.mnuVeiculo.Text = "Veículo";
             // 
             // mnuVeiculoPrincipal
             // 
+            this.mnuVeiculoPrincipal.Image = global::GerenciadorFrotas.Properties.Resources.components;
             this.mnuVeiculoPrincipal.Name = "mnuVeiculoPrincipal";
             this.mnuVeiculoPrincipal.Size = new System.Drawing.Size(125, 22);
             this.mnuVeiculoPrincipal.Text = "Principal";
@@ -119,6 +124,7 @@
             // 
             // mnuModelo
             // 
+            this.mnuModelo.Image = global::GerenciadorFrotas.Properties.Resources.component_blue;
             this.mnuModelo.Name = "mnuModelo";
             this.mnuModelo.Size = new System.Drawing.Size(125, 22);
             this.mnuModelo.Text = "Modelo";
@@ -126,6 +132,7 @@
             // 
             // mnuMarca
             // 
+            this.mnuMarca.Image = global::GerenciadorFrotas.Properties.Resources.component_green;
             this.mnuMarca.Name = "mnuMarca";
             this.mnuMarca.Size = new System.Drawing.Size(125, 22);
             this.mnuMarca.Text = "Marca";
@@ -133,6 +140,7 @@
             // 
             // mnuCategoria
             // 
+            this.mnuCategoria.Image = global::GerenciadorFrotas.Properties.Resources.component_yellow;
             this.mnuCategoria.Name = "mnuCategoria";
             this.mnuCategoria.Size = new System.Drawing.Size(125, 22);
             this.mnuCategoria.Text = "Categoria";
@@ -140,6 +148,7 @@
             // 
             // mnuOficina
             // 
+            this.mnuOficina.Image = global::GerenciadorFrotas.Properties.Resources.briefcase2;
             this.mnuOficina.Name = "mnuOficina";
             this.mnuOficina.Size = new System.Drawing.Size(140, 22);
             this.mnuOficina.Text = "Oficina";
@@ -246,12 +255,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GerenciadorFrotas.Properties.Resources.app_logo;
+            this.BackgroundImage = global::GerenciadorFrotas.Properties.Resources.Captura_de_tela_2024_06_19_210626_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";

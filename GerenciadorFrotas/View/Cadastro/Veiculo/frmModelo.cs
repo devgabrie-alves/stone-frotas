@@ -28,6 +28,8 @@ namespace GerenciadorFrotas.View.Cadastro.Veiculo
                 grdDados.Columns[0].Visible = false;
                 grdDados.Columns[3].Visible = false;
                 grdDados.Columns[4].Visible = false;
+                grdDados.Columns[7].Visible = false;
+                grdDados.Columns[8].Visible = false;
 
                 //Cabeçalho das colunas
                 grdDados.Columns[1].HeaderText = "Modelo";
@@ -88,6 +90,7 @@ namespace GerenciadorFrotas.View.Cadastro.Veiculo
         private void PreencherFormulario()
         {
             txtModelo.Text = modelo.Nome;
+            txtAno.Text = modelo.Ano.ToString();
             btnExcluir.Enabled = true;
             btnCadastrar.Text = "Atualizar";
 
@@ -99,6 +102,7 @@ namespace GerenciadorFrotas.View.Cadastro.Veiculo
         private void PreencherClasse()
         {
             modelo.Nome = txtModelo.Text;
+            modelo.Ano = Convert.ToInt32(txtAno.Text);
             modelo.MarcaId = Convert.ToInt32(cboMarca.SelectedValue);
             modelo.CategoriaId = Convert.ToInt32(cboCategoria.SelectedValue);
         }

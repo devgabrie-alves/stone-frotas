@@ -206,5 +206,41 @@
   <ItemGroup>
     <None Include="Resources\app-logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\components.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\component_blue.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\component_green.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\component_yellow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\businessman.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\businesspeople2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\briefcase2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car_13260.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MicrosoftTeams-image %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de tela 2024-06-19 210626 1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

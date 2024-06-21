@@ -24,15 +24,21 @@ namespace GerenciadorFrotas.View
             {
                 grdDados.DataSource = colaborador.Consultar();
                 grdDados.Columns[0].Visible = false;
+                grdDados.Columns[4].Visible = false;
+                grdDados.Columns[5].Visible = false;
+                grdDados.Columns[6].Visible = false;
+                grdDados.Columns[7].Visible = false;
+                grdDados.Columns[8].Visible = false;
 
                 //Definindo Cabeçalhos
                 grdDados.Columns[1].HeaderText = "Nome";
-                grdDados.Columns[3].HeaderText = "CPF";
-                grdDados.Columns[6].HeaderText = "Celular";
+                grdDados.Columns[2].HeaderText = "CPF";
+                grdDados.Columns[3].HeaderText = "E-mail";
+
 
                 grdDados.Columns[1].Width = 200;
-                grdDados.Columns[3].Width = 100;
-                grdDados.Columns[6].Width = 100;
+                grdDados.Columns[2].Width = 100;
+                grdDados.Columns[3].Width = 200;
             } catch (Exception ex)
             {
                 MessageBox.Show("Erro --> " + ex.Message, "Erro",
@@ -235,12 +241,24 @@ namespace GerenciadorFrotas.View
 
         private void rdbCPF_CheckedChanged(object sender, EventArgs e)
         {
+            txtPesquisa.MaxLength = 11;
             txtPesquisa.Clear();
         }
 
         private void rdbNome_CheckedChanged(object sender, EventArgs e)
         {
+            txtPesquisa.MaxLength = 100;
             txtPesquisa.Clear();
+        }
+
+        private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = ApplicationUtils.SomenteNumeros(e.KeyChar);
+        }
+
+        private void txtCelular_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = ApplicationUtils.SomenteNumeros(e.KeyChar);
         }
     }
 }

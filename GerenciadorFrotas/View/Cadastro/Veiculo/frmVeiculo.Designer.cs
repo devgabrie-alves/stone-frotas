@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVeiculo));
             this.grpVeículo = new System.Windows.Forms.GroupBox();
             this.cboModelo = new System.Windows.Forms.ComboBox();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
@@ -87,7 +88,7 @@
             this.cboModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboModelo.Enabled = false;
             this.cboModelo.FormattingEnabled = true;
-            this.cboModelo.Location = new System.Drawing.Point(303, 98);
+            this.cboModelo.Location = new System.Drawing.Point(324, 98);
             this.cboModelo.Name = "cboModelo";
             this.cboModelo.Size = new System.Drawing.Size(125, 21);
             this.cboModelo.TabIndex = 17;
@@ -193,22 +194,22 @@
             // rdbInativo
             // 
             this.rdbInativo.AutoSize = true;
-            this.rdbInativo.Checked = true;
             this.rdbInativo.Location = new System.Drawing.Point(71, 21);
             this.rdbInativo.Name = "rdbInativo";
             this.rdbInativo.Size = new System.Drawing.Size(57, 17);
             this.rdbInativo.TabIndex = 1;
-            this.rdbInativo.TabStop = true;
             this.rdbInativo.Text = "Inativo";
             this.rdbInativo.UseVisualStyleBackColor = true;
             // 
             // rdbAtivo
             // 
             this.rdbAtivo.AutoSize = true;
+            this.rdbAtivo.Checked = true;
             this.rdbAtivo.Location = new System.Drawing.Point(7, 19);
             this.rdbAtivo.Name = "rdbAtivo";
             this.rdbAtivo.Size = new System.Drawing.Size(49, 17);
             this.rdbAtivo.TabIndex = 0;
+            this.rdbAtivo.TabStop = true;
             this.rdbAtivo.Text = "Ativo";
             this.rdbAtivo.UseVisualStyleBackColor = true;
             // 
@@ -217,9 +218,9 @@
             this.lblModelo.AutoSize = true;
             this.lblModelo.Location = new System.Drawing.Point(248, 101);
             this.lblModelo.Name = "lblModelo";
-            this.lblModelo.Size = new System.Drawing.Size(42, 13);
+            this.lblModelo.Size = new System.Drawing.Size(70, 13);
             this.lblModelo.TabIndex = 2;
-            this.lblModelo.Text = "Modelo";
+            this.lblModelo.Text = "Modelo - Ano";
             // 
             // grpDados
             // 
@@ -336,6 +337,7 @@
             this.Controls.Add(this.grpVeículo);
             this.Controls.Add(this.grpDados);
             this.Controls.Add(this.grpPesquisa);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmVeiculo";
             this.Text = "frmVeiculo";
             this.Load += new System.EventHandler(this.frmVeiculo_Load);

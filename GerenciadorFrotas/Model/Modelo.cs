@@ -13,6 +13,7 @@ namespace GerenciadorFrotas.Model
         public int Id { get; set; }
         public string Nome { get; set; }
         public DateTime DataCadastro { get; set; }
+        public int Ano { get; set; }
         public int MarcaId { get; set; }
         public int CategoriaId { get; set; }
 
@@ -21,6 +22,7 @@ namespace GerenciadorFrotas.Model
             Id = 0;
             Nome = string.Empty;
             DataCadastro = DateTime.MinValue;
+            Ano = 0;
             MarcaId = 0;
             CategoriaId = 0;
         }
@@ -38,7 +40,8 @@ namespace GerenciadorFrotas.Model
             {
                 parameters.Clear();
                 sql.Append("SELECT mo.id AS id, mo.nome AS nome, mo.dataCadastro AS dataCadastro, \n");
-                sql.Append("mo.marcaId AS marcaId, mo.categoriaId AS categoriaId, ma.nome, ca.descricao \n");
+                sql.Append("mo.marcaId AS marcaId, mo.categoriaId AS categoriaId, ma.nome, ca.descricao,  \n");
+                sql.Append("mo.ano AS ano, CONCAT(mo.nome, ' - ', mo.ano) AS nomeAno \n");
                 sql.Append("FROM tblModelo mo \n");
                 sql.Append("INNER JOIN tblMarca ma ON ma.Id = mo.marcaId \n");
                 sql.Append("INNER JOIN tblCategoria ca ON ca.Id = mo.categoriaId \n");
@@ -69,6 +72,7 @@ namespace GerenciadorFrotas.Model
                     Id = Convert.ToInt32(dataTable.Rows[0]["id"]);
                     Nome = dataTable.Rows[0]["nome"].ToString();
                     DataCadastro = Convert.ToDateTime(dataTable.Rows[0]["dataCadastro"]);
+                    Ano = Convert.ToInt32(dataTable.Rows[0]["ano"]);
                     MarcaId = Convert.ToInt32(dataTable.Rows[0]["marcaId"]);
                     CategoriaId = Convert.ToInt32(dataTable.Rows[0]["categoriaId"]);
                 }
@@ -92,9 +96,9 @@ namespace GerenciadorFrotas.Model
                 if (Id == 0)
                 {
                     sql.Append("INSERT INTO tblModelo \n");
-                    sql.Append("(nome, dataCadastro, marcaId, categoriaId) \n");
+                    sql.Append("(nome, dataCadastro, marcaId, categoriaId, ano) \n");
                     sql.Append("VALUES \n");
-                    sql.Append("(@nome, @dataCadastro, @marcaId, @categoriaId) \n");
+                    sql.Append("(@nome, @dataCadastro, @marcaId, @categoriaId, @ano) \n");
 
                     parameters.Add(new SqlParameter("@dataCadastro", DateTime.Now));
 
@@ -104,7 +108,8 @@ namespace GerenciadorFrotas.Model
                     sql.Append("SET \n");
                     sql.Append("nome            = @nome, \n");
                     sql.Append("marcaId         = @marcaId, \n");
-                    sql.Append("categoriaId     = @categoriaId \n");
+                    sql.Append("categoriaId     = @categoriaId, \n");
+                    sql.Append("ano             = @ano \n");
                     sql.Append("WHERE id = @id \n");
 
                     parameters.Add(new SqlParameter("@id", Id));
@@ -113,6 +118,7 @@ namespace GerenciadorFrotas.Model
                 parameters.Add(new SqlParameter("@nome", Nome));
                 parameters.Add(new SqlParameter("@marcaId", MarcaId));
                 parameters.Add(new SqlParameter("@categoriaId", CategoriaId));
+                parameters.Add(new SqlParameter("@ano", Ano));
 
                 acessoDAO.Executar(sql.ToString(), parameters);
             } catch (Exception ex)

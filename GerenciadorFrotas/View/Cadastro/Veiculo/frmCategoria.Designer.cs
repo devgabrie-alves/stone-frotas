@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnExcluir = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategoria));
             this.grpMarca = new System.Windows.Forms.GroupBox();
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.lblCategoria = new System.Windows.Forms.Label();
@@ -37,6 +37,7 @@
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.lblPesquisa = new System.Windows.Forms.Label();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -45,18 +46,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdDados)).BeginInit();
             this.grpPesquisa.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Enabled = false;
-            this.btnExcluir.Location = new System.Drawing.Point(19, 401);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(106, 45);
-            this.btnExcluir.TabIndex = 26;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // grpMarca
             // 
@@ -72,6 +61,7 @@
             // txtCategoria
             // 
             this.txtCategoria.Location = new System.Drawing.Point(70, 29);
+            this.txtCategoria.MaxLength = 30;
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(169, 20);
             this.txtCategoria.TabIndex = 0;
@@ -126,6 +116,7 @@
             // txtPesquisa
             // 
             this.txtPesquisa.Location = new System.Drawing.Point(64, 19);
+            this.txtPesquisa.MaxLength = 30;
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(175, 20);
             this.txtPesquisa.TabIndex = 0;
@@ -140,14 +131,27 @@
             this.lblPesquisa.TabIndex = 0;
             this.lblPesquisa.Text = "Categoria";
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Enabled = false;
+            this.btnExcluir.Image = global::GerenciadorFrotas.Properties.Resources.data_delete;
+            this.btnExcluir.Location = new System.Drawing.Point(19, 401);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(106, 45);
+            this.btnExcluir.TabIndex = 26;
+            this.btnExcluir.Text = "&Excluir";
+            this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Image = global::GerenciadorFrotas.Properties.Resources.check;
+            this.btnCadastrar.Image = global::GerenciadorFrotas.Properties.Resources.data_add;
             this.btnCadastrar.Location = new System.Drawing.Point(145, 401);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(106, 45);
             this.btnCadastrar.TabIndex = 25;
-            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.Text = "&Cadastrar";
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -160,7 +164,7 @@
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(106, 45);
             this.btnLimpar.TabIndex = 24;
-            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.Text = "&Limpar";
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLimpar.UseVisualStyleBackColor = true;
@@ -173,7 +177,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(106, 45);
             this.btnCancelar.TabIndex = 23;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -191,6 +195,7 @@
             this.Controls.Add(this.grpMarca);
             this.Controls.Add(this.grpDados);
             this.Controls.Add(this.grpPesquisa);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCategoria";
             this.Text = "frmCategoria";
             this.Load += new System.EventHandler(this.frmCategoria_Load);

@@ -73,7 +73,7 @@ namespace GerenciadorFrotas.View
 
         private void GetFormDefault()
         {
-            rdbInativo.Checked = true;
+            rdbAtivo.Checked = true;
             btnCadastrar.Text = "Cadastrar";
             txtPesquisa.Focus();
         }

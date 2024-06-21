@@ -123,7 +123,7 @@ CREATE TABLE tblOficina (
     razaoSocial     VARCHAR(50),
     nomeFantasia    VARCHAR(50),
     cnpj            VARCHAR(14),
-    email           VARCHAR(70),
+    email           VARCHAR(100),
     urlSite         VARCHAR(100),
     telefone        VARCHAR(11),
     usuarioId       INT,

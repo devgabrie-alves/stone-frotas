@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOficina));
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
@@ -73,6 +74,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Image = global::GerenciadorFrotas.Properties.Resources.delete;
             this.btnCancelar.Location = new System.Drawing.Point(12, 577);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(143, 47);
@@ -85,6 +87,7 @@
             // 
             // btnLimpar
             // 
+            this.btnLimpar.Image = global::GerenciadorFrotas.Properties.Resources.eraser2;
             this.btnLimpar.Location = new System.Drawing.Point(197, 577);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(143, 47);
@@ -97,6 +100,7 @@
             // 
             // btnGravar
             // 
+            this.btnGravar.Image = global::GerenciadorFrotas.Properties.Resources.check;
             this.btnGravar.Location = new System.Drawing.Point(395, 577);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(143, 47);
@@ -179,6 +183,7 @@
             // txtTelefone
             // 
             this.txtTelefone.Location = new System.Drawing.Point(402, 221);
+            this.txtTelefone.MaxLength = 11;
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(118, 20);
             this.txtTelefone.TabIndex = 12;
@@ -232,6 +237,7 @@
             // txtCEP
             // 
             this.txtCEP.Location = new System.Drawing.Point(297, 189);
+            this.txtCEP.MaxLength = 8;
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(97, 20);
             this.txtCEP.TabIndex = 8;
@@ -248,6 +254,7 @@
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(48, 189);
+            this.txtBairro.MaxLength = 50;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(197, 20);
             this.txtBairro.TabIndex = 7;
@@ -264,6 +271,7 @@
             // txtComplemento
             // 
             this.txtComplemento.Location = new System.Drawing.Point(86, 161);
+            this.txtComplemento.MaxLength = 50;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(308, 20);
             this.txtComplemento.TabIndex = 6;
@@ -283,6 +291,7 @@
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(41, 20);
             this.txtNumero.TabIndex = 5;
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // lblNumero
             // 
@@ -296,6 +305,7 @@
             // txtEndereco
             // 
             this.txtEndereco.Location = new System.Drawing.Point(67, 129);
+            this.txtEndereco.MaxLength = 100;
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(327, 20);
             this.txtEndereco.TabIndex = 4;
@@ -312,6 +322,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(245, 94);
+            this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(274, 20);
             this.txtEmail.TabIndex = 3;
@@ -427,6 +438,7 @@
             // txtPesquisa
             // 
             this.txtPesquisa.Location = new System.Drawing.Point(68, 19);
+            this.txtPesquisa.MaxLength = 50;
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(308, 20);
             this.txtPesquisa.TabIndex = 0;
@@ -452,8 +464,9 @@
             this.Controls.Add(this.grpOficina);
             this.Controls.Add(this.grpDados);
             this.Controls.Add(this.grpPesquisa);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmOficina";
-            this.Text = "frmOficina";
+            this.Text = "Cadastro de Oficina";
             this.Load += new System.EventHandler(this.frmOficina_Load);
             this.grpOficina.ResumeLayout(false);
             this.grpOficina.PerformLayout();

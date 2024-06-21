@@ -182,7 +182,7 @@ namespace GerenciadorFrotas.View
 
             //Busca informações
             cboModelo.DataSource = modelo.Consultar();
-            cboModelo.DisplayMember = "nome";
+            cboModelo.DisplayMember = "nomeAno";
             cboModelo.ValueMember = "id";
             cboModelo.SelectedIndex = -1;
         }

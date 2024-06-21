@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmModelo));
             this.btnExcluir = new System.Windows.Forms.Button();
             this.grpMarca = new System.Windows.Forms.GroupBox();
             this.txtAno = new System.Windows.Forms.TextBox();
@@ -55,6 +56,7 @@
             // btnExcluir
             // 
             this.btnExcluir.Enabled = false;
+            this.btnExcluir.Image = global::GerenciadorFrotas.Properties.Resources.data_delete;
             this.btnExcluir.Location = new System.Drawing.Point(256, 434);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(106, 45);
@@ -84,6 +86,7 @@
             // txtAno
             // 
             this.txtAno.Location = new System.Drawing.Point(159, 45);
+            this.txtAno.MaxLength = 4;
             this.txtAno.Name = "txtAno";
             this.txtAno.Size = new System.Drawing.Size(182, 20);
             this.txtAno.TabIndex = 9;
@@ -92,11 +95,11 @@
             // lblAno
             // 
             this.lblAno.AutoSize = true;
-            this.lblAno.Location = new System.Drawing.Point(114, 48);
+            this.lblAno.Location = new System.Drawing.Point(127, 48);
             this.lblAno.Name = "lblAno";
-            this.lblAno.Size = new System.Drawing.Size(42, 13);
+            this.lblAno.Size = new System.Drawing.Size(26, 13);
             this.lblAno.TabIndex = 10;
-            this.lblAno.Text = "Modelo";
+            this.lblAno.Text = "Ano";
             // 
             // cboCategoria
             // 
@@ -137,6 +140,7 @@
             // txtModelo
             // 
             this.txtModelo.Location = new System.Drawing.Point(159, 19);
+            this.txtModelo.MaxLength = 30;
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(182, 20);
             this.txtModelo.TabIndex = 0;
@@ -191,6 +195,7 @@
             // txtPesquisa
             // 
             this.txtPesquisa.Location = new System.Drawing.Point(67, 19);
+            this.txtPesquisa.MaxLength = 30;
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(395, 20);
             this.txtPesquisa.TabIndex = 0;
@@ -207,7 +212,7 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Image = global::GerenciadorFrotas.Properties.Resources.check;
+            this.btnCadastrar.Image = global::GerenciadorFrotas.Properties.Resources.data_add;
             this.btnCadastrar.Location = new System.Drawing.Point(382, 434);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(106, 45);
@@ -256,6 +261,7 @@
             this.Controls.Add(this.grpMarca);
             this.Controls.Add(this.grpDados);
             this.Controls.Add(this.grpPesquisa);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmModelo";
             this.Text = "frmModelo";
             this.Load += new System.EventHandler(this.frmModelo_Load);
