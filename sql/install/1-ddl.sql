@@ -104,13 +104,14 @@ CREATE TABLE tblVeiculo (
 )
 
 CREATE TABLE tblControle (
-    id	            INT IDENTITY,
-    dataSaida       DATE,
-    dataEntrada     DATE,
-    concluido       BIT,
-    usuarioId       INT,
-    colaboradorId   INT,
-    veiculoId       INT,
+    id	                INT IDENTITY,
+    dataSaida           DATE,
+    dataEntrada         DATE,
+    totalPercorrido     INT,
+    concluido           BIT,
+    usuarioId           INT,
+    colaboradorId       INT,
+    veiculoId           INT,
 
     CONSTRAINT pk_controle              PRIMARY KEY(id),
 	CONSTRAINT fk_controle_usuario      FOREIGN KEY(usuarioId)      REFERENCES tblUsuario,
