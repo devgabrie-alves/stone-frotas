@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.grpVeículo = new System.Windows.Forms.GroupBox();
+            this.txtQuilometragemAtual = new System.Windows.Forms.TextBox();
+            this.lblQuilometragemAtual = new System.Windows.Forms.Label();
             this.cboModelo = new System.Windows.Forms.ComboBox();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
             this.cboMarca = new System.Windows.Forms.ComboBox();
-            this.txtQuilometragem = new System.Windows.Forms.TextBox();
-            this.lblQuilometragem = new System.Windows.Forms.Label();
+            this.txtQuilometragemInicial = new System.Windows.Forms.TextBox();
+            this.lblQuilometragemInicial = new System.Windows.Forms.Label();
             this.txtChassi = new System.Windows.Forms.TextBox();
             this.lblChassi = new System.Windows.Forms.Label();
             this.txtPlaca = new System.Windows.Forms.TextBox();
@@ -47,13 +49,13 @@
             this.grpVeiculos = new System.Windows.Forms.GroupBox();
             this.grdVeiculos = new System.Windows.Forms.DataGridView();
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
+            this.rdbPesquisaInativo = new System.Windows.Forms.RadioButton();
+            this.rdbPesquisaAtivo = new System.Windows.Forms.RadioButton();
+            this.rdbPesquisaTodos = new System.Windows.Forms.RadioButton();
+            this.lblStatusVeiculo = new System.Windows.Forms.Label();
             this.cboPesquisa = new System.Windows.Forms.ComboBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.lblStatusVeiculo = new System.Windows.Forms.Label();
-            this.rdbPesquisaTodos = new System.Windows.Forms.RadioButton();
-            this.rdbPesquisaAtivo = new System.Windows.Forms.RadioButton();
-            this.rdbPesquisaInativo = new System.Windows.Forms.RadioButton();
             this.grpOficina = new System.Windows.Forms.GroupBox();
             this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
             this.mskCNPJ = new System.Windows.Forms.MaskedTextBox();
@@ -96,13 +98,15 @@
             // 
             // grpVeículo
             // 
+            this.grpVeículo.Controls.Add(this.txtQuilometragemAtual);
+            this.grpVeículo.Controls.Add(this.lblQuilometragemAtual);
             this.grpVeículo.Controls.Add(this.cboModelo);
             this.grpVeículo.Controls.Add(this.cboCategoria);
             this.grpVeículo.Controls.Add(this.lblCategoria);
             this.grpVeículo.Controls.Add(this.lblMarca);
             this.grpVeículo.Controls.Add(this.cboMarca);
-            this.grpVeículo.Controls.Add(this.txtQuilometragem);
-            this.grpVeículo.Controls.Add(this.lblQuilometragem);
+            this.grpVeículo.Controls.Add(this.txtQuilometragemInicial);
+            this.grpVeículo.Controls.Add(this.lblQuilometragemInicial);
             this.grpVeículo.Controls.Add(this.txtChassi);
             this.grpVeículo.Controls.Add(this.lblChassi);
             this.grpVeículo.Controls.Add(this.txtPlaca);
@@ -116,42 +120,60 @@
             this.grpVeículo.TabStop = false;
             this.grpVeículo.Text = "Veículo";
             // 
+            // txtQuilometragemAtual
+            // 
+            this.txtQuilometragemAtual.Location = new System.Drawing.Point(119, 64);
+            this.txtQuilometragemAtual.MaxLength = 10;
+            this.txtQuilometragemAtual.Name = "txtQuilometragemAtual";
+            this.txtQuilometragemAtual.ReadOnly = true;
+            this.txtQuilometragemAtual.Size = new System.Drawing.Size(67, 20);
+            this.txtQuilometragemAtual.TabIndex = 33;
+            // 
+            // lblQuilometragemAtual
+            // 
+            this.lblQuilometragemAtual.AutoSize = true;
+            this.lblQuilometragemAtual.Location = new System.Drawing.Point(6, 67);
+            this.lblQuilometragemAtual.Name = "lblQuilometragemAtual";
+            this.lblQuilometragemAtual.Size = new System.Drawing.Size(104, 13);
+            this.lblQuilometragemAtual.TabIndex = 34;
+            this.lblQuilometragemAtual.Text = "Quilometragem Atual";
+            // 
             // cboModelo
             // 
             this.cboModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboModelo.Enabled = false;
             this.cboModelo.FormattingEnabled = true;
-            this.cboModelo.Location = new System.Drawing.Point(325, 97);
+            this.cboModelo.Location = new System.Drawing.Point(317, 98);
             this.cboModelo.Name = "cboModelo";
             this.cboModelo.Size = new System.Drawing.Size(235, 21);
-            this.cboModelo.TabIndex = 17;
+            this.cboModelo.TabIndex = 32;
             // 
             // cboCategoria
             // 
             this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategoria.Enabled = false;
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(265, 60);
+            this.cboCategoria.Location = new System.Drawing.Point(450, 62);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(121, 21);
-            this.cboCategoria.TabIndex = 16;
+            this.cboCategoria.TabIndex = 31;
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(207, 65);
+            this.lblCategoria.Location = new System.Drawing.Point(392, 67);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(52, 13);
-            this.lblCategoria.TabIndex = 15;
+            this.lblCategoria.TabIndex = 30;
             this.lblCategoria.Text = "Categoria";
             // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(16, 65);
+            this.lblMarca.Location = new System.Drawing.Point(201, 67);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(37, 13);
-            this.lblMarca.TabIndex = 13;
+            this.lblMarca.TabIndex = 29;
             this.lblMarca.Text = "Marca";
             // 
             // cboMarca
@@ -159,75 +181,75 @@
             this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMarca.Enabled = false;
             this.cboMarca.FormattingEnabled = true;
-            this.cboMarca.Location = new System.Drawing.Point(71, 60);
+            this.cboMarca.Location = new System.Drawing.Point(256, 62);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(121, 21);
-            this.cboMarca.TabIndex = 12;
+            this.cboMarca.TabIndex = 28;
             // 
-            // txtQuilometragem
+            // txtQuilometragemInicial
             // 
-            this.txtQuilometragem.Location = new System.Drawing.Point(127, 98);
-            this.txtQuilometragem.MaxLength = 10;
-            this.txtQuilometragem.Name = "txtQuilometragem";
-            this.txtQuilometragem.ReadOnly = true;
-            this.txtQuilometragem.Size = new System.Drawing.Size(97, 20);
-            this.txtQuilometragem.TabIndex = 10;
+            this.txtQuilometragemInicial.Location = new System.Drawing.Point(119, 99);
+            this.txtQuilometragemInicial.MaxLength = 10;
+            this.txtQuilometragemInicial.Name = "txtQuilometragemInicial";
+            this.txtQuilometragemInicial.ReadOnly = true;
+            this.txtQuilometragemInicial.Size = new System.Drawing.Size(67, 20);
+            this.txtQuilometragemInicial.TabIndex = 26;
             // 
-            // lblQuilometragem
+            // lblQuilometragemInicial
             // 
-            this.lblQuilometragem.AutoSize = true;
-            this.lblQuilometragem.Location = new System.Drawing.Point(14, 101);
-            this.lblQuilometragem.Name = "lblQuilometragem";
-            this.lblQuilometragem.Size = new System.Drawing.Size(107, 13);
-            this.lblQuilometragem.TabIndex = 11;
-            this.lblQuilometragem.Text = "Quilometragem Inicial";
+            this.lblQuilometragemInicial.AutoSize = true;
+            this.lblQuilometragemInicial.Location = new System.Drawing.Point(6, 102);
+            this.lblQuilometragemInicial.Name = "lblQuilometragemInicial";
+            this.lblQuilometragemInicial.Size = new System.Drawing.Size(107, 13);
+            this.lblQuilometragemInicial.TabIndex = 27;
+            this.lblQuilometragemInicial.Text = "Quilometragem Inicial";
             // 
             // txtChassi
             // 
             this.txtChassi.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtChassi.Location = new System.Drawing.Point(219, 28);
+            this.txtChassi.Location = new System.Drawing.Point(257, 29);
             this.txtChassi.MaxLength = 17;
             this.txtChassi.Name = "txtChassi";
             this.txtChassi.ReadOnly = true;
-            this.txtChassi.Size = new System.Drawing.Size(167, 20);
-            this.txtChassi.TabIndex = 8;
+            this.txtChassi.Size = new System.Drawing.Size(120, 20);
+            this.txtChassi.TabIndex = 24;
             // 
             // lblChassi
             // 
             this.lblChassi.AutoSize = true;
-            this.lblChassi.Location = new System.Drawing.Point(165, 31);
+            this.lblChassi.Location = new System.Drawing.Point(202, 32);
             this.lblChassi.Name = "lblChassi";
             this.lblChassi.Size = new System.Drawing.Size(38, 13);
-            this.lblChassi.TabIndex = 9;
+            this.lblChassi.TabIndex = 25;
             this.lblChassi.Text = "Chassi";
             // 
             // txtPlaca
             // 
             this.txtPlaca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPlaca.Location = new System.Drawing.Point(69, 28);
+            this.txtPlaca.Location = new System.Drawing.Point(61, 29);
             this.txtPlaca.MaxLength = 7;
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.ReadOnly = true;
-            this.txtPlaca.Size = new System.Drawing.Size(75, 20);
-            this.txtPlaca.TabIndex = 6;
+            this.txtPlaca.Size = new System.Drawing.Size(125, 20);
+            this.txtPlaca.TabIndex = 22;
             // 
             // lblPlaca
             // 
             this.lblPlaca.AutoSize = true;
-            this.lblPlaca.Location = new System.Drawing.Point(14, 31);
+            this.lblPlaca.Location = new System.Drawing.Point(6, 32);
             this.lblPlaca.Name = "lblPlaca";
             this.lblPlaca.Size = new System.Drawing.Size(34, 13);
-            this.lblPlaca.TabIndex = 7;
+            this.lblPlaca.TabIndex = 23;
             this.lblPlaca.Text = "Placa";
             // 
             // grpStatus
             // 
             this.grpStatus.Controls.Add(this.rdbInativo);
             this.grpStatus.Controls.Add(this.rdbAtivo);
-            this.grpStatus.Location = new System.Drawing.Point(411, 28);
+            this.grpStatus.Location = new System.Drawing.Point(418, 11);
             this.grpStatus.Name = "grpStatus";
-            this.grpStatus.Size = new System.Drawing.Size(149, 50);
-            this.grpStatus.TabIndex = 5;
+            this.grpStatus.Size = new System.Drawing.Size(149, 38);
+            this.grpStatus.TabIndex = 21;
             this.grpStatus.TabStop = false;
             this.grpStatus.Text = "Status";
             // 
@@ -235,7 +257,7 @@
             // 
             this.rdbInativo.AutoSize = true;
             this.rdbInativo.Enabled = false;
-            this.rdbInativo.Location = new System.Drawing.Point(71, 21);
+            this.rdbInativo.Location = new System.Drawing.Point(73, 19);
             this.rdbInativo.Name = "rdbInativo";
             this.rdbInativo.Size = new System.Drawing.Size(57, 17);
             this.rdbInativo.TabIndex = 1;
@@ -256,10 +278,10 @@
             // lblModelo
             // 
             this.lblModelo.AutoSize = true;
-            this.lblModelo.Location = new System.Drawing.Point(248, 101);
+            this.lblModelo.Location = new System.Drawing.Point(240, 102);
             this.lblModelo.Name = "lblModelo";
             this.lblModelo.Size = new System.Drawing.Size(70, 13);
-            this.lblModelo.TabIndex = 2;
+            this.lblModelo.TabIndex = 20;
             this.lblModelo.Text = "Modelo - Ano";
             // 
             // grpVeiculos
@@ -287,6 +309,7 @@
             this.grdVeiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdVeiculos.Size = new System.Drawing.Size(568, 210);
             this.grdVeiculos.TabIndex = 0;
+            this.grdVeiculos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVeiculos_CellClick);
             // 
             // grpPesquisa
             // 
@@ -303,6 +326,47 @@
             this.grpPesquisa.TabIndex = 18;
             this.grpPesquisa.TabStop = false;
             this.grpPesquisa.Text = "Pesquisa";
+            // 
+            // rdbPesquisaInativo
+            // 
+            this.rdbPesquisaInativo.AutoSize = true;
+            this.rdbPesquisaInativo.Location = new System.Drawing.Point(392, 53);
+            this.rdbPesquisaInativo.Name = "rdbPesquisaInativo";
+            this.rdbPesquisaInativo.Size = new System.Drawing.Size(57, 17);
+            this.rdbPesquisaInativo.TabIndex = 6;
+            this.rdbPesquisaInativo.Text = "Inativo";
+            this.rdbPesquisaInativo.UseVisualStyleBackColor = true;
+            // 
+            // rdbPesquisaAtivo
+            // 
+            this.rdbPesquisaAtivo.AutoSize = true;
+            this.rdbPesquisaAtivo.Location = new System.Drawing.Point(337, 53);
+            this.rdbPesquisaAtivo.Name = "rdbPesquisaAtivo";
+            this.rdbPesquisaAtivo.Size = new System.Drawing.Size(49, 17);
+            this.rdbPesquisaAtivo.TabIndex = 5;
+            this.rdbPesquisaAtivo.Text = "Ativo";
+            this.rdbPesquisaAtivo.UseVisualStyleBackColor = true;
+            // 
+            // rdbPesquisaTodos
+            // 
+            this.rdbPesquisaTodos.AutoSize = true;
+            this.rdbPesquisaTodos.Checked = true;
+            this.rdbPesquisaTodos.Location = new System.Drawing.Point(276, 53);
+            this.rdbPesquisaTodos.Name = "rdbPesquisaTodos";
+            this.rdbPesquisaTodos.Size = new System.Drawing.Size(55, 17);
+            this.rdbPesquisaTodos.TabIndex = 4;
+            this.rdbPesquisaTodos.TabStop = true;
+            this.rdbPesquisaTodos.Text = "Todos";
+            this.rdbPesquisaTodos.UseVisualStyleBackColor = true;
+            // 
+            // lblStatusVeiculo
+            // 
+            this.lblStatusVeiculo.AutoSize = true;
+            this.lblStatusVeiculo.Location = new System.Drawing.Point(227, 55);
+            this.lblStatusVeiculo.Name = "lblStatusVeiculo";
+            this.lblStatusVeiculo.Size = new System.Drawing.Size(43, 13);
+            this.lblStatusVeiculo.TabIndex = 3;
+            this.lblStatusVeiculo.Text = "Status: ";
             // 
             // cboPesquisa
             // 
@@ -328,47 +392,6 @@
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(333, 20);
             this.txtPesquisa.TabIndex = 0;
-            // 
-            // lblStatusVeiculo
-            // 
-            this.lblStatusVeiculo.AutoSize = true;
-            this.lblStatusVeiculo.Location = new System.Drawing.Point(227, 55);
-            this.lblStatusVeiculo.Name = "lblStatusVeiculo";
-            this.lblStatusVeiculo.Size = new System.Drawing.Size(43, 13);
-            this.lblStatusVeiculo.TabIndex = 3;
-            this.lblStatusVeiculo.Text = "Status: ";
-            // 
-            // rdbPesquisaTodos
-            // 
-            this.rdbPesquisaTodos.AutoSize = true;
-            this.rdbPesquisaTodos.Checked = true;
-            this.rdbPesquisaTodos.Location = new System.Drawing.Point(276, 53);
-            this.rdbPesquisaTodos.Name = "rdbPesquisaTodos";
-            this.rdbPesquisaTodos.Size = new System.Drawing.Size(55, 17);
-            this.rdbPesquisaTodos.TabIndex = 4;
-            this.rdbPesquisaTodos.TabStop = true;
-            this.rdbPesquisaTodos.Text = "Todos";
-            this.rdbPesquisaTodos.UseVisualStyleBackColor = true;
-            // 
-            // rdbPesquisaAtivo
-            // 
-            this.rdbPesquisaAtivo.AutoSize = true;
-            this.rdbPesquisaAtivo.Location = new System.Drawing.Point(337, 53);
-            this.rdbPesquisaAtivo.Name = "rdbPesquisaAtivo";
-            this.rdbPesquisaAtivo.Size = new System.Drawing.Size(49, 17);
-            this.rdbPesquisaAtivo.TabIndex = 5;
-            this.rdbPesquisaAtivo.Text = "Ativo";
-            this.rdbPesquisaAtivo.UseVisualStyleBackColor = true;
-            // 
-            // rdbPesquisaInativo
-            // 
-            this.rdbPesquisaInativo.AutoSize = true;
-            this.rdbPesquisaInativo.Location = new System.Drawing.Point(392, 53);
-            this.rdbPesquisaInativo.Name = "rdbPesquisaInativo";
-            this.rdbPesquisaInativo.Size = new System.Drawing.Size(57, 17);
-            this.rdbPesquisaInativo.TabIndex = 6;
-            this.rdbPesquisaInativo.Text = "Inativo";
-            this.rdbPesquisaInativo.UseVisualStyleBackColor = true;
             // 
             // grpOficina
             // 
@@ -524,6 +547,7 @@
             this.grdOficinas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdOficinas.Size = new System.Drawing.Size(514, 210);
             this.grdOficinas.TabIndex = 10;
+            this.grdOficinas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdOficinas_CellClick);
             // 
             // groupBox1
             // 
@@ -636,6 +660,7 @@
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnLimpar
             // 
@@ -649,6 +674,7 @@
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnLiberar
             // 
@@ -662,6 +688,7 @@
             this.btnLiberar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLiberar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLiberar.UseVisualStyleBackColor = true;
+            this.btnLiberar.Click += new System.EventHandler(this.btnLiberar_Click);
             // 
             // frmEnviarManutencao
             // 
@@ -680,6 +707,7 @@
             this.Controls.Add(this.grpPesquisa);
             this.Name = "frmEnviarManutencao";
             this.Text = "frmEnviarManutencao";
+            this.Load += new System.EventHandler(this.frmEnviarManutencao_Load);
             this.grpVeículo.ResumeLayout(false);
             this.grpVeículo.PerformLayout();
             this.grpStatus.ResumeLayout(false);
@@ -702,21 +730,6 @@
 
         #endregion
         private System.Windows.Forms.GroupBox grpVeículo;
-        private System.Windows.Forms.ComboBox cboModelo;
-        private System.Windows.Forms.ComboBox cboCategoria;
-        private System.Windows.Forms.Label lblCategoria;
-        private System.Windows.Forms.Label lblMarca;
-        private System.Windows.Forms.ComboBox cboMarca;
-        private System.Windows.Forms.TextBox txtQuilometragem;
-        private System.Windows.Forms.Label lblQuilometragem;
-        private System.Windows.Forms.TextBox txtChassi;
-        private System.Windows.Forms.Label lblChassi;
-        private System.Windows.Forms.TextBox txtPlaca;
-        private System.Windows.Forms.Label lblPlaca;
-        private System.Windows.Forms.GroupBox grpStatus;
-        private System.Windows.Forms.RadioButton rdbInativo;
-        private System.Windows.Forms.RadioButton rdbAtivo;
-        private System.Windows.Forms.Label lblModelo;
         private System.Windows.Forms.GroupBox grpVeiculos;
         private System.Windows.Forms.DataGridView grdVeiculos;
         private System.Windows.Forms.GroupBox grpPesquisa;
@@ -755,5 +768,22 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnLiberar;
+        private System.Windows.Forms.TextBox txtQuilometragemAtual;
+        private System.Windows.Forms.Label lblQuilometragemAtual;
+        private System.Windows.Forms.ComboBox cboModelo;
+        private System.Windows.Forms.ComboBox cboCategoria;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.ComboBox cboMarca;
+        private System.Windows.Forms.TextBox txtQuilometragemInicial;
+        private System.Windows.Forms.Label lblQuilometragemInicial;
+        private System.Windows.Forms.TextBox txtChassi;
+        private System.Windows.Forms.Label lblChassi;
+        private System.Windows.Forms.TextBox txtPlaca;
+        private System.Windows.Forms.Label lblPlaca;
+        private System.Windows.Forms.GroupBox grpStatus;
+        private System.Windows.Forms.RadioButton rdbInativo;
+        private System.Windows.Forms.RadioButton rdbAtivo;
+        private System.Windows.Forms.Label lblModelo;
     }
 }

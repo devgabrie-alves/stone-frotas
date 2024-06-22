@@ -88,16 +88,16 @@
     <Compile Include="View\Cadastro\Veiculo\frmModelo.Designer.cs">
       <DependentUpon>frmModelo.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controle\frmEntrada.cs">
+    <Compile Include="View\Controles\frmEntrada.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Controle\frmEntrada.Designer.cs">
+    <Compile Include="View\Controles\frmEntrada.Designer.cs">
       <DependentUpon>frmEntrada.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controle\frmSaida.cs">
+    <Compile Include="View\Controles\frmSaida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Controle\frmSaida.Designer.cs">
+    <Compile Include="View\Controles\frmSaida.Designer.cs">
       <DependentUpon>frmSaida.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmLogin.cs">
@@ -134,16 +134,16 @@
     <Compile Include="View\Cadastro\Veiculo\frmVeiculo.Designer.cs">
       <DependentUpon>frmVeiculo.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Manutencao\frmEnviarManutencao.cs">
+    <Compile Include="View\Manutencoes\frmEnviarManutencao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Manutencao\frmEnviarManutencao.Designer.cs">
+    <Compile Include="View\Manutencoes\frmEnviarManutencao.Designer.cs">
       <DependentUpon>frmEnviarManutencao.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Manutencao\frmRecepcaoManutencao.cs">
+    <Compile Include="View\Manutencoes\frmRecepcaoManutencao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Manutencao\frmRecepcaoManutencao.Designer.cs">
+    <Compile Include="View\Manutencoes\frmRecepcaoManutencao.Designer.cs">
       <DependentUpon>frmRecepcaoManutencao.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -163,10 +163,10 @@
     <EmbeddedResource Include="View\Cadastro\Veiculo\frmModelo.resx">
       <DependentUpon>frmModelo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controle\frmEntrada.resx">
+    <EmbeddedResource Include="View\Controles\frmEntrada.resx">
       <DependentUpon>frmEntrada.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controle\frmSaida.resx">
+    <EmbeddedResource Include="View\Controles\frmSaida.resx">
       <DependentUpon>frmSaida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmLogin.resx">
@@ -184,10 +184,10 @@
     <EmbeddedResource Include="View\Cadastro\Veiculo\frmVeiculo.resx">
       <DependentUpon>frmVeiculo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Manutencao\frmEnviarManutencao.resx">
+    <EmbeddedResource Include="View\Manutencoes\frmEnviarManutencao.resx">
       <DependentUpon>frmEnviarManutencao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Manutencao\frmRecepcaoManutencao.resx">
+    <EmbeddedResource Include="View\Manutencoes\frmRecepcaoManutencao.resx">
       <DependentUpon>frmRecepcaoManutencao.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -256,6 +256,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Captura de tela 2024-06-19 210626 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_blue_add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\floppy_disks.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scroll2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_left_green.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_right_green.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark_blue_up.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark_blue_down.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

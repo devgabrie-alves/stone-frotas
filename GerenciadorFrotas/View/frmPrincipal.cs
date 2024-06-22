@@ -122,7 +122,7 @@ namespace GerenciadorFrotas
 
         private void mnuEntrada_Click(object sender, EventArgs e)
         {
-            AbrirForm(new frmSaida());
+            AbrirForm(new frmEntrada());
         }
 
         //MENU MANUTENCAO

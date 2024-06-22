@@ -185,6 +185,7 @@ namespace GerenciadorFrotas.View
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             LimparCampos();
+            btnGravar.Text = "Cadastrar";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -195,6 +196,7 @@ namespace GerenciadorFrotas.View
         private void grdDados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             colaborador = new Colaborador();
+            btnGravar.Text = "Atualizar";
             colaborador.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
             colaborador.Consultar();
             PreencherFormulario();

@@ -34,8 +34,8 @@
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
             this.cboMarca = new System.Windows.Forms.ComboBox();
-            this.txtQuilometragem = new System.Windows.Forms.TextBox();
-            this.lblQuilometragem = new System.Windows.Forms.Label();
+            this.txtQuilometragemInicial = new System.Windows.Forms.TextBox();
+            this.lblQuilometragemInicial = new System.Windows.Forms.Label();
             this.txtChassi = new System.Windows.Forms.TextBox();
             this.lblChassi = new System.Windows.Forms.Label();
             this.txtPlaca = new System.Windows.Forms.TextBox();
@@ -45,13 +45,13 @@
             this.rdbAtivo = new System.Windows.Forms.RadioButton();
             this.lblModelo = new System.Windows.Forms.Label();
             this.grpVeiculos = new System.Windows.Forms.GroupBox();
-            this.grdDados = new System.Windows.Forms.DataGridView();
+            this.grdVeiculos = new System.Windows.Forms.DataGridView();
             this.grpPesquisaVeiculo = new System.Windows.Forms.GroupBox();
             this.cboPesquisa = new System.Windows.Forms.ComboBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.grpColaboradores = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grdColaboradores = new System.Windows.Forms.DataGridView();
             this.grpPesquisaColaborador = new System.Windows.Forms.GroupBox();
             this.mskPesquisa = new System.Windows.Forms.MaskedTextBox();
             this.rdbCPF = new System.Windows.Forms.RadioButton();
@@ -75,26 +75,30 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnLiberar = new System.Windows.Forms.Button();
+            this.txtQuilometragemAtual = new System.Windows.Forms.TextBox();
+            this.lblQuilometragemAtual = new System.Windows.Forms.Label();
             this.grpVeículo.SuspendLayout();
             this.grpStatus.SuspendLayout();
             this.grpVeiculos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdDados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdVeiculos)).BeginInit();
             this.grpPesquisaVeiculo.SuspendLayout();
             this.grpColaboradores.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdColaboradores)).BeginInit();
             this.grpPesquisaColaborador.SuspendLayout();
             this.grpColaborador.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpVeículo
             // 
+            this.grpVeículo.Controls.Add(this.txtQuilometragemAtual);
+            this.grpVeículo.Controls.Add(this.lblQuilometragemAtual);
             this.grpVeículo.Controls.Add(this.cboModelo);
             this.grpVeículo.Controls.Add(this.cboCategoria);
             this.grpVeículo.Controls.Add(this.lblCategoria);
             this.grpVeículo.Controls.Add(this.lblMarca);
             this.grpVeículo.Controls.Add(this.cboMarca);
-            this.grpVeículo.Controls.Add(this.txtQuilometragem);
-            this.grpVeículo.Controls.Add(this.lblQuilometragem);
+            this.grpVeículo.Controls.Add(this.txtQuilometragemInicial);
+            this.grpVeículo.Controls.Add(this.lblQuilometragemInicial);
             this.grpVeículo.Controls.Add(this.txtChassi);
             this.grpVeículo.Controls.Add(this.lblChassi);
             this.grpVeículo.Controls.Add(this.txtPlaca);
@@ -123,7 +127,7 @@
             this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategoria.Enabled = false;
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(265, 60);
+            this.cboCategoria.Location = new System.Drawing.Point(458, 61);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(121, 21);
             this.cboCategoria.TabIndex = 16;
@@ -131,7 +135,7 @@
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(207, 65);
+            this.lblCategoria.Location = new System.Drawing.Point(400, 66);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(52, 13);
             this.lblCategoria.TabIndex = 15;
@@ -140,7 +144,7 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(16, 65);
+            this.lblMarca.Location = new System.Drawing.Point(209, 66);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(37, 13);
             this.lblMarca.TabIndex = 13;
@@ -151,28 +155,28 @@
             this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMarca.Enabled = false;
             this.cboMarca.FormattingEnabled = true;
-            this.cboMarca.Location = new System.Drawing.Point(71, 60);
+            this.cboMarca.Location = new System.Drawing.Point(264, 61);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(121, 21);
             this.cboMarca.TabIndex = 12;
             // 
-            // txtQuilometragem
+            // txtQuilometragemInicial
             // 
-            this.txtQuilometragem.Location = new System.Drawing.Point(127, 98);
-            this.txtQuilometragem.MaxLength = 10;
-            this.txtQuilometragem.Name = "txtQuilometragem";
-            this.txtQuilometragem.ReadOnly = true;
-            this.txtQuilometragem.Size = new System.Drawing.Size(97, 20);
-            this.txtQuilometragem.TabIndex = 10;
+            this.txtQuilometragemInicial.Location = new System.Drawing.Point(127, 98);
+            this.txtQuilometragemInicial.MaxLength = 10;
+            this.txtQuilometragemInicial.Name = "txtQuilometragemInicial";
+            this.txtQuilometragemInicial.ReadOnly = true;
+            this.txtQuilometragemInicial.Size = new System.Drawing.Size(67, 20);
+            this.txtQuilometragemInicial.TabIndex = 10;
             // 
-            // lblQuilometragem
+            // lblQuilometragemInicial
             // 
-            this.lblQuilometragem.AutoSize = true;
-            this.lblQuilometragem.Location = new System.Drawing.Point(14, 101);
-            this.lblQuilometragem.Name = "lblQuilometragem";
-            this.lblQuilometragem.Size = new System.Drawing.Size(107, 13);
-            this.lblQuilometragem.TabIndex = 11;
-            this.lblQuilometragem.Text = "Quilometragem Inicial";
+            this.lblQuilometragemInicial.AutoSize = true;
+            this.lblQuilometragemInicial.Location = new System.Drawing.Point(14, 101);
+            this.lblQuilometragemInicial.Name = "lblQuilometragemInicial";
+            this.lblQuilometragemInicial.Size = new System.Drawing.Size(107, 13);
+            this.lblQuilometragemInicial.TabIndex = 11;
+            this.lblQuilometragemInicial.Text = "Quilometragem Inicial";
             // 
             // txtChassi
             // 
@@ -216,9 +220,9 @@
             // 
             this.grpStatus.Controls.Add(this.rdbInativo);
             this.grpStatus.Controls.Add(this.rdbAtivo);
-            this.grpStatus.Location = new System.Drawing.Point(411, 28);
+            this.grpStatus.Location = new System.Drawing.Point(426, 10);
             this.grpStatus.Name = "grpStatus";
-            this.grpStatus.Size = new System.Drawing.Size(149, 50);
+            this.grpStatus.Size = new System.Drawing.Size(149, 38);
             this.grpStatus.TabIndex = 5;
             this.grpStatus.TabStop = false;
             this.grpStatus.Text = "Status";
@@ -256,7 +260,7 @@
             // 
             // grpVeiculos
             // 
-            this.grpVeiculos.Controls.Add(this.grdDados);
+            this.grpVeiculos.Controls.Add(this.grdVeiculos);
             this.grpVeiculos.Location = new System.Drawing.Point(12, 69);
             this.grpVeiculos.Name = "grpVeiculos";
             this.grpVeiculos.Size = new System.Drawing.Size(581, 231);
@@ -264,21 +268,22 @@
             this.grpVeiculos.TabStop = false;
             this.grpVeiculos.Text = "Veículos";
             // 
-            // grdDados
+            // grdVeiculos
             // 
-            this.grdDados.AllowUserToAddRows = false;
-            this.grdDados.AllowUserToDeleteRows = false;
-            this.grdDados.AllowUserToResizeColumns = false;
-            this.grdDados.AllowUserToResizeRows = false;
-            this.grdDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDados.Location = new System.Drawing.Point(7, 20);
-            this.grdDados.MultiSelect = false;
-            this.grdDados.Name = "grdDados";
-            this.grdDados.ReadOnly = true;
-            this.grdDados.RowHeadersVisible = false;
-            this.grdDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdDados.Size = new System.Drawing.Size(568, 205);
-            this.grdDados.TabIndex = 0;
+            this.grdVeiculos.AllowUserToAddRows = false;
+            this.grdVeiculos.AllowUserToDeleteRows = false;
+            this.grdVeiculos.AllowUserToResizeColumns = false;
+            this.grdVeiculos.AllowUserToResizeRows = false;
+            this.grdVeiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdVeiculos.Location = new System.Drawing.Point(7, 20);
+            this.grdVeiculos.MultiSelect = false;
+            this.grdVeiculos.Name = "grdVeiculos";
+            this.grdVeiculos.ReadOnly = true;
+            this.grdVeiculos.RowHeadersVisible = false;
+            this.grdVeiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdVeiculos.Size = new System.Drawing.Size(568, 205);
+            this.grdVeiculos.TabIndex = 0;
+            this.grdVeiculos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVeiculos_CellClick);
             // 
             // grpPesquisaVeiculo
             // 
@@ -319,7 +324,7 @@
             // 
             // grpColaboradores
             // 
-            this.grpColaboradores.Controls.Add(this.dataGridView1);
+            this.grpColaboradores.Controls.Add(this.grdColaboradores);
             this.grpColaboradores.Location = new System.Drawing.Point(599, 73);
             this.grpColaboradores.Name = "grpColaboradores";
             this.grpColaboradores.Size = new System.Drawing.Size(526, 227);
@@ -327,21 +332,22 @@
             this.grpColaboradores.TabStop = false;
             this.grpColaboradores.Text = "Colaboradores";
             // 
-            // dataGridView1
+            // grdColaboradores
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(514, 202);
-            this.dataGridView1.TabIndex = 10;
+            this.grdColaboradores.AllowUserToAddRows = false;
+            this.grdColaboradores.AllowUserToDeleteRows = false;
+            this.grdColaboradores.AllowUserToResizeColumns = false;
+            this.grdColaboradores.AllowUserToResizeRows = false;
+            this.grdColaboradores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdColaboradores.Location = new System.Drawing.Point(6, 19);
+            this.grdColaboradores.MultiSelect = false;
+            this.grdColaboradores.Name = "grdColaboradores";
+            this.grdColaboradores.ReadOnly = true;
+            this.grdColaboradores.RowHeadersVisible = false;
+            this.grdColaboradores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdColaboradores.Size = new System.Drawing.Size(514, 202);
+            this.grdColaboradores.TabIndex = 10;
+            this.grdColaboradores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdColaboradores_CellClick);
             // 
             // grpPesquisaColaborador
             // 
@@ -589,6 +595,24 @@
             this.btnLiberar.UseVisualStyleBackColor = true;
             this.btnLiberar.Click += new System.EventHandler(this.btnLiberar_Click);
             // 
+            // txtQuilometragemAtual
+            // 
+            this.txtQuilometragemAtual.Location = new System.Drawing.Point(127, 63);
+            this.txtQuilometragemAtual.MaxLength = 10;
+            this.txtQuilometragemAtual.Name = "txtQuilometragemAtual";
+            this.txtQuilometragemAtual.ReadOnly = true;
+            this.txtQuilometragemAtual.Size = new System.Drawing.Size(67, 20);
+            this.txtQuilometragemAtual.TabIndex = 18;
+            // 
+            // lblQuilometragemAtual
+            // 
+            this.lblQuilometragemAtual.AutoSize = true;
+            this.lblQuilometragemAtual.Location = new System.Drawing.Point(14, 66);
+            this.lblQuilometragemAtual.Name = "lblQuilometragemAtual";
+            this.lblQuilometragemAtual.Size = new System.Drawing.Size(104, 13);
+            this.lblQuilometragemAtual.TabIndex = 19;
+            this.lblQuilometragemAtual.Text = "Quilometragem Atual";
+            // 
             // frmSaida
             // 
             this.AcceptButton = this.btnLiberar;
@@ -610,16 +634,17 @@
             this.MinimizeBox = false;
             this.Name = "frmSaida";
             this.Text = "frmEntrada";
+            this.Load += new System.EventHandler(this.frmSaida_Load);
             this.grpVeículo.ResumeLayout(false);
             this.grpVeículo.PerformLayout();
             this.grpStatus.ResumeLayout(false);
             this.grpStatus.PerformLayout();
             this.grpVeiculos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdDados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdVeiculos)).EndInit();
             this.grpPesquisaVeiculo.ResumeLayout(false);
             this.grpPesquisaVeiculo.PerformLayout();
             this.grpColaboradores.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdColaboradores)).EndInit();
             this.grpPesquisaColaborador.ResumeLayout(false);
             this.grpPesquisaColaborador.PerformLayout();
             this.grpColaborador.ResumeLayout(false);
@@ -636,8 +661,8 @@
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.ComboBox cboMarca;
-        private System.Windows.Forms.TextBox txtQuilometragem;
-        private System.Windows.Forms.Label lblQuilometragem;
+        private System.Windows.Forms.TextBox txtQuilometragemInicial;
+        private System.Windows.Forms.Label lblQuilometragemInicial;
         private System.Windows.Forms.TextBox txtChassi;
         private System.Windows.Forms.Label lblChassi;
         private System.Windows.Forms.TextBox txtPlaca;
@@ -647,13 +672,13 @@
         private System.Windows.Forms.RadioButton rdbAtivo;
         private System.Windows.Forms.Label lblModelo;
         private System.Windows.Forms.GroupBox grpVeiculos;
-        private System.Windows.Forms.DataGridView grdDados;
+        private System.Windows.Forms.DataGridView grdVeiculos;
         private System.Windows.Forms.GroupBox grpPesquisaVeiculo;
         private System.Windows.Forms.ComboBox cboPesquisa;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.GroupBox grpColaboradores;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grdColaboradores;
         private System.Windows.Forms.GroupBox grpPesquisaColaborador;
         private System.Windows.Forms.MaskedTextBox mskPesquisa;
         private System.Windows.Forms.RadioButton rdbCPF;
@@ -677,5 +702,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnLiberar;
+        private System.Windows.Forms.TextBox txtQuilometragemAtual;
+        private System.Windows.Forms.Label lblQuilometragemAtual;
     }
 }

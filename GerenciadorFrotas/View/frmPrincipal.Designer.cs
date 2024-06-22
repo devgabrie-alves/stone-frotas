@@ -83,8 +83,9 @@
             this.mnuColaborador,
             this.mnuVeiculo,
             this.mnuOficina});
+            this.mnuCadastro.Image = global::GerenciadorFrotas.Properties.Resources.book_blue_add;
             this.mnuCadastro.Name = "mnuCadastro";
-            this.mnuCadastro.Size = new System.Drawing.Size(66, 20);
+            this.mnuCadastro.Size = new System.Drawing.Size(82, 20);
             this.mnuCadastro.Text = "Cadastro";
             // 
             // mnuUsuario
@@ -160,12 +161,14 @@
             this.mnuControle.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuSaida,
             this.mnuEntrada});
+            this.mnuControle.Image = global::GerenciadorFrotas.Properties.Resources.floppy_disks;
             this.mnuControle.Name = "mnuControle";
-            this.mnuControle.Size = new System.Drawing.Size(65, 20);
+            this.mnuControle.Size = new System.Drawing.Size(81, 20);
             this.mnuControle.Text = "Controle";
             // 
             // mnuSaida
             // 
+            this.mnuSaida.Image = global::GerenciadorFrotas.Properties.Resources.arrow_left_green;
             this.mnuSaida.Name = "mnuSaida";
             this.mnuSaida.Size = new System.Drawing.Size(114, 22);
             this.mnuSaida.Text = "Saída";
@@ -173,6 +176,7 @@
             // 
             // mnuEntrada
             // 
+            this.mnuEntrada.Image = global::GerenciadorFrotas.Properties.Resources.arrow_right_green;
             this.mnuEntrada.Name = "mnuEntrada";
             this.mnuEntrada.Size = new System.Drawing.Size(114, 22);
             this.mnuEntrada.Text = "Entrada";
@@ -183,28 +187,32 @@
             this.mnuManutencao.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuEnviar,
             this.mnuRecepcao});
+            this.mnuManutencao.Image = global::GerenciadorFrotas.Properties.Resources.scroll2;
             this.mnuManutencao.Name = "mnuManutencao";
-            this.mnuManutencao.Size = new System.Drawing.Size(86, 20);
+            this.mnuManutencao.Size = new System.Drawing.Size(102, 20);
             this.mnuManutencao.Text = "Manutenção";
             // 
             // mnuEnviar
             // 
+            this.mnuEnviar.Image = global::GerenciadorFrotas.Properties.Resources.bookmark_blue_up;
             this.mnuEnviar.Name = "mnuEnviar";
-            this.mnuEnviar.Size = new System.Drawing.Size(125, 22);
+            this.mnuEnviar.Size = new System.Drawing.Size(180, 22);
             this.mnuEnviar.Text = "Enviar";
             this.mnuEnviar.Click += new System.EventHandler(this.mnuEnviar_Click);
             // 
             // mnuRecepcao
             // 
+            this.mnuRecepcao.Image = global::GerenciadorFrotas.Properties.Resources.bookmark_blue_down;
             this.mnuRecepcao.Name = "mnuRecepcao";
-            this.mnuRecepcao.Size = new System.Drawing.Size(125, 22);
+            this.mnuRecepcao.Size = new System.Drawing.Size(180, 22);
             this.mnuRecepcao.Text = "Recepção";
             this.mnuRecepcao.Click += new System.EventHandler(this.mnuRecepcao_Click);
             // 
             // mnuSair
             // 
+            this.mnuSair.Image = global::GerenciadorFrotas.Properties.Resources.exit;
             this.mnuSair.Name = "mnuSair";
-            this.mnuSair.Size = new System.Drawing.Size(38, 20);
+            this.mnuSair.Size = new System.Drawing.Size(54, 20);
             this.mnuSair.Text = "Sair";
             this.mnuSair.Click += new System.EventHandler(this.mnuSair_Click);
             // 

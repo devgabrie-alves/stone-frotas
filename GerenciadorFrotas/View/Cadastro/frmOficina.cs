@@ -247,6 +247,7 @@ namespace GerenciadorFrotas.View
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             LimparCampos();
+            btnGravar.Text = "Cadastrar";
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
@@ -289,6 +290,7 @@ namespace GerenciadorFrotas.View
             {
                 oficina = new Oficina();
                 oficina.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
+                btnGravar.Text = "Atualizar";
                 oficina.Consultar();
                 PreencherFormulario();
             } catch (Exception ex)

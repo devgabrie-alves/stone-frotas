@@ -105,7 +105,7 @@
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(143, 47);
             this.btnGravar.TabIndex = 5;
-            this.btnGravar.Text = "&Gravar";
+            this.btnGravar.Text = "&Cadastrar";
             this.btnGravar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGravar.UseVisualStyleBackColor = true;
