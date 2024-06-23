@@ -72,6 +72,11 @@ namespace GerenciadorFrotas.View
         {
             ApplicationUtils.LimparFormulario(this);
             dtpDataAdmissao.Value = DateTime.Parse("01/01/1900");
+            rdbNome.Checked = true;
+            rdbCPF.Checked = false;
+            mskPesquisa.Mask = "";
+            mskPesquisa.MaxLength = 100;
+            mskPesquisa.Clear();
             mskPesquisa.Focus();
         }
 

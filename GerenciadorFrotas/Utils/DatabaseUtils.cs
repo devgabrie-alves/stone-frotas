@@ -20,8 +20,8 @@ namespace GerenciadorFrotas.Utils
             Servidor = ConfigurationManager.AppSettings.Get("servidor");
             Banco = ConfigurationManager.AppSettings.Get("banco");
 
-            Conexao = $"Data Source={Servidor};Initial Catalog={Banco};Integrated Security=true;";
-            //Conexao = $"Server=localhost;Database=GerenciadorFrotas;User Id=sa; Password=dev0@local; Encrypt=False";
+            //Conexao = $"Data Source={Servidor};Initial Catalog={Banco};Integrated Security=true;";
+            Conexao = $"Server=localhost;Database=GerenciadorFrotas;User Id=sa; Password=dev0@local; Encrypt=False";
         }
 
         public static DataTable ConsultarCidades(int estadoId)

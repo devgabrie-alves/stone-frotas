@@ -1,4 +1,5 @@
 ﻿using GerenciadorFrotas.Data;
+using GerenciadorFrotas.Model.enums;
 using GerenciadorFrotas.Utils;
 using System;
 using System.Collections.Generic;
@@ -13,8 +14,8 @@ namespace GerenciadorFrotas.Model
         public int Id { get; set; }
         public string Placa { get; set; }
         public string Chassi { get; set; }
-        public decimal QuilometragemInicial { get; set; }
-        public decimal QuilometragemAtual { get; set; }
+        public int QuilometragemInicial { get; set; }
+        public int QuilometragemAtual { get; set; }
         public bool Ativo { get; set; }
         public int UsuarioId { get; set; }
         public int ModeloId { get; set; }
@@ -37,7 +38,7 @@ namespace GerenciadorFrotas.Model
         List<SqlParameter> parameters = new List<SqlParameter>();
         StringBuilder sql;
 
-        public DataTable Consultar(int valorSelecionado, string campoPesquisa)
+        public DataTable Consultar(int valorSelecionado, string campoPesquisa, StatusVeiculoEnum status)
         {
             sql = new StringBuilder();
 
@@ -61,10 +62,11 @@ namespace GerenciadorFrotas.Model
                 sql.Append("INNER JOIN tblModelo mo ON mo.id = v.modeloId \n");
                 sql.Append("INNER JOIN tblMarca ma ON ma.id = mo.marcaId \n");
                 sql.Append("INNER JOIN tblCategoria ca ON ca.id = mo.categoriaId \n");
+                sql.Append(" WHERE 1=1 \n");
 
                 if (Id != 0)
                 {
-                    sql.Append("WHERE v.id = @id \n");
+                    sql.Append("AND v.id = @id \n");
 
                     parameters.Add(new SqlParameter("@id", Id));
                 }
@@ -73,31 +75,31 @@ namespace GerenciadorFrotas.Model
                 {
                     if (valorSelecionado == 1)
                     {
-                        sql.Append("WHERE v.placa LIKE @placa \n");
+                        sql.Append("AND v.placa LIKE @placa \n");
 
                         parameters.Add(new SqlParameter("@placa", DatabaseUtils.LikeFormatter(campoPesquisa)));
 
                     } else if (valorSelecionado == 2)
                     {
-                        sql.Append("WHERE v.chassi LIKE @chassi \n");
+                        sql.Append("AND v.chassi LIKE @chassi \n");
 
                         parameters.Add(new SqlParameter("@chassi", DatabaseUtils.LikeFormatter(campoPesquisa)));
 
                     } else if (valorSelecionado == 3)
                     {
-                        sql.Append("WHERE mo.nome LIKE @nomeModelo \n");
+                        sql.Append("AND mo.nome LIKE @nomeModelo \n");
 
                         parameters.Add(new SqlParameter("@nomeModelo", DatabaseUtils.LikeFormatter(campoPesquisa)));
 
                     } else if (valorSelecionado == 4)
                     {
-                        sql.Append("WHERE ma.nome LIKE @nomeMarca \n");
+                        sql.Append("AND ma.nome LIKE @nomeMarca \n");
 
                         parameters.Add(new SqlParameter("@nomeMarca", DatabaseUtils.LikeFormatter(campoPesquisa)));
 
                     } else if (valorSelecionado == 5)
                     {
-                        sql.Append("WHERE ca.descricao LIKE @descricaoCategoria \n");
+                        sql.Append("AND ca.descricao LIKE @descricaoCategoria \n");
 
                         parameters.Add(new SqlParameter("@descricaoCategoria", DatabaseUtils.LikeFormatter(campoPesquisa)));
                     }
@@ -106,9 +108,18 @@ namespace GerenciadorFrotas.Model
                 //Para comparar placas IGUAIS
                 if (valorSelecionado == 6)
                 {
-                    sql.Append("WHERE v.placa = @placa \n");
+                    sql.Append("AND v.placa = @placa \n");
 
                     parameters.Add(new SqlParameter("@placa", campoPesquisa));
+                }
+
+                if (status == StatusVeiculoEnum.ATIVO)
+                {
+                    sql.Append(" AND v.ativo = 1 \n");
+                
+                }else if (status == StatusVeiculoEnum.INATIVO)
+                {
+                    sql.Append(" AND v.ativo = 0 \n");
                 }
 
                 dataTable = acessoDAO.Consultar(sql.ToString(), parameters);

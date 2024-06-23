@@ -1,4 +1,5 @@
 ﻿using GerenciadorFrotas.Model;
+using GerenciadorFrotas.Model.enums;
 using GerenciadorFrotas.Utils;
 using System;
 using System.Data;
@@ -25,7 +26,7 @@ namespace GerenciadorFrotas.View
         {
             try
             {
-                grdDados.DataSource = veiculo.Consultar(escolhaConsulta, campoPesquisa);
+                grdDados.DataSource = veiculo.Consultar(escolhaConsulta, campoPesquisa, Model.enums.StatusVeiculoEnum.TODOS);
                 grdDados.Columns[0].Visible = false;
                 grdDados.Columns[3].Visible = false;
                 grdDados.Columns[4].Visible = false;
@@ -131,7 +132,7 @@ namespace GerenciadorFrotas.View
                 {
                     Veiculo v = new Veiculo();
                     v.Placa = txtPlaca.Text;
-                    v.Consultar(6, v.Placa);
+                    v.Consultar(6, v.Placa, StatusVeiculoEnum.TODOS);
                     if (veiculo.Id == 0 && v.Id != 0 ||
                         veiculo.Id != 0 && v.Id != 0 && veiculo.Id != v.Id)
                     {
@@ -271,7 +272,7 @@ namespace GerenciadorFrotas.View
             {
                 veiculo = new Veiculo();
                 veiculo.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
-                veiculo.Consultar(-1, "");
+                veiculo.Consultar(-1, "", StatusVeiculoEnum.TODOS);
                 PreencherFormulario();
 
                 btnCadastrar.Text = "Atualizar";
@@ -310,16 +311,6 @@ namespace GerenciadorFrotas.View
             {
                 escolhaPesquisa = 5;
             }
-
-            //Limpar Dados
-            txtPlaca.Clear();
-            txtChassi.Clear();
-            txtQuilometragem.Clear();
-            rdbAtivo.Checked = false;
-            rdbInativo.Checked = true;
-            cboMarca.SelectedIndex = -1;
-            cboCategoria.SelectedIndex = -1;
-            cboModelo.SelectedIndex = -1;
 
             campoPesquisa = txtPesquisa.Text;
             CarregarGrid(escolhaPesquisa, campoPesquisa);

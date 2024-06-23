@@ -53,6 +53,8 @@
     <Compile Include="Model\Colaborador.cs" />
     <Compile Include="Model\Controle.cs" />
     <Compile Include="Model\EnderecoOficina.cs" />
+    <Compile Include="Model\enums\StatusEnum.cs" />
+    <Compile Include="Model\enums\StatusVeiculoEnum.cs" />
     <Compile Include="Model\Manutencao.cs" />
     <Compile Include="Model\Marca.cs" />
     <Compile Include="Model\Modelo.cs" />
@@ -88,16 +90,16 @@
     <Compile Include="View\Cadastro\Veiculo\frmModelo.Designer.cs">
       <DependentUpon>frmModelo.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controles\frmEntrada.cs">
+    <Compile Include="View\Controle\frmEntrada.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Controles\frmEntrada.Designer.cs">
+    <Compile Include="View\Controle\frmEntrada.Designer.cs">
       <DependentUpon>frmEntrada.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controles\frmSaida.cs">
+    <Compile Include="View\Controle\frmSaida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Controles\frmSaida.Designer.cs">
+    <Compile Include="View\Controle\frmSaida.Designer.cs">
       <DependentUpon>frmSaida.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmLogin.cs">
@@ -134,16 +136,16 @@
     <Compile Include="View\Cadastro\Veiculo\frmVeiculo.Designer.cs">
       <DependentUpon>frmVeiculo.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Manutencoes\frmEnviarManutencao.cs">
+    <Compile Include="View\Manutencao\frmEnviarManutencao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Manutencoes\frmEnviarManutencao.Designer.cs">
+    <Compile Include="View\Manutencao\frmEnviarManutencao.Designer.cs">
       <DependentUpon>frmEnviarManutencao.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Manutencoes\frmRecepcaoManutencao.cs">
+    <Compile Include="View\Manutencao\frmRecepcaoManutencao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Manutencoes\frmRecepcaoManutencao.Designer.cs">
+    <Compile Include="View\Manutencao\frmRecepcaoManutencao.Designer.cs">
       <DependentUpon>frmRecepcaoManutencao.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -163,10 +165,10 @@
     <EmbeddedResource Include="View\Cadastro\Veiculo\frmModelo.resx">
       <DependentUpon>frmModelo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controles\frmEntrada.resx">
+    <EmbeddedResource Include="View\Controle\frmEntrada.resx">
       <DependentUpon>frmEntrada.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controles\frmSaida.resx">
+    <EmbeddedResource Include="View\Controle\frmSaida.resx">
       <DependentUpon>frmSaida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmLogin.resx">
@@ -184,10 +186,10 @@
     <EmbeddedResource Include="View\Cadastro\Veiculo\frmVeiculo.resx">
       <DependentUpon>frmVeiculo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Manutencoes\frmEnviarManutencao.resx">
+    <EmbeddedResource Include="View\Manutencao\frmEnviarManutencao.resx">
       <DependentUpon>frmEnviarManutencao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Manutencoes\frmRecepcaoManutencao.resx">
+    <EmbeddedResource Include="View\Manutencao\frmRecepcaoManutencao.resx">
       <DependentUpon>frmRecepcaoManutencao.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

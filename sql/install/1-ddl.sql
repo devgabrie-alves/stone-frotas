@@ -105,8 +105,8 @@ CREATE TABLE tblVeiculo (
 
 CREATE TABLE tblControle (
     id	                INT IDENTITY,
-    dataSaida           DATE,
-    dataEntrada         DATE,
+    dataSaida           DATETIME,
+    dataEntrada         DATETIME,
     totalPercorrido     INT,
     concluido           BIT,
     usuarioId           INT,
@@ -149,11 +149,13 @@ CREATE TABLE tblEnderecoOficina (
     CONSTRAINT fk_enderecoOficina_oficina   FOREIGN KEY(oficinaId) REFERENCES tblOficina
 )
 
---REVISAR
 CREATE TABLE tblManutencao (
     id          INT IDENTITY,
     descricao   VARCHAR(255),
     orcamento   MONEY,
+    dataSaida   DATETIME,
+    dataEntrada DATETIME,
+    concluido   BIT,
     oficinaId   INT,
     veiculoId   INT, 
 

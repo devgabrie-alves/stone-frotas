@@ -1,9 +1,9 @@
 ﻿using GerenciadorFrotas.Model;
+using GerenciadorFrotas.Model.enums;
 using GerenciadorFrotas.Utils;
 using System;
 using System.Data;
-using System.Reflection;
-using System.Text.RegularExpressions;
+using System.Transactions;
 using System.Windows.Forms;
 
 namespace GerenciadorFrotas.View.Controle
@@ -35,7 +35,7 @@ namespace GerenciadorFrotas.View.Controle
         {
             try
             {
-                grdVeiculos.DataSource = veiculo.Consultar(escolhaConsulta, campoPesquisa);
+                grdVeiculos.DataSource = veiculo.Consultar(escolhaConsulta, campoPesquisa, StatusVeiculoEnum.ATIVO);
                 grdVeiculos.Columns[0].Visible = false;
                 grdVeiculos.Columns[3].Visible = false;
                 grdVeiculos.Columns[4].Visible = false;
@@ -57,8 +57,7 @@ namespace GerenciadorFrotas.View.Controle
                 grdVeiculos.Columns[9].Width = 100;
                 grdVeiculos.Columns[10].Width = 100;
 
-            }
-            catch (Exception ex)
+            } catch (Exception ex)
             {
                 MessageBox.Show("Erro-->" + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -86,8 +85,7 @@ namespace GerenciadorFrotas.View.Controle
                 grdColaboradores.Columns[1].Width = 200;
                 grdColaboradores.Columns[2].Width = 100;
                 grdColaboradores.Columns[3].Width = 200;
-            }
-            catch (Exception ex)
+            } catch (Exception ex)
             {
                 MessageBox.Show("Erro --> " + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -118,6 +116,12 @@ namespace GerenciadorFrotas.View.Controle
 
         private void GetFormDefault()
         {
+            rdbNome.Checked = true;
+            rdbCPF.Checked = false;
+            mskPesquisa.Mask = "";
+            mskPesquisa.MaxLength = 100;
+            mskPesquisa.Clear();
+
             rdbAtivo.Checked = false;
             rdbInativo.Checked = false;
             cboPesquisa.SelectedIndex = 0;
@@ -248,6 +252,37 @@ namespace GerenciadorFrotas.View.Controle
             CarregarComboBoxSexo();
         }
 
+        private string ValidarPreenchimento()
+        {
+            string mensagemErro = string.Empty;
+
+            if (veiculo.Id == 0)
+            {
+                mensagemErro = "Por favor, selecione um veículo. \n";
+            }
+
+            if (colaborador.Id == 0)
+            {
+                mensagemErro = "Por favor, selecione um colaborador. \n";
+            }
+
+            return mensagemErro;
+        }
+
+        private void PreencherClasse()
+        {
+            controle.DataSaida = DateTime.Now;
+            controle.Concluido = false;
+            controle.UsuarioId = DatabaseUtils.IdUsuarioLogado;
+            controle.ColaboradorId = colaborador.Id;
+            controle.VeiculoId = veiculo.Id;
+
+            veiculo = new Veiculo();
+            veiculo.Id = controle.VeiculoId;
+            veiculo.Consultar(-1, "", StatusVeiculoEnum.TODOS);
+            veiculo.Ativo = false;
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
@@ -256,11 +291,49 @@ namespace GerenciadorFrotas.View.Controle
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             LimparCampos();
+            btnLiberar.Enabled = false;
         }
 
         private void btnLiberar_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                string mensagemErro = ValidarPreenchimento();
+
+                if (mensagemErro != string.Empty)
+                {
+                    MessageBox.Show(mensagemErro, "Erro de Preenchimento",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                PreencherClasse();
+
+                if (controle.VerificarPendencia())
+                {
+                    MessageBox.Show("O veículo ou colaborador já estão com um controle pendente.", "Erro",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                using (TransactionScope transacao = new TransactionScope())
+                {
+                    controle.Gravar();
+                    veiculo.Gravar();
+
+                    transacao.Complete();
+                }
+
+                MessageBox.Show("Registro feito com sucesso!", "Controle - Saída",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LimparCampos();
+                CarregarGrids();
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Erro-->" + ex.Message, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void frmSaida_Load(object sender, EventArgs e)
@@ -274,8 +347,13 @@ namespace GerenciadorFrotas.View.Controle
         {
             veiculo = new Veiculo();
             veiculo.Id = Convert.ToInt32(grdVeiculos.SelectedRows[0].Cells[0].Value);
-            veiculo.Consultar(-1, "");
+            veiculo.Consultar(-1, "", StatusVeiculoEnum.ATIVO);
             PreencherFormularioVeiculo();
+
+            if (veiculo.Id != 0 && colaborador.Id != 0)
+            {
+                btnLiberar.Enabled = true;
+            }
         }
 
         private void grdColaboradores_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -284,6 +362,71 @@ namespace GerenciadorFrotas.View.Controle
             colaborador.Id = Convert.ToInt32(grdColaboradores.SelectedRows[0].Cells[0].Value);
             colaborador.Consultar();
             PreencherFormularioColaboradores();
+
+            if (veiculo.Id != 0 && colaborador.Id != 0)
+            {
+                btnLiberar.Enabled = true;
+            }
+        }
+
+        private void rdbNome_CheckedChanged(object sender, EventArgs e)
+        {
+            mskPesquisa.Mask = "";
+            mskPesquisa.MaxLength = 100;
+            mskPesquisa.Clear();
+        }
+
+        private void rdbCPF_CheckedChanged(object sender, EventArgs e)
+        {
+            mskPesquisa.Clear();
+            mskPesquisa.Mask = "000,000,000-00";
+        }
+
+        private void mskPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            colaborador = new Colaborador();
+
+            if (rdbNome.Checked)
+            {
+                colaborador.Nome = mskPesquisa.Text;
+                CarregarGridColaboradores();
+
+            } else if (rdbCPF.Checked && mskPesquisa.Text.Length == 14)
+            {
+                colaborador.CPF = mskPesquisa.Text;
+                CarregarGridColaboradores();
+            }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            veiculo = new Veiculo();
+            string campoPesquisa = string.Empty;
+            int escolhaPesquisa = -1;
+
+            if (Convert.ToInt32(cboPesquisa.SelectedValue) == 1)
+            {
+                escolhaPesquisa = 1;
+
+            } else if (Convert.ToInt32(cboPesquisa.SelectedValue) == 2)
+            {
+                escolhaPesquisa = 2;
+
+            } else if (Convert.ToInt32(cboPesquisa.SelectedValue) == 3)
+            {
+                escolhaPesquisa = 3;
+
+            } else if (Convert.ToInt32(cboPesquisa.SelectedValue) == 4)
+            {
+                escolhaPesquisa = 4;
+
+            } else if (Convert.ToInt32(cboPesquisa.SelectedValue) == 5)
+            {
+                escolhaPesquisa = 5;
+            }
+
+            campoPesquisa = txtPesquisa.Text;
+            CarregarGridVeiculos(escolhaPesquisa, campoPesquisa);
         }
     }
 }

@@ -30,6 +30,14 @@
         {
             this.grpControle = new System.Windows.Forms.GroupBox();
             this.grpOficina = new System.Windows.Forms.GroupBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.mskCNPJ = new System.Windows.Forms.MaskedTextBox();
+            this.txtNomeFantasia = new System.Windows.Forms.TextBox();
+            this.lblNomeFantasia = new System.Windows.Forms.Label();
+            this.lblCNPJ = new System.Windows.Forms.Label();
+            this.txtRazaoSocial = new System.Windows.Forms.TextBox();
+            this.lblRazaoSocial = new System.Windows.Forms.Label();
             this.grpControleVeiculo = new System.Windows.Forms.GroupBox();
             this.lblPlaca = new System.Windows.Forms.Label();
             this.cboModelo = new System.Windows.Forms.ComboBox();
@@ -40,24 +48,16 @@
             this.grpDados = new System.Windows.Forms.GroupBox();
             this.grdDados = new System.Windows.Forms.DataGridView();
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
+            this.mskPesquisaOficina = new System.Windows.Forms.MaskedTextBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.lblOficinaDescricao = new System.Windows.Forms.Label();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.lblVeiculoDescricao = new System.Windows.Forms.Label();
             this.cboPesquisaOficina = new System.Windows.Forms.ComboBox();
-            this.txtPesquisaOficina = new System.Windows.Forms.TextBox();
             this.cboPesquisaVeiculo = new System.Windows.Forms.ComboBox();
             this.txtPesquisaVeiculo = new System.Windows.Forms.TextBox();
             this.btnRecepcionar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.btnLimpar = new System.Windows.Forms.Button();
-            this.mskCNPJ = new System.Windows.Forms.MaskedTextBox();
-            this.txtNomeFantasia = new System.Windows.Forms.TextBox();
-            this.lblNomeFantasia = new System.Windows.Forms.Label();
-            this.lblCNPJ = new System.Windows.Forms.Label();
-            this.txtRazaoSocial = new System.Windows.Forms.TextBox();
-            this.lblRazaoSocial = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
             this.grpControle.SuspendLayout();
             this.grpOficina.SuspendLayout();
             this.grpControleVeiculo.SuspendLayout();
@@ -93,6 +93,78 @@
             this.grpOficina.TabIndex = 19;
             this.grpOficina.TabStop = false;
             this.grpOficina.Text = "Oficina";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(265, 48);
+            this.txtEmail.MaxLength = 100;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
+            this.txtEmail.Size = new System.Drawing.Size(274, 20);
+            this.txtEmail.TabIndex = 35;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(224, 51);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.TabIndex = 36;
+            this.lblEmail.Text = "E-mail";
+            // 
+            // mskCNPJ
+            // 
+            this.mskCNPJ.Location = new System.Drawing.Point(96, 45);
+            this.mskCNPJ.Mask = "00,000,000/0000-00";
+            this.mskCNPJ.Name = "mskCNPJ";
+            this.mskCNPJ.ReadOnly = true;
+            this.mskCNPJ.Size = new System.Drawing.Size(115, 20);
+            this.mskCNPJ.TabIndex = 34;
+            // 
+            // txtNomeFantasia
+            // 
+            this.txtNomeFantasia.Location = new System.Drawing.Point(353, 19);
+            this.txtNomeFantasia.MaxLength = 50;
+            this.txtNomeFantasia.Name = "txtNomeFantasia";
+            this.txtNomeFantasia.ReadOnly = true;
+            this.txtNomeFantasia.Size = new System.Drawing.Size(186, 20);
+            this.txtNomeFantasia.TabIndex = 32;
+            // 
+            // lblNomeFantasia
+            // 
+            this.lblNomeFantasia.AutoSize = true;
+            this.lblNomeFantasia.Location = new System.Drawing.Point(269, 22);
+            this.lblNomeFantasia.Name = "lblNomeFantasia";
+            this.lblNomeFantasia.Size = new System.Drawing.Size(78, 13);
+            this.lblNomeFantasia.TabIndex = 33;
+            this.lblNomeFantasia.Text = "Nome Fantasia";
+            // 
+            // lblCNPJ
+            // 
+            this.lblCNPJ.AutoSize = true;
+            this.lblCNPJ.Location = new System.Drawing.Point(40, 48);
+            this.lblCNPJ.Name = "lblCNPJ";
+            this.lblCNPJ.Size = new System.Drawing.Size(34, 13);
+            this.lblCNPJ.TabIndex = 31;
+            this.lblCNPJ.Text = "CNPJ";
+            // 
+            // txtRazaoSocial
+            // 
+            this.txtRazaoSocial.Location = new System.Drawing.Point(96, 19);
+            this.txtRazaoSocial.MaxLength = 50;
+            this.txtRazaoSocial.Name = "txtRazaoSocial";
+            this.txtRazaoSocial.ReadOnly = true;
+            this.txtRazaoSocial.Size = new System.Drawing.Size(166, 20);
+            this.txtRazaoSocial.TabIndex = 29;
+            // 
+            // lblRazaoSocial
+            // 
+            this.lblRazaoSocial.AutoSize = true;
+            this.lblRazaoSocial.Location = new System.Drawing.Point(12, 22);
+            this.lblRazaoSocial.Name = "lblRazaoSocial";
+            this.lblRazaoSocial.Size = new System.Drawing.Size(70, 13);
+            this.lblRazaoSocial.TabIndex = 30;
+            this.lblRazaoSocial.Text = "Razão Social";
             // 
             // grpControleVeiculo
             // 
@@ -191,15 +263,16 @@
             this.grdDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdDados.Size = new System.Drawing.Size(568, 170);
             this.grdDados.TabIndex = 0;
+            this.grdDados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDados_CellClick);
             // 
             // grpPesquisa
             // 
+            this.grpPesquisa.Controls.Add(this.mskPesquisaOficina);
             this.grpPesquisa.Controls.Add(this.btnPesquisar);
             this.grpPesquisa.Controls.Add(this.lblOficinaDescricao);
             this.grpPesquisa.Controls.Add(this.btnLimpar);
             this.grpPesquisa.Controls.Add(this.lblVeiculoDescricao);
             this.grpPesquisa.Controls.Add(this.cboPesquisaOficina);
-            this.grpPesquisa.Controls.Add(this.txtPesquisaOficina);
             this.grpPesquisa.Controls.Add(this.cboPesquisaVeiculo);
             this.grpPesquisa.Controls.Add(this.txtPesquisaVeiculo);
             this.grpPesquisa.Location = new System.Drawing.Point(12, 7);
@@ -209,14 +282,44 @@
             this.grpPesquisa.TabStop = false;
             this.grpPesquisa.Text = "Pesquisa";
             // 
+            // mskPesquisaOficina
+            // 
+            this.mskPesquisaOficina.Location = new System.Drawing.Point(118, 50);
+            this.mskPesquisaOficina.Name = "mskPesquisaOficina";
+            this.mskPesquisaOficina.Size = new System.Drawing.Size(332, 20);
+            this.mskPesquisaOficina.TabIndex = 24;
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(285, 81);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(101, 39);
+            this.btnPesquisar.TabIndex = 23;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
             // lblOficinaDescricao
             // 
             this.lblOficinaDescricao.AutoSize = true;
             this.lblOficinaDescricao.Location = new System.Drawing.Point(456, 52);
             this.lblOficinaDescricao.Name = "lblOficinaDescricao";
-            this.lblOficinaDescricao.Size = new System.Drawing.Size(64, 13);
+            this.lblOficinaDescricao.Size = new System.Drawing.Size(40, 13);
             this.lblOficinaDescricao.TabIndex = 6;
-            this.lblOficinaDescricao.Text = "Colaborador";
+            this.lblOficinaDescricao.Text = "Oficina";
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Image = global::GerenciadorFrotas.Properties.Resources.eraser2;
+            this.btnLimpar.Location = new System.Drawing.Point(168, 81);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(99, 39);
+            this.btnLimpar.TabIndex = 22;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // lblVeiculoDescricao
             // 
@@ -236,13 +339,6 @@
             this.cboPesquisaOficina.Size = new System.Drawing.Size(94, 21);
             this.cboPesquisaOficina.TabIndex = 4;
             // 
-            // txtPesquisaOficina
-            // 
-            this.txtPesquisaOficina.Location = new System.Drawing.Point(117, 49);
-            this.txtPesquisaOficina.Name = "txtPesquisaOficina";
-            this.txtPesquisaOficina.Size = new System.Drawing.Size(333, 20);
-            this.txtPesquisaOficina.TabIndex = 3;
-            // 
             // cboPesquisaVeiculo
             // 
             this.cboPesquisaVeiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -261,6 +357,7 @@
             // 
             // btnRecepcionar
             // 
+            this.btnRecepcionar.Enabled = false;
             this.btnRecepcionar.Image = global::GerenciadorFrotas.Properties.Resources.check;
             this.btnRecepcionar.Location = new System.Drawing.Point(444, 549);
             this.btnRecepcionar.Name = "btnRecepcionar";
@@ -270,6 +367,7 @@
             this.btnRecepcionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRecepcionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRecepcionar.UseVisualStyleBackColor = true;
+            this.btnRecepcionar.Click += new System.EventHandler(this.btnRecepcionar_Click);
             // 
             // btnCancelar
             // 
@@ -282,102 +380,7 @@
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Image = global::GerenciadorFrotas.Properties.Resources.eraser2;
-            this.btnPesquisar.Location = new System.Drawing.Point(285, 81);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(101, 39);
-            this.btnPesquisar.TabIndex = 23;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.Image = global::GerenciadorFrotas.Properties.Resources.eraser2;
-            this.btnLimpar.Location = new System.Drawing.Point(168, 81);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(99, 39);
-            this.btnLimpar.TabIndex = 22;
-            this.btnLimpar.Text = "Limpar";
-            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLimpar.UseVisualStyleBackColor = true;
-            // 
-            // mskCNPJ
-            // 
-            this.mskCNPJ.Location = new System.Drawing.Point(96, 45);
-            this.mskCNPJ.Mask = "00,000,000/0000-00";
-            this.mskCNPJ.Name = "mskCNPJ";
-            this.mskCNPJ.ReadOnly = true;
-            this.mskCNPJ.Size = new System.Drawing.Size(115, 20);
-            this.mskCNPJ.TabIndex = 34;
-            // 
-            // txtNomeFantasia
-            // 
-            this.txtNomeFantasia.Location = new System.Drawing.Point(353, 19);
-            this.txtNomeFantasia.MaxLength = 50;
-            this.txtNomeFantasia.Name = "txtNomeFantasia";
-            this.txtNomeFantasia.ReadOnly = true;
-            this.txtNomeFantasia.Size = new System.Drawing.Size(186, 20);
-            this.txtNomeFantasia.TabIndex = 32;
-            // 
-            // lblNomeFantasia
-            // 
-            this.lblNomeFantasia.AutoSize = true;
-            this.lblNomeFantasia.Location = new System.Drawing.Point(269, 22);
-            this.lblNomeFantasia.Name = "lblNomeFantasia";
-            this.lblNomeFantasia.Size = new System.Drawing.Size(78, 13);
-            this.lblNomeFantasia.TabIndex = 33;
-            this.lblNomeFantasia.Text = "Nome Fantasia";
-            // 
-            // lblCNPJ
-            // 
-            this.lblCNPJ.AutoSize = true;
-            this.lblCNPJ.Location = new System.Drawing.Point(40, 48);
-            this.lblCNPJ.Name = "lblCNPJ";
-            this.lblCNPJ.Size = new System.Drawing.Size(34, 13);
-            this.lblCNPJ.TabIndex = 31;
-            this.lblCNPJ.Text = "CNPJ";
-            // 
-            // txtRazaoSocial
-            // 
-            this.txtRazaoSocial.Location = new System.Drawing.Point(96, 19);
-            this.txtRazaoSocial.MaxLength = 50;
-            this.txtRazaoSocial.Name = "txtRazaoSocial";
-            this.txtRazaoSocial.ReadOnly = true;
-            this.txtRazaoSocial.Size = new System.Drawing.Size(166, 20);
-            this.txtRazaoSocial.TabIndex = 29;
-            // 
-            // lblRazaoSocial
-            // 
-            this.lblRazaoSocial.AutoSize = true;
-            this.lblRazaoSocial.Location = new System.Drawing.Point(12, 22);
-            this.lblRazaoSocial.Name = "lblRazaoSocial";
-            this.lblRazaoSocial.Size = new System.Drawing.Size(70, 13);
-            this.lblRazaoSocial.TabIndex = 30;
-            this.lblRazaoSocial.Text = "Razão Social";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(265, 48);
-            this.txtEmail.MaxLength = 100;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.ReadOnly = true;
-            this.txtEmail.Size = new System.Drawing.Size(274, 20);
-            this.txtEmail.TabIndex = 35;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(224, 51);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(35, 13);
-            this.lblEmail.TabIndex = 36;
-            this.lblEmail.Text = "E-mail";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmRecepcaoManutencao
             // 
@@ -389,8 +392,13 @@
             this.Controls.Add(this.grpControle);
             this.Controls.Add(this.grpDados);
             this.Controls.Add(this.grpPesquisa);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmRecepcaoManutencao";
-            this.Text = "frmRecepcao";
+            this.ShowIcon = false;
+            this.Text = "Manutenção - Recepção";
+            this.Load += new System.EventHandler(this.frmRecepcaoManutencao_Load);
             this.grpControle.ResumeLayout(false);
             this.grpOficina.ResumeLayout(false);
             this.grpOficina.PerformLayout();
@@ -425,7 +433,6 @@
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Label lblVeiculoDescricao;
         private System.Windows.Forms.ComboBox cboPesquisaOficina;
-        private System.Windows.Forms.TextBox txtPesquisaOficina;
         private System.Windows.Forms.ComboBox cboPesquisaVeiculo;
         private System.Windows.Forms.TextBox txtPesquisaVeiculo;
         private System.Windows.Forms.MaskedTextBox mskCNPJ;
@@ -436,5 +443,6 @@
         private System.Windows.Forms.Label lblRazaoSocial;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.MaskedTextBox mskPesquisaOficina;
     }
 }

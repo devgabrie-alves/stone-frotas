@@ -168,17 +168,17 @@
             // 
             // mnuSaida
             // 
-            this.mnuSaida.Image = global::GerenciadorFrotas.Properties.Resources.arrow_left_green;
+            this.mnuSaida.Image = global::GerenciadorFrotas.Properties.Resources.arrow_right_green;
             this.mnuSaida.Name = "mnuSaida";
-            this.mnuSaida.Size = new System.Drawing.Size(114, 22);
+            this.mnuSaida.Size = new System.Drawing.Size(180, 22);
             this.mnuSaida.Text = "Saída";
             this.mnuSaida.Click += new System.EventHandler(this.mnuSaida_Click);
             // 
             // mnuEntrada
             // 
-            this.mnuEntrada.Image = global::GerenciadorFrotas.Properties.Resources.arrow_right_green;
+            this.mnuEntrada.Image = global::GerenciadorFrotas.Properties.Resources.arrow_left_green;
             this.mnuEntrada.Name = "mnuEntrada";
-            this.mnuEntrada.Size = new System.Drawing.Size(114, 22);
+            this.mnuEntrada.Size = new System.Drawing.Size(180, 22);
             this.mnuEntrada.Text = "Entrada";
             this.mnuEntrada.Click += new System.EventHandler(this.mnuEntrada_Click);
             // 
@@ -196,7 +196,7 @@
             // 
             this.mnuEnviar.Image = global::GerenciadorFrotas.Properties.Resources.bookmark_blue_up;
             this.mnuEnviar.Name = "mnuEnviar";
-            this.mnuEnviar.Size = new System.Drawing.Size(180, 22);
+            this.mnuEnviar.Size = new System.Drawing.Size(125, 22);
             this.mnuEnviar.Text = "Enviar";
             this.mnuEnviar.Click += new System.EventHandler(this.mnuEnviar_Click);
             // 
@@ -204,7 +204,7 @@
             // 
             this.mnuRecepcao.Image = global::GerenciadorFrotas.Properties.Resources.bookmark_blue_down;
             this.mnuRecepcao.Name = "mnuRecepcao";
-            this.mnuRecepcao.Size = new System.Drawing.Size(180, 22);
+            this.mnuRecepcao.Size = new System.Drawing.Size(125, 22);
             this.mnuRecepcao.Text = "Recepção";
             this.mnuRecepcao.Click += new System.EventHandler(this.mnuRecepcao_Click);
             // 

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.grpVeículo = new System.Windows.Forms.GroupBox();
+            this.txtQuilometragemAtual = new System.Windows.Forms.TextBox();
+            this.lblQuilometragemAtual = new System.Windows.Forms.Label();
             this.cboModelo = new System.Windows.Forms.ComboBox();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.lblCategoria = new System.Windows.Forms.Label();
@@ -75,8 +77,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnLiberar = new System.Windows.Forms.Button();
-            this.txtQuilometragemAtual = new System.Windows.Forms.TextBox();
-            this.lblQuilometragemAtual = new System.Windows.Forms.Label();
             this.grpVeículo.SuspendLayout();
             this.grpStatus.SuspendLayout();
             this.grpVeiculos.SuspendLayout();
@@ -111,6 +111,24 @@
             this.grpVeículo.TabIndex = 17;
             this.grpVeículo.TabStop = false;
             this.grpVeículo.Text = "Veículo";
+            // 
+            // txtQuilometragemAtual
+            // 
+            this.txtQuilometragemAtual.Location = new System.Drawing.Point(127, 63);
+            this.txtQuilometragemAtual.MaxLength = 10;
+            this.txtQuilometragemAtual.Name = "txtQuilometragemAtual";
+            this.txtQuilometragemAtual.ReadOnly = true;
+            this.txtQuilometragemAtual.Size = new System.Drawing.Size(67, 20);
+            this.txtQuilometragemAtual.TabIndex = 18;
+            // 
+            // lblQuilometragemAtual
+            // 
+            this.lblQuilometragemAtual.AutoSize = true;
+            this.lblQuilometragemAtual.Location = new System.Drawing.Point(14, 66);
+            this.lblQuilometragemAtual.Name = "lblQuilometragemAtual";
+            this.lblQuilometragemAtual.Size = new System.Drawing.Size(104, 13);
+            this.lblQuilometragemAtual.TabIndex = 19;
+            this.lblQuilometragemAtual.Text = "Quilometragem Atual";
             // 
             // cboModelo
             // 
@@ -314,6 +332,7 @@
             this.btnPesquisar.TabIndex = 1;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // txtPesquisa
             // 
@@ -368,6 +387,7 @@
             this.mskPesquisa.Name = "mskPesquisa";
             this.mskPesquisa.Size = new System.Drawing.Size(308, 20);
             this.mskPesquisa.TabIndex = 3;
+            this.mskPesquisa.TextChanged += new System.EventHandler(this.mskPesquisa_TextChanged);
             // 
             // rdbCPF
             // 
@@ -378,6 +398,7 @@
             this.rdbCPF.TabIndex = 2;
             this.rdbCPF.Text = "CPF";
             this.rdbCPF.UseVisualStyleBackColor = true;
+            this.rdbCPF.CheckedChanged += new System.EventHandler(this.rdbCPF_CheckedChanged);
             // 
             // rdbNome
             // 
@@ -390,6 +411,7 @@
             this.rdbNome.TabStop = true;
             this.rdbNome.Text = "Nome";
             this.rdbNome.UseVisualStyleBackColor = true;
+            this.rdbNome.CheckedChanged += new System.EventHandler(this.rdbNome_CheckedChanged);
             // 
             // lblPesquisa
             // 
@@ -583,6 +605,7 @@
             // 
             // btnLiberar
             // 
+            this.btnLiberar.Enabled = false;
             this.btnLiberar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLiberar.Image = global::GerenciadorFrotas.Properties.Resources.check;
             this.btnLiberar.Location = new System.Drawing.Point(716, 443);
@@ -594,24 +617,6 @@
             this.btnLiberar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLiberar.UseVisualStyleBackColor = true;
             this.btnLiberar.Click += new System.EventHandler(this.btnLiberar_Click);
-            // 
-            // txtQuilometragemAtual
-            // 
-            this.txtQuilometragemAtual.Location = new System.Drawing.Point(127, 63);
-            this.txtQuilometragemAtual.MaxLength = 10;
-            this.txtQuilometragemAtual.Name = "txtQuilometragemAtual";
-            this.txtQuilometragemAtual.ReadOnly = true;
-            this.txtQuilometragemAtual.Size = new System.Drawing.Size(67, 20);
-            this.txtQuilometragemAtual.TabIndex = 18;
-            // 
-            // lblQuilometragemAtual
-            // 
-            this.lblQuilometragemAtual.AutoSize = true;
-            this.lblQuilometragemAtual.Location = new System.Drawing.Point(14, 66);
-            this.lblQuilometragemAtual.Name = "lblQuilometragemAtual";
-            this.lblQuilometragemAtual.Size = new System.Drawing.Size(104, 13);
-            this.lblQuilometragemAtual.TabIndex = 19;
-            this.lblQuilometragemAtual.Text = "Quilometragem Atual";
             // 
             // frmSaida
             // 
@@ -633,7 +638,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSaida";
-            this.Text = "frmEntrada";
+            this.ShowIcon = false;
+            this.Text = "Saída";
             this.Load += new System.EventHandler(this.frmSaida_Load);
             this.grpVeículo.ResumeLayout(false);
             this.grpVeículo.PerformLayout();
