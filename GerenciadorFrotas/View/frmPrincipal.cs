@@ -135,5 +135,10 @@ namespace GerenciadorFrotas
         {
             AbrirForm(new frmRecepcaoManutencao());
         }
+
+        private void mnuControleConsulta_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmConsultaControle());
+        }
     }
 }

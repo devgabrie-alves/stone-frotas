@@ -255,6 +255,7 @@ namespace GerenciadorFrotas.View.Controle
 
                 controle.TotalPercorrido = (Convert.ToInt32(txtQuilometragem.Text) - veiculo.QuilometragemAtual);
                 veiculo.QuilometragemAtual += controle.TotalPercorrido;
+                veiculo.Ativo = true;
 
                 using (TransactionScope transacao = new TransactionScope())
                 {

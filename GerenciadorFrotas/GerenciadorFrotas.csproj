@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -89,6 +93,12 @@
     </Compile>
     <Compile Include="View\Cadastro\Veiculo\frmModelo.Designer.cs">
       <DependentUpon>frmModelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controle\frmConsultaControle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Controle\frmConsultaControle.Designer.cs">
+      <DependentUpon>frmConsultaControle.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Controle\frmEntrada.cs">
       <SubType>Form</SubType>
@@ -165,6 +175,9 @@
     <EmbeddedResource Include="View\Cadastro\Veiculo\frmModelo.resx">
       <DependentUpon>frmModelo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Controle\frmConsultaControle.resx">
+      <DependentUpon>frmConsultaControle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Controle\frmEntrada.resx">
       <DependentUpon>frmEntrada.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +205,7 @@
     <EmbeddedResource Include="View\Manutencao\frmRecepcaoManutencao.resx">
       <DependentUpon>frmRecepcaoManutencao.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -282,6 +296,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bookmark_blue_down.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microsoft_excel_icon_132212.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microsoft_excel_icon_132212.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier-1_icon-icons.com_56924.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

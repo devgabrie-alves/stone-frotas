@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GerenciadorFrotas.Model
 {
@@ -187,6 +188,39 @@ namespace GerenciadorFrotas.Model
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        public bool VerificaManutencaoOuControle()
+        {
+            sql = new StringBuilder();
+            parameters.Clear();
+
+            try
+            {
+                parameters.Clear();
+
+                sql.Append("SELECT 1 FROM tblVeiculo \n");
+                sql.Append(" WHERE id in  \n");
+                sql.Append("  (select veiculoId from tblManutencao WHERE concluido = 0) \n");
+                sql.Append(" OR id in \n");
+                sql.Append("  (select veiculoId from tblControle WHERE concluido = 0) \n");
+
+                dataTable = acessoDAO.Consultar(sql.ToString(), parameters);
+
+                if (dataTable.Rows.Count > 0)
+                {
+                    return true;
+
+                } else
+                {
+                    return false;
+                }
+
+            } catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
         }
     }
 }

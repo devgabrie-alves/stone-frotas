@@ -42,6 +42,7 @@
             this.mnuCategoria = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOficina = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuControle = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuControleConsulta = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSaida = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEntrada = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuManutencao = new System.Windows.Forms.ToolStripMenuItem();
@@ -159,12 +160,21 @@
             // mnuControle
             // 
             this.mnuControle.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuControleConsulta,
             this.mnuSaida,
             this.mnuEntrada});
             this.mnuControle.Image = global::GerenciadorFrotas.Properties.Resources.floppy_disks;
             this.mnuControle.Name = "mnuControle";
             this.mnuControle.Size = new System.Drawing.Size(81, 20);
             this.mnuControle.Text = "Controle";
+            // 
+            // mnuControleConsulta
+            // 
+            this.mnuControleConsulta.Image = global::GerenciadorFrotas.Properties.Resources.magnifier_1_icon_icons_com_56924;
+            this.mnuControleConsulta.Name = "mnuControleConsulta";
+            this.mnuControleConsulta.Size = new System.Drawing.Size(180, 22);
+            this.mnuControleConsulta.Text = "Consulta";
+            this.mnuControleConsulta.Click += new System.EventHandler(this.mnuControleConsulta_Click);
             // 
             // mnuSaida
             // 
@@ -324,6 +334,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuManutencao;
         private System.Windows.Forms.ToolStripMenuItem mnuEnviar;
         private System.Windows.Forms.ToolStripMenuItem mnuRecepcao;
+        private System.Windows.Forms.ToolStripMenuItem mnuControleConsulta;
     }
 }
 

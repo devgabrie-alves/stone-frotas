@@ -111,6 +111,10 @@ namespace GerenciadorFrotas.View
             cboPesquisa.SelectedIndex = 0;
             cboModelo.Enabled = false;
             cboModelo.DataSource = null;
+            txtQuilometragem.Enabled = true;
+            rdbAtivo.Enabled = true;
+            rdbInativo.Enabled = true;
+
             txtPesquisa.Focus();
         }
 
@@ -273,6 +277,14 @@ namespace GerenciadorFrotas.View
                 veiculo = new Veiculo();
                 veiculo.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
                 veiculo.Consultar(-1, "", StatusVeiculoEnum.TODOS);
+
+                if(veiculo.VerificaManutencaoOuControle())
+                {
+                    txtQuilometragem.Enabled = false;
+                    rdbAtivo.Enabled = false;
+                    rdbInativo.Enabled = false;
+                }
+
                 PreencherFormulario();
 
                 btnCadastrar.Text = "Atualizar";

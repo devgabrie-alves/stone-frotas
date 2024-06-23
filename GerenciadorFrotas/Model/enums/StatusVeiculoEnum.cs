@@ -8,8 +8,8 @@ namespace GerenciadorFrotas.Model.enums
 {
     public enum StatusVeiculoEnum
     {
-        TODOS = 1,
-        ATIVO = 2,
-        INATIVO = 3
+        TODOS,
+        ATIVO,
+        INATIVO
     }
 }
