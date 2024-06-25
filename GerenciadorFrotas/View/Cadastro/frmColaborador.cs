@@ -200,11 +200,25 @@ namespace GerenciadorFrotas.View
 
         private void grdDados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            colaborador = new Colaborador();
-            btnGravar.Text = "Atualizar";
-            colaborador.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
-            colaborador.Consultar();
-            PreencherFormulario();
+            if (grdDados.Rows.Count == 0)
+            {
+                return;
+            }
+
+            try
+            {
+                colaborador = new Colaborador();
+                btnGravar.Text = "Atualizar";
+                colaborador.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
+                colaborador.Consultar();
+                PreencherFormulario();
+            
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Erro-->" + ex.Message, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void btnGravar_Click(object sender, EventArgs e)

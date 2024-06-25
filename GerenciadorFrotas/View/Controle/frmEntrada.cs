@@ -189,12 +189,26 @@ namespace GerenciadorFrotas.View.Controle
 
         private void grdDados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            controle = new Model.Controle();
-            controle.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
-            controle.Consultar(StatusEnum.PENDENTE, veiculo, colaborador);
-            PreencherFormulario();
+            if (grdDados.Rows.Count == 0)
+            {
+                return;
+            }
 
-            btnRecepcionar.Enabled = true;
+            try
+            {
+                controle = new Model.Controle();
+                controle.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
+                controle.Consultar(StatusEnum.PENDENTE, veiculo, colaborador);
+                PreencherFormulario();
+
+                btnRecepcionar.Enabled = true;
+            
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Erro-->" + ex.Message, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)

@@ -227,12 +227,26 @@ namespace GerenciadorFrotas.View.Manutencao
 
         private void grdDados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            manutencao = new Model.Manutencao();
-            manutencao.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
-            manutencao.Consultar(StatusEnum.PENDENTE, veiculo, oficina);
-            PreencherFormulario();
+            if (grdDados.Rows.Count == 0)
+            {
+                return;
+            }
 
-            btnRecepcionar.Enabled = true;
+            try
+            {
+                manutencao = new Model.Manutencao();
+                manutencao.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
+                manutencao.Consultar(StatusEnum.PENDENTE, veiculo, oficina);
+                PreencherFormulario();
+
+                btnRecepcionar.Enabled = true;
+            
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Erro-->" + ex.Message, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void btnRecepcionar_Click(object sender, EventArgs e)

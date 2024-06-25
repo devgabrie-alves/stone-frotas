@@ -345,27 +345,53 @@ namespace GerenciadorFrotas.View.Controle
 
         private void grdVeiculos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            veiculo = new Veiculo();
-            veiculo.Id = Convert.ToInt32(grdVeiculos.SelectedRows[0].Cells[0].Value);
-            veiculo.Consultar(-1, "", StatusVeiculoEnum.ATIVO);
-            PreencherFormularioVeiculo();
-
-            if (veiculo.Id != 0 && colaborador.Id != 0)
+            if (grdVeiculos.Rows.Count == 0)
             {
-                btnLiberar.Enabled = true;
+                return;
+            }
+
+            try
+            {
+                veiculo = new Veiculo();
+                veiculo.Id = Convert.ToInt32(grdVeiculos.SelectedRows[0].Cells[0].Value);
+                veiculo.Consultar(-1, "", StatusVeiculoEnum.ATIVO);
+                PreencherFormularioVeiculo();
+
+                if (veiculo.Id != 0 && colaborador.Id != 0)
+                {
+                    btnLiberar.Enabled = true;
+                }
+            
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Erro-->" + ex.Message, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void grdColaboradores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            colaborador = new Colaborador();
-            colaborador.Id = Convert.ToInt32(grdColaboradores.SelectedRows[0].Cells[0].Value);
-            colaborador.Consultar();
-            PreencherFormularioColaboradores();
-
-            if (veiculo.Id != 0 && colaborador.Id != 0)
+            if (grdColaboradores.Rows.Count == 0)
             {
-                btnLiberar.Enabled = true;
+                return;
+            }
+
+            try
+            {
+                colaborador = new Colaborador();
+                colaborador.Id = Convert.ToInt32(grdColaboradores.SelectedRows[0].Cells[0].Value);
+                colaborador.Consultar();
+                PreencherFormularioColaboradores();
+
+                if (veiculo.Id != 0 && colaborador.Id != 0)
+                {
+                    btnLiberar.Enabled = true;
+                }
+            
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Erro-->" + ex.Message, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

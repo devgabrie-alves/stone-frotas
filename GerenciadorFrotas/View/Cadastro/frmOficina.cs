@@ -286,6 +286,11 @@ namespace GerenciadorFrotas.View
 
         private void grdDados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (grdDados.Rows.Count == 0)
+            {
+                return;
+            }
+
             try
             {
                 oficina = new Oficina();

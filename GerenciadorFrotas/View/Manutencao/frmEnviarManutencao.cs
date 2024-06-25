@@ -273,18 +273,45 @@ namespace GerenciadorFrotas.View.Manutencao
 
         private void grdVeiculos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            veiculo = new Veiculo();
-            veiculo.Id = Convert.ToInt32(grdVeiculos.SelectedRows[0].Cells[0].Value);
-            veiculo.Consultar(-1, "", StatusVeiculoEnum.ATIVO);
-            PreencherFormularioVeiculo();
+
+            if (grdVeiculos.Rows.Count == 0)
+            {
+                return;
+            }
+
+            try
+            {
+                veiculo = new Veiculo();
+                veiculo.Id = Convert.ToInt32(grdVeiculos.SelectedRows[0].Cells[0].Value);
+                veiculo.Consultar(-1, "", StatusVeiculoEnum.ATIVO);
+                PreencherFormularioVeiculo();
+
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Erro-->" + ex.Message, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void grdOficinas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            oficina = new Oficina();
-            oficina.Id = Convert.ToInt32(grdOficinas.SelectedRows[0].Cells[0].Value);
-            oficina.Consultar();
-            PreencherFormularioOficinas();
+            if (grdOficinas.Rows.Count == 0)
+            {
+                return;
+            }
+
+            try
+            {
+                oficina = new Oficina();
+                oficina.Id = Convert.ToInt32(grdOficinas.SelectedRows[0].Cells[0].Value);
+                oficina.Consultar();
+                PreencherFormularioOficinas();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro-->" + ex.Message, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnLiberar_Click(object sender, EventArgs e)

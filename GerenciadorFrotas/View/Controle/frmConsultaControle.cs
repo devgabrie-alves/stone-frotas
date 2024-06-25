@@ -229,5 +229,13 @@ namespace GerenciadorFrotas.View.Controle
 
             CarregarGrid(radioButton);
         }
+
+        private void grdDados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (grdDados.Rows.Count == 0)
+            {
+                return;
+            }
+        }
     }
 }

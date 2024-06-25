@@ -144,21 +144,11 @@ namespace GerenciadorFrotas.View
 
         private void grdDados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            if (grdDados.Rows.Count == 0)
             {
-                usuario = new Usuario();
-                usuario.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
-                usuario.Consultar();
-                PreencherFormulario();
-            } catch (Exception ex)
-            {
-                MessageBox.Show("Erro-->" + ex.Message, "Erro",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-        }
 
-        private void grdDados_CellClick_1(object sender, DataGridViewCellEventArgs e)
-        {
             try
             {
                 usuario = new Usuario();
