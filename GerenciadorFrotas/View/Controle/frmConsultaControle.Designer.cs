@@ -240,7 +240,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmConsultaControle";
-            this.Text = "Consulta de Controles";
+            this.Text = "Controle - Consulta";
             this.Load += new System.EventHandler(this.frmConsultaControle_Load);
             this.grpPesquisa.ResumeLayout(false);
             this.grpPesquisa.PerformLayout();

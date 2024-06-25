@@ -639,7 +639,7 @@
             this.MinimizeBox = false;
             this.Name = "frmSaida";
             this.ShowIcon = false;
-            this.Text = "Saída";
+            this.Text = "Controle - Saída";
             this.Load += new System.EventHandler(this.frmSaida_Load);
             this.grpVeículo.ResumeLayout(false);
             this.grpVeículo.PerformLayout();

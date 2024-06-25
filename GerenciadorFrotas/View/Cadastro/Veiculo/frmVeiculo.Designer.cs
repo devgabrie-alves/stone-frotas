@@ -347,7 +347,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmVeiculo";
-            this.Text = "frmVeiculo";
+            this.Text = "Cadastro de Veículo";
             this.Load += new System.EventHandler(this.frmVeiculo_Load);
             this.grpVeículo.ResumeLayout(false);
             this.grpVeículo.PerformLayout();

@@ -199,7 +199,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMarca";
-            this.Text = "frmMarca";
+            this.Text = "Veículo - Cadastro de Marca";
             this.Load += new System.EventHandler(this.frmMarca_Load);
             this.grpMarca.ResumeLayout(false);
             this.grpMarca.PerformLayout();

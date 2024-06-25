@@ -403,7 +403,7 @@
             this.MinimizeBox = false;
             this.Name = "frmEntrada";
             this.ShowIcon = false;
-            this.Text = "Entrada";
+            this.Text = "Controle - Entrada";
             this.Load += new System.EventHandler(this.frmEntrada_Load);
             this.grpControle.ResumeLayout(false);
             this.grpControle.PerformLayout();
