@@ -118,7 +118,7 @@ namespace GerenciadorFrotas.Model
             }
         }
 
-        public DataTable Consultar(StatusEnum status, Veiculo veiculo, Colaborador colaborador)
+        public DataTable Consultar(StatusAtividadeEnum status, Veiculo veiculo, Colaborador colaborador)
         {
             sql = new StringBuilder();
 
@@ -164,11 +164,11 @@ namespace GerenciadorFrotas.Model
 
                 }
 
-                if (status == StatusEnum.CONCLUIDO)
+                if (status == StatusAtividadeEnum.CONCLUIDO)
                 {
                     sql.Append(" AND ctl.concluido = 1 ");
 
-                } else if (status == StatusEnum.PENDENTE)
+                } else if (status == StatusAtividadeEnum.PENDENTE)
                 {
                     sql.Append(" AND ctl.concluido = 0 ");
                 }

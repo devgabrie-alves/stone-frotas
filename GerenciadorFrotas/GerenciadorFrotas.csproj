@@ -57,8 +57,8 @@
     <Compile Include="Model\Colaborador.cs" />
     <Compile Include="Model\Controle.cs" />
     <Compile Include="Model\EnderecoOficina.cs" />
-    <Compile Include="Model\enums\StatusEnum.cs" />
-    <Compile Include="Model\enums\StatusVeiculoEnum.cs" />
+    <Compile Include="Model\enums\StatusAtividadeEnum.cs" />
+    <Compile Include="Model\enums\StatusAtivoEnum.cs" />
     <Compile Include="Model\Manutencao.cs" />
     <Compile Include="Model\Marca.cs" />
     <Compile Include="Model\Modelo.cs" />

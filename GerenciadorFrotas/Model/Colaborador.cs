@@ -39,7 +39,7 @@ namespace GerenciadorFrotas.Model
         List<SqlParameter> parameters = new List<SqlParameter>();
         StringBuilder sql;
 
-        public DataTable Consultar(StatusEnum statusControle)
+        public DataTable Consultar(StatusAtividadeEnum statusAtividade, StatusAtivoEnum statusAtivo)
         {
             sql = new StringBuilder();
 
@@ -47,9 +47,8 @@ namespace GerenciadorFrotas.Model
             {
                 parameters.Clear();
 
-                sql.Append("SELECT DISTINCT clb.id, clb.nome, clb.CPF, clb.email, clb.dataAdmissao, clb.celular, clb.sexoId, clb.statusId, clb.usuarioId \n");
+                sql.Append("SELECT clb.id, clb.nome, clb.CPF, clb.email, clb.dataAdmissao, clb.celular, clb.sexoId, clb.statusId, clb.usuarioId \n");
                 sql.Append("FROM tblColaborador clb \n");
-                sql.Append("LEFT JOIN tblControle ctl ON clb.id = ctl.colaboradorId \n");
                 sql.Append("WHERE 1=1 \n");
 
                 if (Id != 0)
@@ -68,10 +67,14 @@ namespace GerenciadorFrotas.Model
                     parameters.Add(new SqlParameter("@nome", '%' + Nome + '%'));
                 }
 
-                if (statusControle == StatusEnum.CONCLUIDO)
+                if (statusAtividade == StatusAtividadeEnum.CONCLUIDO)
                 {
                     sql.Append("AND clb.id NOT IN (SELECT colaboradorId FROM tblControle where concluido = 0) ");
+                }
 
+                if(statusAtivo == StatusAtivoEnum.ATIVO)
+                {
+                    sql.Append("AND clb.statusId IN (SELECT id FROM tblStatus where UPPER(descricao) = 'ATIVO') ");
                 }
 
                 dataTable = acessoDAO.Consultar(sql.ToString(), parameters);
@@ -141,6 +144,37 @@ namespace GerenciadorFrotas.Model
 
                 acessoDAO.Executar(sql.ToString(), parameters);
 
+            } catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
+        public bool VerificaAtividade()
+        {
+            sql = new StringBuilder();
+
+            try
+            {
+                parameters.Clear();
+
+                sql.Append(" SELECT 1 FROM tblColaborador clb \n");
+                sql.Append(" WHERE  clb.id = @id \n");
+                sql.Append("  AND clb.id IN (select colaboradorId from tblControle WHERE concluido = 0) \n");
+
+                parameters.Add(new SqlParameter("@id", Id));
+
+                dataTable = acessoDAO.Consultar(sql.ToString(), parameters);
+
+                if (dataTable.Rows.Count > 0)
+                {
+                    return true;
+                
+                }else
+                {
+                    return false;
+                }
             } catch (Exception ex)
             {
                 throw new Exception(ex.Message);

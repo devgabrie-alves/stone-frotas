@@ -23,7 +23,7 @@ namespace GerenciadorFrotas.View
         {
             try
             {
-                grdDados.DataSource = colaborador.Consultar(StatusEnum.TODOS);
+                grdDados.DataSource = colaborador.Consultar(StatusAtividadeEnum.TODOS, StatusAtivoEnum.TODOS);
                 grdDados.Columns[0].Visible = false;
                 grdDados.Columns[4].Visible = false;
                 grdDados.Columns[5].Visible = false;
@@ -71,6 +71,7 @@ namespace GerenciadorFrotas.View
 
         private void LimparCampos()
         {
+            colaborador = new Colaborador();
             ApplicationUtils.LimparFormulario(this);
             dtpDataAdmissao.Value = DateTime.Parse("01/01/1900");
             rdbNome.Checked = true;
@@ -78,6 +79,7 @@ namespace GerenciadorFrotas.View
             mskPesquisa.Mask = "";
             mskPesquisa.MaxLength = 100;
             mskPesquisa.Clear();
+            cboStatus.Enabled = true;
             mskPesquisa.Focus();
         }
 
@@ -134,7 +136,7 @@ namespace GerenciadorFrotas.View
                 {
                     Colaborador col = new Colaborador();
                     col.CPF = mskCPF.Text;
-                    col.Consultar(StatusEnum.TODOS);
+                    col.Consultar(StatusAtividadeEnum.TODOS, StatusAtivoEnum.TODOS);
                     if (colaborador.Id == 0 && col.Id != 0 ||
                         colaborador.Id != 0 && col.Id != 0 && colaborador.Id != col.Id)
                     {
@@ -208,10 +210,20 @@ namespace GerenciadorFrotas.View
 
             try
             {
+
                 colaborador = new Colaborador();
-                btnGravar.Text = "Atualizar";
                 colaborador.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
-                colaborador.Consultar(StatusEnum.TODOS);
+                
+                if(colaborador.VerificaAtividade())
+                {
+                    cboStatus.Enabled = false;
+                } else
+                {
+                    cboStatus.Enabled = true;
+                }
+
+                btnGravar.Text = "Atualizar";
+                colaborador.Consultar(StatusAtividadeEnum.TODOS, StatusAtivoEnum.TODOS);
                 PreencherFormulario();
             
             }catch (Exception ex)

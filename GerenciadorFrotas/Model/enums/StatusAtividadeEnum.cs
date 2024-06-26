@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GerenciadorFrotas.Model.enums
 {
-    public enum StatusEnum
+    public enum StatusAtividadeEnum
     {
         TODOS,
         CONCLUIDO,

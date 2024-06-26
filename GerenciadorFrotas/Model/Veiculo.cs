@@ -39,7 +39,7 @@ namespace GerenciadorFrotas.Model
         List<SqlParameter> parameters = new List<SqlParameter>();
         StringBuilder sql;
 
-        public DataTable Consultar(int valorSelecionado, string campoPesquisa, StatusVeiculoEnum status)
+        public DataTable Consultar(int valorSelecionado, string campoPesquisa, StatusAtivoEnum status)
         {
             sql = new StringBuilder();
 
@@ -114,11 +114,11 @@ namespace GerenciadorFrotas.Model
                     parameters.Add(new SqlParameter("@placa", campoPesquisa));
                 }
 
-                if (status == StatusVeiculoEnum.ATIVO)
+                if (status == StatusAtivoEnum.ATIVO)
                 {
                     sql.Append(" AND v.ativo = 1 \n");
                 
-                }else if (status == StatusVeiculoEnum.INATIVO)
+                }else if (status == StatusAtivoEnum.INATIVO)
                 {
                     sql.Append(" AND v.ativo = 0 \n");
                 }

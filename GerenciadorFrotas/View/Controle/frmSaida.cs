@@ -35,7 +35,7 @@ namespace GerenciadorFrotas.View.Controle
         {
             try
             {
-                grdVeiculos.DataSource = veiculo.Consultar(escolhaConsulta, campoPesquisa, StatusVeiculoEnum.ATIVO);
+                grdVeiculos.DataSource = veiculo.Consultar(escolhaConsulta, campoPesquisa, StatusAtivoEnum.ATIVO);
                 grdVeiculos.Columns[0].Visible = false;
                 grdVeiculos.Columns[3].Visible = false;
                 grdVeiculos.Columns[4].Visible = false;
@@ -68,7 +68,7 @@ namespace GerenciadorFrotas.View.Controle
         {
             try
             {
-                grdColaboradores.DataSource = colaborador.Consultar(StatusEnum.CONCLUIDO);
+                grdColaboradores.DataSource = colaborador.Consultar(StatusAtividadeEnum.CONCLUIDO, StatusAtivoEnum.ATIVO);
                 grdColaboradores.Columns[0].Visible = false;
                 grdColaboradores.Columns[4].Visible = false;
                 grdColaboradores.Columns[5].Visible = false;
@@ -280,7 +280,7 @@ namespace GerenciadorFrotas.View.Controle
 
             veiculo = new Veiculo();
             veiculo.Id = controle.VeiculoId;
-            veiculo.Consultar(-1, "", StatusVeiculoEnum.TODOS);
+            veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS);
             veiculo.Ativo = false;
         }
 
@@ -355,7 +355,7 @@ namespace GerenciadorFrotas.View.Controle
             {
                 veiculo = new Veiculo();
                 veiculo.Id = Convert.ToInt32(grdVeiculos.SelectedRows[0].Cells[0].Value);
-                veiculo.Consultar(-1, "", StatusVeiculoEnum.ATIVO);
+                veiculo.Consultar(-1, "", StatusAtivoEnum.ATIVO);
                 PreencherFormularioVeiculo();
 
                 if (veiculo.Id != 0 && colaborador.Id != 0)
@@ -381,7 +381,7 @@ namespace GerenciadorFrotas.View.Controle
             {
                 colaborador = new Colaborador();
                 colaborador.Id = Convert.ToInt32(grdColaboradores.SelectedRows[0].Cells[0].Value);
-                colaborador.Consultar(StatusEnum.CONCLUIDO);
+                colaborador.Consultar(StatusAtividadeEnum.CONCLUIDO, StatusAtivoEnum.ATIVO);
                 PreencherFormularioColaboradores();
 
                 if (veiculo.Id != 0 && colaborador.Id != 0)

@@ -27,7 +27,7 @@ namespace GerenciadorFrotas.View.Controle
         {
             try
             {
-                grdDados.DataSource = controle.Consultar(StatusEnum.PENDENTE, veiculo, colaborador);
+                grdDados.DataSource = controle.Consultar(StatusAtividadeEnum.PENDENTE, veiculo, colaborador);
                 grdDados.Columns[0].Visible = false;
                 grdDados.Columns[4].Visible = false;
                 grdDados.Columns[5].Visible = false;
@@ -142,7 +142,7 @@ namespace GerenciadorFrotas.View.Controle
         {
             veiculo = new Veiculo();
             veiculo.Id = controle.VeiculoId;
-            veiculo.Consultar(-1, "", StatusVeiculoEnum.TODOS);
+            veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS);
 
             controle.Concluido = true;
             controle.DataEntrada = DateTime.Now;
@@ -200,7 +200,7 @@ namespace GerenciadorFrotas.View.Controle
             {
                 controle = new Model.Controle();
                 controle.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
-                controle.Consultar(StatusEnum.PENDENTE, veiculo, colaborador);
+                controle.Consultar(StatusAtividadeEnum.PENDENTE, veiculo, colaborador);
                 PreencherFormulario();
 
                 btnRecepcionar.Enabled = true;

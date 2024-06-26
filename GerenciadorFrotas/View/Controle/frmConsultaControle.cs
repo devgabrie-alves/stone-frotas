@@ -131,18 +131,18 @@ namespace GerenciadorFrotas.View.Controle
             CarregarGrid(0);
         }
 
-        private StatusEnum getStatusByRadioButton(int radioButton)
+        private StatusAtividadeEnum getStatusByRadioButton(int radioButton)
         {
             if (radioButton == 1)
             {
-                return StatusEnum.CONCLUIDO;
+                return StatusAtividadeEnum.CONCLUIDO;
             
             }else if (radioButton == 2)
             {
-                return StatusEnum.PENDENTE;
+                return StatusAtividadeEnum.PENDENTE;
             }
 
-            return StatusEnum.TODOS; 
+            return StatusAtividadeEnum.TODOS; 
 
         }
 

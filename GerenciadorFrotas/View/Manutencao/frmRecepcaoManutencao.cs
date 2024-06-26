@@ -33,7 +33,7 @@ namespace GerenciadorFrotas.View.Manutencao
         {
             try
             {
-                grdDados.DataSource = manutencao.Consultar(StatusEnum.PENDENTE, veiculo, oficina);
+                grdDados.DataSource = manutencao.Consultar(StatusAtividadeEnum.PENDENTE, veiculo, oficina);
                 grdDados.Columns[0].Visible = false;
                 grdDados.Columns[4].Visible = false;
                 grdDados.Columns[5].Visible = false;
@@ -148,7 +148,7 @@ namespace GerenciadorFrotas.View.Manutencao
         {
             veiculo = new Veiculo();
             veiculo.Id = manutencao.VeiculoId;
-            veiculo.Consultar(-1, "", StatusVeiculoEnum.TODOS);
+            veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS);
             veiculo.QuilometragemInicial = veiculo.QuilometragemAtual;
             veiculo.Ativo = true;
 
@@ -238,7 +238,7 @@ namespace GerenciadorFrotas.View.Manutencao
             {
                 manutencao = new Model.Manutencao();
                 manutencao.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
-                manutencao.Consultar(StatusEnum.PENDENTE, veiculo, oficina);
+                manutencao.Consultar(StatusAtividadeEnum.PENDENTE, veiculo, oficina);
                 PreencherFormulario();
 
                 btnRecepcionar.Enabled = true;
