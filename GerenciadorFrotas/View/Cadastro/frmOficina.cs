@@ -83,6 +83,7 @@ namespace GerenciadorFrotas.View
 
         private void LimparCampos()
         {
+            oficina = new Oficina();
             ApplicationUtils.LimparFormulario(this);
             rdbNome.Checked = true;
             rdbCNPJ.Checked = false;

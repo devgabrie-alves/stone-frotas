@@ -1,4 +1,5 @@
 ﻿using GerenciadorFrotas.Data;
+using GerenciadorFrotas.Model.enums;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -38,7 +39,7 @@ namespace GerenciadorFrotas.Model
         List<SqlParameter> parameters = new List<SqlParameter>();
         StringBuilder sql;
 
-        public DataTable Consultar()
+        public DataTable Consultar(StatusEnum statusControle)
         {
             sql = new StringBuilder();
 
@@ -46,23 +47,31 @@ namespace GerenciadorFrotas.Model
             {
                 parameters.Clear();
 
-                sql.Append("select id, nome, CPF, email, dataAdmissao, celular, sexoId, statusId, usuarioId \n");
-                sql.Append("from tblColaborador \n");
+                sql.Append("SELECT DISTINCT clb.id, clb.nome, clb.CPF, clb.email, clb.dataAdmissao, clb.celular, clb.sexoId, clb.statusId, clb.usuarioId \n");
+                sql.Append("FROM tblColaborador clb \n");
+                sql.Append("LEFT JOIN tblControle ctl ON clb.id = ctl.colaboradorId \n");
+                sql.Append("WHERE 1=1 \n");
 
                 if (Id != 0)
                 {
-                    sql.Append("where id = @id \n");
+                    sql.Append("AND clb.id = @id \n");
                     parameters.Add(new SqlParameter("@id", Id));
 
                 } else if (CPF != string.Empty)
                 {
-                    sql.Append("where CPF = @CPF \n");
+                    sql.Append("AND clb.CPF = @CPF \n");
                     parameters.Add(new SqlParameter("@CPF", CPF));
 
                 } else if (Nome != string.Empty)
                 {
-                    sql.Append("where nome like @nome \n");
+                    sql.Append("AND clb.nome like @nome \n");
                     parameters.Add(new SqlParameter("@nome", '%' + Nome + '%'));
+                }
+
+                if (statusControle == StatusEnum.CONCLUIDO)
+                {
+                    sql.Append("AND clb.id NOT IN (SELECT colaboradorId FROM tblControle where concluido = 0) ");
+
                 }
 
                 dataTable = acessoDAO.Consultar(sql.ToString(), parameters);

@@ -1,4 +1,5 @@
 ﻿using GerenciadorFrotas.Model;
+using GerenciadorFrotas.Model.enums;
 using GerenciadorFrotas.Utils;
 using System;
 using System.Net.Mail;
@@ -22,7 +23,7 @@ namespace GerenciadorFrotas.View
         {
             try
             {
-                grdDados.DataSource = colaborador.Consultar();
+                grdDados.DataSource = colaborador.Consultar(StatusEnum.TODOS);
                 grdDados.Columns[0].Visible = false;
                 grdDados.Columns[4].Visible = false;
                 grdDados.Columns[5].Visible = false;
@@ -133,7 +134,7 @@ namespace GerenciadorFrotas.View
                 {
                     Colaborador col = new Colaborador();
                     col.CPF = mskCPF.Text;
-                    col.Consultar();
+                    col.Consultar(StatusEnum.TODOS);
                     if (colaborador.Id == 0 && col.Id != 0 ||
                         colaborador.Id != 0 && col.Id != 0 && colaborador.Id != col.Id)
                     {
@@ -210,7 +211,7 @@ namespace GerenciadorFrotas.View
                 colaborador = new Colaborador();
                 btnGravar.Text = "Atualizar";
                 colaborador.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
-                colaborador.Consultar();
+                colaborador.Consultar(StatusEnum.TODOS);
                 PreencherFormulario();
             
             }catch (Exception ex)

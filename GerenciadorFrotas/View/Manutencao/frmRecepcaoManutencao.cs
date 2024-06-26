@@ -136,7 +136,9 @@ namespace GerenciadorFrotas.View.Manutencao
 
         private void LimparCampos()
         {
+            manutencao = new Model.Manutencao();
             veiculo = new Veiculo();
+            oficina = new Oficina();
             ApplicationUtils.LimparFormulario(this);
             CarregarGrid();
             GetFormDefault();
@@ -274,7 +276,6 @@ namespace GerenciadorFrotas.View.Manutencao
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 LimparCampos();
-                CarregarGrid();
             } catch (Exception ex)
             {
                 MessageBox.Show("Erro-->" + ex.Message, "Erro",

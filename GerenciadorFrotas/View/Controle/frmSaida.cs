@@ -68,7 +68,7 @@ namespace GerenciadorFrotas.View.Controle
         {
             try
             {
-                grdColaboradores.DataSource = colaborador.Consultar();
+                grdColaboradores.DataSource = colaborador.Consultar(StatusEnum.CONCLUIDO);
                 grdColaboradores.Columns[0].Visible = false;
                 grdColaboradores.Columns[4].Visible = false;
                 grdColaboradores.Columns[5].Visible = false;
@@ -109,6 +109,7 @@ namespace GerenciadorFrotas.View.Controle
         private void LimparCampos()
         {
             veiculo = new Veiculo();
+            colaborador = new Colaborador();
             ApplicationUtils.LimparFormulario(this);
             CarregarGrids();
             GetFormDefault();
@@ -380,7 +381,7 @@ namespace GerenciadorFrotas.View.Controle
             {
                 colaborador = new Colaborador();
                 colaborador.Id = Convert.ToInt32(grdColaboradores.SelectedRows[0].Cells[0].Value);
-                colaborador.Consultar();
+                colaborador.Consultar(StatusEnum.CONCLUIDO);
                 PreencherFormularioColaboradores();
 
                 if (veiculo.Id != 0 && colaborador.Id != 0)

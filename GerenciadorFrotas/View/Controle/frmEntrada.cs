@@ -130,7 +130,9 @@ namespace GerenciadorFrotas.View.Controle
 
         private void LimparCampos()
         {
+            controle = new Model.Controle();
             veiculo = new Veiculo();
+            colaborador = new Colaborador();
             ApplicationUtils.LimparFormulario(this);
             CarregarGrid();
             GetFormDefault();
@@ -292,7 +294,6 @@ namespace GerenciadorFrotas.View.Controle
                 }
 
                 LimparCampos();
-                CarregarGrid();
             } catch (Exception ex)
             {
                 MessageBox.Show("Erro-->" + ex.Message, "Erro",
