@@ -172,7 +172,7 @@
             // 
             this.mnuControleConsulta.Image = global::GerenciadorFrotas.Properties.Resources.magnifier_1_icon_icons_com_56924;
             this.mnuControleConsulta.Name = "mnuControleConsulta";
-            this.mnuControleConsulta.Size = new System.Drawing.Size(180, 22);
+            this.mnuControleConsulta.Size = new System.Drawing.Size(121, 22);
             this.mnuControleConsulta.Text = "Consulta";
             this.mnuControleConsulta.Click += new System.EventHandler(this.mnuControleConsulta_Click);
             // 
@@ -180,7 +180,7 @@
             // 
             this.mnuSaida.Image = global::GerenciadorFrotas.Properties.Resources.arrow_right_green;
             this.mnuSaida.Name = "mnuSaida";
-            this.mnuSaida.Size = new System.Drawing.Size(180, 22);
+            this.mnuSaida.Size = new System.Drawing.Size(121, 22);
             this.mnuSaida.Text = "Saída";
             this.mnuSaida.Click += new System.EventHandler(this.mnuSaida_Click);
             // 
@@ -188,7 +188,7 @@
             // 
             this.mnuEntrada.Image = global::GerenciadorFrotas.Properties.Resources.arrow_left_green;
             this.mnuEntrada.Name = "mnuEntrada";
-            this.mnuEntrada.Size = new System.Drawing.Size(180, 22);
+            this.mnuEntrada.Size = new System.Drawing.Size(121, 22);
             this.mnuEntrada.Text = "Entrada";
             this.mnuEntrada.Click += new System.EventHandler(this.mnuEntrada_Click);
             // 
@@ -285,7 +285,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GerenciadorFrotas.Properties.Resources.Captura_de_tela_2024_06_19_210626_1;
+            this.BackgroundImage = global::GerenciadorFrotas.Properties.Resources._58f13b1b_7ddc_42ab_97c9_64ef651bce8a;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.statusStrip1);

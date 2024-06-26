@@ -63,6 +63,16 @@ namespace GerenciadorFrotas.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _58f13b1b_7ddc_42ab_97c9_64ef651bce8a {
+            get {
+                object obj = ResourceManager.GetObject("_58f13b1b-7ddc-42ab-97c9-64ef651bce8a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap app_logo {
             get {
                 object obj = ResourceManager.GetObject("app-logo", resourceCulture);

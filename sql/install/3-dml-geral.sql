@@ -17,10 +17,10 @@ values
 insert tblUsuario 
 (login,nome,email,senha,ativo)
 values
-('adm_@frotas','adm_adm','adm@adm.com.br','b09c600fddc573f117449b3723f23d64',1),
-('arnaldo_@frotas','arnaldo_cesar_coelho','gerente@frota.com.br','cef0712f8fd489562f63d849a16cf4cc',1),
-('galvao_bueno@frotas','galvao_bueno','gerente02@frota.com.br','cef0712f8fd489562f63d849a16cf4cc',1),
-('drake_@frotas','drake_Aubrey','gerente03@frota.com.br','cef0712f8fd489562f63d849a16cf4cc',1)
+('adm_@frotas','adm_adm','adm@adm.com.br','adm',1),
+('arnaldo_@frotas','arnaldo_cesar_coelho','gerente@frota.com.br','frotas12345',1),
+('galvao_bueno@frotas','galvao_bueno','gerente02@frota.com.br','frotas12345',1),
+('drake_@frotas','drake_Aubrey','gerente03@frota.com.br','frotas12345',1)
 
 
 insert tblColaborador   
