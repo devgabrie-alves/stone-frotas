@@ -49,7 +49,12 @@ namespace GerenciadorFrotas.View
             usuario.Login = txtLogin.Text;
             usuario.Nome = txtNome.Text;
             usuario.Email = txtEmail.Text;
-            usuario.Senha = ApplicationUtils.Criptografar(txtSenha.Text);
+
+            if (usuario.Senha != txtSenha.Text)
+            {
+                usuario.Senha = ApplicationUtils.Criptografar(txtSenha.Text);
+            }
+            
             usuario.Ativo = rdbAtivo.Checked;
         }
 
