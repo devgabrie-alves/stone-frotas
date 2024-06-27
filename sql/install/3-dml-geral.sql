@@ -17,22 +17,22 @@ values
 insert tblUsuario 
 (login,nome,email,senha,ativo)
 values
-('adm_@frotas','adm_adm','adm@adm.com.br','adm',1),
-('arnaldo_@frotas','arnaldo_cesar_coelho','gerente@frota.com.br','frotas12345',1),
-('galvao_bueno@frotas','galvao_bueno','gerente02@frota.com.br','frotas12345',1),
-('drake_@frotas','drake_Aubrey','gerente03@frota.com.br','frotas12345',1)
+('adm_@frotas','adm_adm','adm@adm.com.br','b09c600fddc573f117449b3723f23d64',1),
+('arnaldo_@frotas','arnaldo_cesar_coelho','gerente@frota.com.br','cef0712f8fd489562f63d849a16cf4cc',1),
+('galvao_bueno@frotas','galvao_bueno','gerente02@frota.com.br','cef0712f8fd489562f63d849a16cf4cc',1),
+('drake_@frotas','drake_Aubrey','gerente03@frota.com.br','cef0712f8fd489562f63d849a16cf4cc',1)
 
 
 insert tblColaborador   
 (nome,cpf,email,dataAdmissao,
 celular,sexoId,statusId,usuarioId)
 values
-('Elon_Musk','15489765412','elon_doidin@frota.com.br','2024-02-06','11999999990',1,1,3),
-('Usain Bolt','15879462331','usain_rapido@frota.com.br','2024-06-01','11965481763',1,1,1),
-('Cristiano Ronaldo','124567890','pulou_simmmmm@frota.com.br','2023-05-08','11987856245',1,1,2),
-('Michael Jordan','58962514278','jordan_cestinhA@fota.com.br','2022-06-02','11987456332',1,1,3),
-('Pele','98745612345','filme_do_pele@frota.com.br','2022-06-02','15965897458',1,1,1),
-('Serena_Williams','11654897254','atrizserena@frota.com.br','2017-12-05','18956234785',1,1,3)
+('Elon_Musk','154.897.654-12','elon_doidin@frota.com.br','2024-02-06','(11) 99999-9990',1,1,3),
+('Usain Bolt','158.794.623-31','usain_rapido@frota.com.br','2024-06-01','(11) 96548-1763',1,1,1),
+('Cristiano Ronaldo','124.567.890-01','pulou_simmmmm@frota.com.br','2023-05-08','(11) 98785-6245',1,1,2),
+('Michael Jordan','589.625.142-78','jordan_cestinhA@fota.com.br','2022-06-02','(11) 98745-6332',1,1,3),
+('Pele','987.456.123-45','filme_do_pele@frota.com.br','2022-06-02','(15) 96589-7458',1,1,1),
+('Serena_Williams','116.548.972-54','atrizserena@frota.com.br','2017-12-05','(18) 95623-4785',1,1,3)
 
 
 insert tblCategoria
@@ -43,11 +43,11 @@ values
 insert tblOficina
 (razaoSocial,nomeFantasia,cnpj,email,urlSite,telefone,usuarioId)
 values
-('Auto Pecas Martins Ltda','Martins Auto Parts','65432109000176','contato@martinsautoparts.com','http://www.martinsautoparts.com','(51) 6543-2109','2'),
-('Centro Automotivo Almeida & Filhos Ltda','Almeida Auto Center','76543210000187','contato@almeidaautocenter.com','http://www.almeidaautocenter.com.br','(41) 7654-3210','2'),
-('Reparacaoo Automotiva Oliveira Ltda','Oliveira Auto Service','87654321000154','contato@oliveiraautoservice.com','http://www.oliveiraautoservice.com','(31) 8765-4321','3'),
-('Mecanica Rapida Santos S.A.','Mecanica Santos','98765432000121','contato@mecanicasantos.com','http://www.mecanicasantos.com.br','(21) 9876-5432','1'),
-('Auto Mecanica Silva Ltda','Silva Auto Center','12345678000190','contato@silvaautocenter.com','http://www.silvaautocenter.com','(11) 1234-5678','1')
+('Auto Pecas Martins Ltda','Martins Auto Parts','65.432.109/0001-76','contato@martinsautoparts.com','http://www.martinsautoparts.com','(51) 6543-2109','2'),
+('Centro Automotivo Almeida & Filhos Ltda','Almeida Auto Center','76.543.210/0001-87','contato@almeidaautocenter.com','http://www.almeidaautocenter.com.br','(41) 7654-3210','2'),
+('Reparacaoo Automotiva Oliveira Ltda','Oliveira Auto Service','87.654.321/0001-54','contato@oliveiraautoservice.com','http://www.oliveiraautoservice.com','(31) 8765-4321','3'),
+('Mecanica Rapida Santos S.A.','Mecanica Santos','98.765.432/0001-21','contato@mecanicasantos.com','http://www.mecanicasantos.com.br','(21) 9876-5432','1'),
+('Auto Mecanica Silva Ltda','Silva Auto Center','12.345.678/0001-90','contato@silvaautocenter.com','http://www.silvaautocenter.com','(11) 1234-5678','1')
 
 insert tblMarca(nome,dataCadastro)
 values 
