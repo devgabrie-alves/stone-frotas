@@ -72,10 +72,10 @@ values
 
 insert tblEnderecoOficina (logradouro,numero,complemento,bairro,cep,referencia,cidadeId,oficinaId)
 values
-('Rua_das_Estrelas',123,'Bloco A','Jardim Celestial','12345678','Proximo a Via Lactea',5370,2),
-('Avenida das Flores',456,'Sala 202','Primavera Park','54321987','Parque das arvores',5370,3),
-('Travessa dos Passarinhos',789,'Casa Azul','Cantinho do Bosque','98765432','Ao lado da lagoa dos cisnes',5370,4),
-('Rua do Sol Nascente',1011,'','Aurora Boreal','87654321','Proximo a montanha de cristal',5370,5)
+('Rua_das_Estrelas',123,'Bloco A','Jardim Celestial','12345-678','Proximo a Via Lactea',5370,2),
+('Avenida das Flores',456,'Sala 202','Primavera Park','54321-987','Parque das arvores',5370,3),
+('Travessa dos Passarinhos',789,'Casa Azul','Cantinho do Bosque','98765-432','Ao lado da lagoa dos cisnes',5370,4),
+('Rua do Sol Nascente',1011,'','Aurora Boreal','87654-321','Proximo a montanha de cristal',5370,5)
 
 insert tblControle (dataSaida,dataEntrada,concluido,usuarioId,colaboradorId,veiculoId)
 values
