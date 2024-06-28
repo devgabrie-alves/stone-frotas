@@ -145,6 +145,9 @@
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="table_96649" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\table_96649.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="data_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\data_add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,11 +157,14 @@
   <data name="data_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\data_delete.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="magnifier-1_icon-icons.com_56924" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\magnifier-1_icon-icons.com_56924.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_58f13b1b-7ddc-42ab-97c9-64ef651bce8a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\_58f13b1b-7ddc-42ab-97c9-64ef651bce8a.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="microsoft_excel_icon_132212" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\microsoft_excel_icon_132212.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="table_96649 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\table_96649 (1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="briefcase2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\briefcase2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,6 +202,9 @@
   <data name="microsoft_excel_icon_1322121" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\microsoft_excel_icon_132212.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="magnifier-1_icon-icons.com_56924" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magnifier-1_icon-icons.com_56924.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="eraser2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eraser2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,7 +214,7 @@
   <data name="book_blue_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\book_blue_add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_58f13b1b-7ddc-42ab-97c9-64ef651bce8a" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\_58f13b1b-7ddc-42ab-97c9-64ef651bce8a.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="table_96649 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\table_96649 (2).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

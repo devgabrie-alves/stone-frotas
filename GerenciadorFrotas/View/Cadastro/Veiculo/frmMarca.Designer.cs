@@ -134,6 +134,7 @@
             // btnExcluir
             // 
             this.btnExcluir.Enabled = false;
+            this.btnExcluir.Image = global::GerenciadorFrotas.Properties.Resources.data_delete;
             this.btnExcluir.Location = new System.Drawing.Point(19, 401);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(106, 45);

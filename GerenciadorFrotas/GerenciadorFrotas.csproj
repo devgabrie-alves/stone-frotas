@@ -309,5 +309,14 @@
   <ItemGroup>
     <None Include="Resources\_58f13b1b-7ddc-42ab-97c9-64ef651bce8a.jfif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table_96649.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table_96649 %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table_96649 %282%29.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

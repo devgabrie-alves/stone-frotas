@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
-            this.btnExcel = new System.Windows.Forms.Button();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.rdbPendente = new System.Windows.Forms.RadioButton();
             this.rdbConcluido = new System.Windows.Forms.RadioButton();
             this.rdbTodos = new System.Windows.Forms.RadioButton();
             this.mskPesquisaColaborador = new System.Windows.Forms.MaskedTextBox();
             this.lblColaboradorDescricao = new System.Windows.Forms.Label();
-            this.btnLimpar = new System.Windows.Forms.Button();
             this.lblVeiculoDescricao = new System.Windows.Forms.Label();
             this.cboPesquisaColaborador = new System.Windows.Forms.ComboBox();
             this.cboPesquisaVeiculo = new System.Windows.Forms.ComboBox();
             this.txtPesquisaVeiculo = new System.Windows.Forms.TextBox();
             this.grpDados = new System.Windows.Forms.GroupBox();
             this.grdDados = new System.Windows.Forms.DataGridView();
+            this.btnExcel = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.grpPesquisa.SuspendLayout();
             this.grpDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDados)).BeginInit();
@@ -70,42 +70,6 @@
             this.grpPesquisa.TabIndex = 19;
             this.grpPesquisa.TabStop = false;
             this.grpPesquisa.Text = "Pesquisa";
-            // 
-            // btnExcel
-            // 
-            this.btnExcel.Location = new System.Drawing.Point(1070, 16);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(146, 54);
-            this.btnExcel.TabIndex = 31;
-            this.btnExcel.Text = "Exportar para Excel";
-            this.btnExcel.UseVisualStyleBackColor = true;
-            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Image = global::GerenciadorFrotas.Properties.Resources.check;
-            this.btnPesquisar.Location = new System.Drawing.Point(894, 16);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(94, 54);
-            this.btnPesquisar.TabIndex = 30;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Image = global::GerenciadorFrotas.Properties.Resources.delete;
-            this.btnCancelar.Location = new System.Drawing.Point(794, 15);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 54);
-            this.btnCancelar.TabIndex = 29;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // rdbPendente
             // 
@@ -154,19 +118,6 @@
             this.lblColaboradorDescricao.Size = new System.Drawing.Size(64, 13);
             this.lblColaboradorDescricao.TabIndex = 6;
             this.lblColaboradorDescricao.Text = "Colaborador";
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.Image = global::GerenciadorFrotas.Properties.Resources.eraser2;
-            this.btnLimpar.Location = new System.Drawing.Point(685, 13);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(103, 58);
-            this.btnLimpar.TabIndex = 22;
-            this.btnLimpar.Text = "Limpar";
-            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLimpar.UseVisualStyleBackColor = true;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // lblVeiculoDescricao
             // 
@@ -228,6 +179,58 @@
             this.grdDados.Size = new System.Drawing.Size(1497, 569);
             this.grdDados.TabIndex = 1;
             this.grdDados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDados_CellClick);
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.Image = global::GerenciadorFrotas.Properties.Resources.table_96649__2_;
+            this.btnExcel.Location = new System.Drawing.Point(1070, 16);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(153, 59);
+            this.btnExcel.TabIndex = 31;
+            this.btnExcel.Text = "Exportar para Excel";
+            this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Image = global::GerenciadorFrotas.Properties.Resources.check;
+            this.btnPesquisar.Location = new System.Drawing.Point(894, 16);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(94, 54);
+            this.btnPesquisar.TabIndex = 30;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Image = global::GerenciadorFrotas.Properties.Resources.delete;
+            this.btnCancelar.Location = new System.Drawing.Point(794, 15);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(94, 54);
+            this.btnCancelar.TabIndex = 29;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Image = global::GerenciadorFrotas.Properties.Resources.eraser2;
+            this.btnLimpar.Location = new System.Drawing.Point(685, 13);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(103, 58);
+            this.btnLimpar.TabIndex = 22;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // frmConsultaControle
             // 
