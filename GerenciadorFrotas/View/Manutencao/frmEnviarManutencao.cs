@@ -36,7 +36,7 @@ namespace GerenciadorFrotas.View.Manutencao
         {
             try
             {
-                grdVeiculos.DataSource = veiculo.Consultar(escolhaConsulta, campoPesquisa, status, StatusAtividadeEnum.TODOS);
+                grdVeiculos.DataSource = veiculo.Consultar(escolhaConsulta, campoPesquisa, status, StatusAtividadeEnum.CONCLUIDO, StatusManutencaoEnum.CONCLUIDO);
                 grdVeiculos.Columns[0].Visible = false;
                 grdVeiculos.Columns[3].Visible = false;
                 grdVeiculos.Columns[4].Visible = false;
@@ -264,7 +264,7 @@ namespace GerenciadorFrotas.View.Manutencao
             manutencao.Descricao = txtDescricao.Text;
             manutencao.Orcamento = Convert.ToDecimal(txtOrcamento.Text);
 
-            veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS, StatusAtividadeEnum.TODOS);
+            veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS, StatusAtividadeEnum.CONCLUIDO, StatusManutencaoEnum.CONCLUIDO);
             veiculo.Ativo = false;
         }
 
@@ -287,7 +287,7 @@ namespace GerenciadorFrotas.View.Manutencao
             {
                 veiculo = new Veiculo();
                 veiculo.Id = Convert.ToInt32(grdVeiculos.SelectedRows[0].Cells[0].Value);
-                veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS, StatusAtividadeEnum.TODOS);
+                veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS, StatusAtividadeEnum.CONCLUIDO, StatusManutencaoEnum.CONCLUIDO);
                 PreencherFormularioVeiculo();
 
             }catch (Exception ex)

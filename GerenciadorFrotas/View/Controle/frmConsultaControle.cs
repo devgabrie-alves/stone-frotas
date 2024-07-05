@@ -231,7 +231,7 @@ namespace GerenciadorFrotas.View.Controle
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Arquivo CSV (*.csv)|*.csv| Todos os arquivos (*.*)|*.*";
             saveFileDialog.FilterIndex = 0;
-            saveFileDialog.FileName = "Relatório-Frotas_" + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+            saveFileDialog.FileName = "relatorio-frotas_" + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
             saveFileDialog.DefaultExt = ".csv";
             saveFileDialog.InitialDirectory = diretorio;
 

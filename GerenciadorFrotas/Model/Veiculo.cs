@@ -38,7 +38,7 @@ namespace GerenciadorFrotas.Model
         List<SqlParameter> parameters = new List<SqlParameter>();
         StringBuilder sql;
 
-        public DataTable Consultar(int valorSelecionado, string campoPesquisa, StatusAtivoEnum status, StatusAtividadeEnum statusControle)
+        public DataTable Consultar(int valorSelecionado, string campoPesquisa, StatusAtivoEnum status, StatusAtividadeEnum statusControle, StatusManutencaoEnum statusManutencao)
         {
             sql = new StringBuilder();
 
@@ -129,6 +129,15 @@ namespace GerenciadorFrotas.Model
                 } else if (statusControle == StatusAtividadeEnum.PENDENTE)
                 {
                     sql.Append(" AND v.id IN (select veiculoId FROM tblControle WHERE concluido = 0) \n");
+                }
+
+                if (statusManutencao == StatusManutencaoEnum.CONCLUIDO)
+                {
+                    sql.Append(" AND v.id NOT IN (select veiculoId FROM tblManutencao WHERE concluido = 0) \n");
+
+                } else if (statusManutencao == StatusManutencaoEnum.PENDENTE)
+                {
+                    sql.Append(" AND v.id IN (select veiculoId FROM tblManutencao WHERE concluido = 0) \n");
                 }
 
                 dataTable = acessoDAO.Consultar(sql.ToString(), parameters);
@@ -228,7 +237,36 @@ namespace GerenciadorFrotas.Model
             {
                 throw new Exception(ex.Message);
             }
+        }
 
+        public bool VerificaManutencao()
+        {
+            sql = new StringBuilder();
+            parameters.Clear();
+
+            try
+            {
+                parameters.Clear();
+
+                sql.Append("SELECT 1 FROM tblVeiculo \n");
+                sql.Append(" WHERE id in  \n");
+                sql.Append("  (select veiculoId from tblManutencao WHERE concluido = 0) \n");
+
+                dataTable = acessoDAO.Consultar(sql.ToString(), parameters);
+
+                if (dataTable.Rows.Count > 0)
+                {
+                    return true;
+
+                } else
+                {
+                    return false;
+                }
+
+            } catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

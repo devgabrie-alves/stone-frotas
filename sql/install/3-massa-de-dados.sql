@@ -66,6 +66,10 @@ values
 (SYSDATETIME(),SYSDATETIME(),1,1,3,5),(SYSDATETIME(),SYSDATETIME(),2,2,4,7),
 (SYSDATETIME(),SYSDATETIME(),1,3,5,10)
 
-insert tblManutencao (descricao,orcamento,oficinaid,veiculoid)  
+insert tblManutencao (descricao,orcamento,oficinaid,veiculoid, concluido)  
 values
-('','10000',1,5),('','5000',2,7),('','15000',3,10),('','7000',4,11),('','2000',5,8)
+('','10000',1,5,1),
+('','5000',2,7,1),
+('','15000',3,10,1),
+('','7000',4,11,1),
+('','2000',5,8,1)

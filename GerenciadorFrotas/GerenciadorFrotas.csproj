@@ -55,6 +55,7 @@
     <Compile Include="Model\EnderecoOficina.cs" />
     <Compile Include="Model\enums\StatusAtividadeEnum.cs" />
     <Compile Include="Model\enums\StatusAtivoEnum.cs" />
+    <Compile Include="Model\enums\StatusManutencaoEnum.cs" />
     <Compile Include="Model\Manutencao.cs" />
     <Compile Include="Model\Marca.cs" />
     <Compile Include="Model\Modelo.cs" />

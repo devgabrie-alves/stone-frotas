@@ -26,7 +26,7 @@ namespace GerenciadorFrotas.View
         {
             try
             {
-                grdDados.DataSource = veiculo.Consultar(escolhaConsulta, campoPesquisa, Model.enums.StatusAtivoEnum.TODOS, StatusAtividadeEnum.TODOS);
+                grdDados.DataSource = veiculo.Consultar(escolhaConsulta, campoPesquisa, Model.enums.StatusAtivoEnum.TODOS, StatusAtividadeEnum.TODOS, StatusManutencaoEnum.TODOS);
                 grdDados.Columns[0].Visible = false;
                 grdDados.Columns[3].Visible = false;
                 grdDados.Columns[4].Visible = false;
@@ -136,7 +136,7 @@ namespace GerenciadorFrotas.View
                 {
                     Veiculo v = new Veiculo();
                     v.Placa = txtPlaca.Text;
-                    v.Consultar(6, v.Placa, StatusAtivoEnum.TODOS, StatusAtividadeEnum.TODOS);
+                    v.Consultar(6, v.Placa, StatusAtivoEnum.TODOS, StatusAtividadeEnum.TODOS, StatusManutencaoEnum.TODOS);
                     if (veiculo.Id == 0 && v.Id != 0 ||
                         veiculo.Id != 0 && v.Id != 0 && veiculo.Id != v.Id)
                     {
@@ -147,8 +147,8 @@ namespace GerenciadorFrotas.View
                 if (txtChassi.Text == string.Empty)
                 {
                     mensagemErro += "O campo CHASSI não pode ser vazio.\n";
-                
-                } else if (txtChassi.Text.Length != 17) 
+
+                } else if (txtChassi.Text.Length != 17)
                 {
                     mensagemErro += "O campo CHASSI é inválido.\n";
                 }
@@ -281,19 +281,26 @@ namespace GerenciadorFrotas.View
             {
                 veiculo = new Veiculo();
                 veiculo.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
-                veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS, StatusAtividadeEnum.TODOS);
+                veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS, StatusAtividadeEnum.TODOS, StatusManutencaoEnum.TODOS);
 
-                if(veiculo.VerificaManutencaoOuControle())
+                if (veiculo.VerificaManutencaoOuControle())
                 {
-                    txtQuilometragem.Enabled = false;
                     rdbAtivo.Enabled = false;
                     rdbInativo.Enabled = false;
-                
-                }else
+
+                } else
                 {
-                    txtQuilometragem.Enabled = true;
                     rdbAtivo.Enabled = true;
                     rdbInativo.Enabled = true;
+                }
+
+                if (veiculo.VerificaManutencao())
+                {
+                    txtQuilometragem.Enabled = false;
+
+                } else
+                {
+                    txtQuilometragem.Enabled = true;
                 }
 
                 PreencherFormulario();

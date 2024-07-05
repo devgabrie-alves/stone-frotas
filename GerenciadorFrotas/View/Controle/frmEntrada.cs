@@ -142,7 +142,7 @@ namespace GerenciadorFrotas.View.Controle
         {
             veiculo = new Veiculo();
             veiculo.Id = controle.VeiculoId;
-            veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS, StatusAtividadeEnum.TODOS);
+            veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS, StatusAtividadeEnum.TODOS, StatusManutencaoEnum.TODOS);
 
             controle.Concluido = true;
             controle.DataEntrada = DateTime.Now;

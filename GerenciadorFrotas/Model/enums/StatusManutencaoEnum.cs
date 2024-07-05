@@ -1,6 +1,6 @@
 ﻿namespace GerenciadorFrotas.Model.enums
 {
-    public enum StatusAtividadeEnum
+    public enum StatusManutencaoEnum
     {
         TODOS,
         CONCLUIDO,

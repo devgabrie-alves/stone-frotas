@@ -34,7 +34,7 @@ namespace GerenciadorFrotas.View.Controle
         {
             try
             {
-                grdVeiculos.DataSource = veiculo.Consultar(escolhaConsulta, campoPesquisa, StatusAtivoEnum.ATIVO, StatusAtividadeEnum.CONCLUIDO);
+                grdVeiculos.DataSource = veiculo.Consultar(escolhaConsulta, campoPesquisa, StatusAtivoEnum.ATIVO, StatusAtividadeEnum.CONCLUIDO, StatusManutencaoEnum.TODOS);
                 grdVeiculos.Columns[0].Visible = false;
                 grdVeiculos.Columns[3].Visible = false;
                 grdVeiculos.Columns[4].Visible = false;
@@ -343,7 +343,7 @@ namespace GerenciadorFrotas.View.Controle
             {
                 veiculo = new Veiculo();
                 veiculo.Id = Convert.ToInt32(grdVeiculos.SelectedRows[0].Cells[0].Value);
-                veiculo.Consultar(-1, "", StatusAtivoEnum.ATIVO, StatusAtividadeEnum.CONCLUIDO);
+                veiculo.Consultar(-1, "", StatusAtivoEnum.ATIVO, StatusAtividadeEnum.CONCLUIDO, StatusManutencaoEnum.TODOS);
                 PreencherFormularioVeiculo();
 
                 if (veiculo.Id != 0 && colaborador.Id != 0)
