@@ -148,7 +148,7 @@ namespace GerenciadorFrotas.View.Manutencao
         {
             veiculo = new Veiculo();
             veiculo.Id = manutencao.VeiculoId;
-            veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS);
+            veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS, StatusAtividadeEnum.TODOS);
             veiculo.QuilometragemInicial = veiculo.QuilometragemAtual;
             veiculo.Ativo = true;
 

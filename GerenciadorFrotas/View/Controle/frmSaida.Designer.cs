@@ -282,7 +282,7 @@
             this.grpVeiculos.Location = new System.Drawing.Point(12, 69);
             this.grpVeiculos.Name = "grpVeiculos";
             this.grpVeiculos.Size = new System.Drawing.Size(581, 231);
-            this.grpVeiculos.TabIndex = 16;
+            this.grpVeiculos.TabIndex = 2;
             this.grpVeiculos.TabStop = false;
             this.grpVeiculos.Text = "Veículos";
             // 
@@ -311,7 +311,7 @@
             this.grpPesquisaVeiculo.Location = new System.Drawing.Point(12, 12);
             this.grpPesquisaVeiculo.Name = "grpPesquisaVeiculo";
             this.grpPesquisaVeiculo.Size = new System.Drawing.Size(581, 51);
-            this.grpPesquisaVeiculo.TabIndex = 15;
+            this.grpPesquisaVeiculo.TabIndex = 0;
             this.grpPesquisaVeiculo.TabStop = false;
             this.grpPesquisaVeiculo.Text = "Pesquisa de Veículos";
             // 
@@ -322,14 +322,14 @@
             this.cboPesquisa.Location = new System.Drawing.Point(17, 22);
             this.cboPesquisa.Name = "cboPesquisa";
             this.cboPesquisa.Size = new System.Drawing.Size(94, 21);
-            this.cboPesquisa.TabIndex = 2;
+            this.cboPesquisa.TabIndex = 0;
             // 
             // btnPesquisar
             // 
             this.btnPesquisar.Location = new System.Drawing.Point(469, 19);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(87, 23);
-            this.btnPesquisar.TabIndex = 1;
+            this.btnPesquisar.TabIndex = 2;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
@@ -339,7 +339,7 @@
             this.txtPesquisa.Location = new System.Drawing.Point(117, 22);
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(333, 20);
-            this.txtPesquisa.TabIndex = 0;
+            this.txtPesquisa.TabIndex = 1;
             // 
             // grpColaboradores
             // 
@@ -347,7 +347,7 @@
             this.grpColaboradores.Location = new System.Drawing.Point(599, 73);
             this.grpColaboradores.Name = "grpColaboradores";
             this.grpColaboradores.Size = new System.Drawing.Size(526, 227);
-            this.grpColaboradores.TabIndex = 20;
+            this.grpColaboradores.TabIndex = 3;
             this.grpColaboradores.TabStop = false;
             this.grpColaboradores.Text = "Colaboradores";
             // 
@@ -365,7 +365,7 @@
             this.grdColaboradores.RowHeadersVisible = false;
             this.grdColaboradores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdColaboradores.Size = new System.Drawing.Size(514, 202);
-            this.grdColaboradores.TabIndex = 10;
+            this.grdColaboradores.TabIndex = 0;
             this.grdColaboradores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdColaboradores_CellClick);
             // 
             // grpPesquisaColaborador
@@ -377,7 +377,7 @@
             this.grpPesquisaColaborador.Location = new System.Drawing.Point(599, 12);
             this.grpPesquisaColaborador.Name = "grpPesquisaColaborador";
             this.grpPesquisaColaborador.Size = new System.Drawing.Size(526, 54);
-            this.grpPesquisaColaborador.TabIndex = 18;
+            this.grpPesquisaColaborador.TabIndex = 1;
             this.grpPesquisaColaborador.TabStop = false;
             this.grpPesquisaColaborador.Text = "Pesquisa de Colaboradores";
             // 
@@ -386,7 +386,7 @@
             this.mskPesquisa.Location = new System.Drawing.Point(68, 19);
             this.mskPesquisa.Name = "mskPesquisa";
             this.mskPesquisa.Size = new System.Drawing.Size(308, 20);
-            this.mskPesquisa.TabIndex = 3;
+            this.mskPesquisa.TabIndex = 0;
             this.mskPesquisa.TextChanged += new System.EventHandler(this.mskPesquisa_TextChanged);
             // 
             // rdbCPF
@@ -582,7 +582,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(333, 443);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(143, 47);
-            this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -596,7 +596,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(518, 443);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(143, 47);
-            this.btnLimpar.TabIndex = 22;
+            this.btnLimpar.TabIndex = 5;
             this.btnLimpar.Text = "&Limpar";
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -611,7 +611,7 @@
             this.btnLiberar.Location = new System.Drawing.Point(716, 443);
             this.btnLiberar.Name = "btnLiberar";
             this.btnLiberar.Size = new System.Drawing.Size(143, 47);
-            this.btnLiberar.TabIndex = 21;
+            this.btnLiberar.TabIndex = 6;
             this.btnLiberar.Text = "&Liberar";
             this.btnLiberar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLiberar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

@@ -142,7 +142,7 @@ namespace GerenciadorFrotas.View.Controle
         {
             veiculo = new Veiculo();
             veiculo.Id = controle.VeiculoId;
-            veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS);
+            veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS, StatusAtividadeEnum.TODOS);
 
             controle.Concluido = true;
             controle.DataEntrada = DateTime.Now;
@@ -199,6 +199,8 @@ namespace GerenciadorFrotas.View.Controle
             try
             {
                 controle = new Model.Controle();
+                veiculo = new Veiculo();
+                colaborador = new Colaborador();
                 controle.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
                 controle.Consultar(StatusAtividadeEnum.PENDENTE, veiculo, colaborador);
                 PreencherFormulario();
@@ -244,6 +246,9 @@ namespace GerenciadorFrotas.View.Controle
 
         private void btnRecepcionar_Click(object sender, EventArgs e)
         {
+            bool passouQuilometragem = false;
+            int quilometrosRodadosPosManutencao = 0;
+
             try
             {
                 if (controle.Id == 0)
@@ -270,10 +275,16 @@ namespace GerenciadorFrotas.View.Controle
                 }
 
                 controle.TotalPercorrido = (Convert.ToInt32(txtQuilometragem.Text) - veiculo.QuilometragemAtual);
-                veiculo.QuilometragemAtual += controle.TotalPercorrido;
-                veiculo.Ativo = true;
+                veiculo.QuilometragemAtual += controle.TotalPercorrido;          
+                quilometrosRodadosPosManutencao = veiculo.QuilometragemAtual - veiculo.QuilometragemInicial;
 
-                using (TransactionScope transacao = new TransactionScope())
+                if (quilometrosRodadosPosManutencao > 5000)
+                {
+                    passouQuilometragem = true;
+                    veiculo.Ativo = false;
+                }
+
+                    using (TransactionScope transacao = new TransactionScope())
                 {
                     controle.Gravar();
                     veiculo.Gravar();
@@ -284,12 +295,11 @@ namespace GerenciadorFrotas.View.Controle
                 MessageBox.Show("Registro feito com sucesso!", "Controle - Entrada",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                int quilometrosRodadosPosManutencao = 0;
-                quilometrosRodadosPosManutencao = veiculo.QuilometragemAtual - veiculo.QuilometragemInicial;
 
-                if (quilometrosRodadosPosManutencao > 5000)
+                if (passouQuilometragem)
                 {
-                    MessageBox.Show("Este veículo passou dos 5000 km's rodados e precisa de uma manutenção!", "Controle - Entrada",
+                    MessageBox.Show("Este veículo passou dos 5000 km's rodados e precisa de uma manutenção!\n" +
+                        "Inativando veículo...", "Controle - Entrada",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 

@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
+            this.btnCsv = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.rdbPendente = new System.Windows.Forms.RadioButton();
             this.rdbConcluido = new System.Windows.Forms.RadioButton();
             this.rdbTodos = new System.Windows.Forms.RadioButton();
             this.mskPesquisaColaborador = new System.Windows.Forms.MaskedTextBox();
             this.lblColaboradorDescricao = new System.Windows.Forms.Label();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.lblVeiculoDescricao = new System.Windows.Forms.Label();
             this.cboPesquisaColaborador = new System.Windows.Forms.ComboBox();
             this.cboPesquisaVeiculo = new System.Windows.Forms.ComboBox();
             this.txtPesquisaVeiculo = new System.Windows.Forms.TextBox();
             this.grpDados = new System.Windows.Forms.GroupBox();
             this.grdDados = new System.Windows.Forms.DataGridView();
-            this.btnExcel = new System.Windows.Forms.Button();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnLimpar = new System.Windows.Forms.Button();
             this.grpPesquisa.SuspendLayout();
             this.grpDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDados)).BeginInit();
@@ -51,7 +51,7 @@
             // 
             // grpPesquisa
             // 
-            this.grpPesquisa.Controls.Add(this.btnExcel);
+            this.grpPesquisa.Controls.Add(this.btnCsv);
             this.grpPesquisa.Controls.Add(this.btnPesquisar);
             this.grpPesquisa.Controls.Add(this.btnCancelar);
             this.grpPesquisa.Controls.Add(this.rdbPendente);
@@ -67,9 +67,48 @@
             this.grpPesquisa.Location = new System.Drawing.Point(12, 12);
             this.grpPesquisa.Name = "grpPesquisa";
             this.grpPesquisa.Size = new System.Drawing.Size(1510, 81);
-            this.grpPesquisa.TabIndex = 19;
+            this.grpPesquisa.TabIndex = 0;
             this.grpPesquisa.TabStop = false;
             this.grpPesquisa.Text = "Pesquisa";
+            // 
+            // btnCsv
+            // 
+            this.btnCsv.Image = global::GerenciadorFrotas.Properties.Resources.table_96649__2_;
+            this.btnCsv.Location = new System.Drawing.Point(1070, 16);
+            this.btnCsv.Name = "btnCsv";
+            this.btnCsv.Size = new System.Drawing.Size(153, 59);
+            this.btnCsv.TabIndex = 10;
+            this.btnCsv.Text = "Exportar para .CSV";
+            this.btnCsv.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCsv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCsv.UseVisualStyleBackColor = true;
+            this.btnCsv.Click += new System.EventHandler(this.btnCsv_Click);
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Image = global::GerenciadorFrotas.Properties.Resources.check;
+            this.btnPesquisar.Location = new System.Drawing.Point(894, 16);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(94, 54);
+            this.btnPesquisar.TabIndex = 9;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Image = global::GerenciadorFrotas.Properties.Resources.delete;
+            this.btnCancelar.Location = new System.Drawing.Point(794, 15);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(94, 54);
+            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // rdbPendente
             // 
@@ -77,7 +116,7 @@
             this.rdbPendente.Location = new System.Drawing.Point(553, 50);
             this.rdbPendente.Name = "rdbPendente";
             this.rdbPendente.Size = new System.Drawing.Size(71, 17);
-            this.rdbPendente.TabIndex = 28;
+            this.rdbPendente.TabIndex = 6;
             this.rdbPendente.Text = "Pendente";
             this.rdbPendente.UseVisualStyleBackColor = true;
             // 
@@ -87,7 +126,7 @@
             this.rdbConcluido.Location = new System.Drawing.Point(553, 32);
             this.rdbConcluido.Name = "rdbConcluido";
             this.rdbConcluido.Size = new System.Drawing.Size(74, 17);
-            this.rdbConcluido.TabIndex = 27;
+            this.rdbConcluido.TabIndex = 5;
             this.rdbConcluido.Text = "Concluído";
             this.rdbConcluido.UseVisualStyleBackColor = true;
             // 
@@ -98,7 +137,7 @@
             this.rdbTodos.Location = new System.Drawing.Point(553, 15);
             this.rdbTodos.Name = "rdbTodos";
             this.rdbTodos.Size = new System.Drawing.Size(55, 17);
-            this.rdbTodos.TabIndex = 26;
+            this.rdbTodos.TabIndex = 4;
             this.rdbTodos.TabStop = true;
             this.rdbTodos.Text = "Todos";
             this.rdbTodos.UseVisualStyleBackColor = true;
@@ -108,7 +147,7 @@
             this.mskPesquisaColaborador.Location = new System.Drawing.Point(117, 50);
             this.mskPesquisaColaborador.Name = "mskPesquisaColaborador";
             this.mskPesquisaColaborador.Size = new System.Drawing.Size(333, 20);
-            this.mskPesquisaColaborador.TabIndex = 25;
+            this.mskPesquisaColaborador.TabIndex = 3;
             // 
             // lblColaboradorDescricao
             // 
@@ -118,6 +157,19 @@
             this.lblColaboradorDescricao.Size = new System.Drawing.Size(64, 13);
             this.lblColaboradorDescricao.TabIndex = 6;
             this.lblColaboradorDescricao.Text = "Colaborador";
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Image = global::GerenciadorFrotas.Properties.Resources.eraser2;
+            this.btnLimpar.Location = new System.Drawing.Point(685, 13);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(103, 58);
+            this.btnLimpar.TabIndex = 7;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // lblVeiculoDescricao
             // 
@@ -135,7 +187,7 @@
             this.cboPesquisaColaborador.Location = new System.Drawing.Point(17, 49);
             this.cboPesquisaColaborador.Name = "cboPesquisaColaborador";
             this.cboPesquisaColaborador.Size = new System.Drawing.Size(94, 21);
-            this.cboPesquisaColaborador.TabIndex = 4;
+            this.cboPesquisaColaborador.TabIndex = 2;
             // 
             // cboPesquisaVeiculo
             // 
@@ -144,14 +196,14 @@
             this.cboPesquisaVeiculo.Location = new System.Drawing.Point(17, 22);
             this.cboPesquisaVeiculo.Name = "cboPesquisaVeiculo";
             this.cboPesquisaVeiculo.Size = new System.Drawing.Size(94, 21);
-            this.cboPesquisaVeiculo.TabIndex = 2;
+            this.cboPesquisaVeiculo.TabIndex = 0;
             // 
             // txtPesquisaVeiculo
             // 
             this.txtPesquisaVeiculo.Location = new System.Drawing.Point(117, 22);
             this.txtPesquisaVeiculo.Name = "txtPesquisaVeiculo";
             this.txtPesquisaVeiculo.Size = new System.Drawing.Size(333, 20);
-            this.txtPesquisaVeiculo.TabIndex = 0;
+            this.txtPesquisaVeiculo.TabIndex = 1;
             // 
             // grpDados
             // 
@@ -159,7 +211,7 @@
             this.grpDados.Location = new System.Drawing.Point(13, 100);
             this.grpDados.Name = "grpDados";
             this.grpDados.Size = new System.Drawing.Size(1509, 594);
-            this.grpDados.TabIndex = 21;
+            this.grpDados.TabIndex = 1;
             this.grpDados.TabStop = false;
             this.grpDados.Text = "Dados";
             // 
@@ -177,60 +229,8 @@
             this.grdDados.RowHeadersVisible = false;
             this.grdDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdDados.Size = new System.Drawing.Size(1497, 569);
-            this.grdDados.TabIndex = 1;
+            this.grdDados.TabIndex = 0;
             this.grdDados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDados_CellClick);
-            // 
-            // btnExcel
-            // 
-            this.btnExcel.Image = global::GerenciadorFrotas.Properties.Resources.table_96649__2_;
-            this.btnExcel.Location = new System.Drawing.Point(1070, 16);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(153, 59);
-            this.btnExcel.TabIndex = 31;
-            this.btnExcel.Text = "Exportar para Excel";
-            this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExcel.UseVisualStyleBackColor = true;
-            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Image = global::GerenciadorFrotas.Properties.Resources.check;
-            this.btnPesquisar.Location = new System.Drawing.Point(894, 16);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(94, 54);
-            this.btnPesquisar.TabIndex = 30;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Image = global::GerenciadorFrotas.Properties.Resources.delete;
-            this.btnCancelar.Location = new System.Drawing.Point(794, 15);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 54);
-            this.btnCancelar.TabIndex = 29;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.Image = global::GerenciadorFrotas.Properties.Resources.eraser2;
-            this.btnLimpar.Location = new System.Drawing.Point(685, 13);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(103, 58);
-            this.btnLimpar.TabIndex = 22;
-            this.btnLimpar.Text = "Limpar";
-            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLimpar.UseVisualStyleBackColor = true;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // frmConsultaControle
             // 
@@ -268,7 +268,7 @@
         private System.Windows.Forms.RadioButton rdbTodos;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.Button btnCsv;
         private System.Windows.Forms.GroupBox grpDados;
         private System.Windows.Forms.DataGridView grdDados;
     }

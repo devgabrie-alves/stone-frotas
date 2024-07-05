@@ -5,6 +5,7 @@ using System;
 using System.Data;
 using System.Transactions;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace GerenciadorFrotas.View.Manutencao
 {
@@ -27,15 +28,15 @@ namespace GerenciadorFrotas.View.Manutencao
         //Metodos
         private void CarregarGrids()
         {
-            CarregarGridVeiculos(-1, "");
+            CarregarGridVeiculos(-1, "", StatusAtivoEnum.TODOS);
             CarregarGridOficinas();
         }
 
-        private void CarregarGridVeiculos(int escolhaConsulta, string campoPesquisa)
+        private void CarregarGridVeiculos(int escolhaConsulta, string campoPesquisa, StatusAtivoEnum status)
         {
             try
             {
-                grdVeiculos.DataSource = veiculo.Consultar(escolhaConsulta, campoPesquisa, StatusAtivoEnum.ATIVO);
+                grdVeiculos.DataSource = veiculo.Consultar(escolhaConsulta, campoPesquisa, status, StatusAtividadeEnum.TODOS);
                 grdVeiculos.Columns[0].Visible = false;
                 grdVeiculos.Columns[3].Visible = false;
                 grdVeiculos.Columns[4].Visible = false;
@@ -120,6 +121,9 @@ namespace GerenciadorFrotas.View.Manutencao
             rdbInativo.Checked = false;
             cboPesquisa.SelectedIndex = 0;
             txtPesquisa.Focus();
+            rdbPesquisaTodos.Checked = true;
+            rdbPesquisaAtivo.Checked = false;
+            rdbPesquisaInativo.Checked = false;
         }
 
         private void PreencherFormularioVeiculo()
@@ -260,7 +264,7 @@ namespace GerenciadorFrotas.View.Manutencao
             manutencao.Descricao = txtDescricao.Text;
             manutencao.Orcamento = Convert.ToDecimal(txtOrcamento.Text);
 
-            veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS);
+            veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS, StatusAtividadeEnum.TODOS);
             veiculo.Ativo = false;
         }
 
@@ -283,7 +287,7 @@ namespace GerenciadorFrotas.View.Manutencao
             {
                 veiculo = new Veiculo();
                 veiculo.Id = Convert.ToInt32(grdVeiculos.SelectedRows[0].Cells[0].Value);
-                veiculo.Consultar(-1, "", StatusAtivoEnum.ATIVO);
+                veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS, StatusAtividadeEnum.TODOS);
                 PreencherFormularioVeiculo();
 
             }catch (Exception ex)
@@ -387,6 +391,7 @@ namespace GerenciadorFrotas.View.Manutencao
             veiculo = new Veiculo();
             string campoPesquisa = string.Empty;
             int escolhaPesquisa = -1;
+            StatusAtivoEnum status = StatusAtivoEnum.TODOS; 
 
             if (Convert.ToInt32(cboPesquisa.SelectedValue) == 1)
             {
@@ -409,8 +414,19 @@ namespace GerenciadorFrotas.View.Manutencao
                 escolhaPesquisa = 5;
             }
 
+            //radioButton
+            if (rdbPesquisaAtivo.Checked)
+            {
+                status = StatusAtivoEnum.ATIVO;
+
+            } else if (rdbPesquisaInativo.Checked)
+            {
+                status = StatusAtivoEnum.INATIVO;
+            }
+
+
             campoPesquisa = txtPesquisa.Text;
-            CarregarGridVeiculos(escolhaPesquisa, campoPesquisa);
+            CarregarGridVeiculos(escolhaPesquisa, campoPesquisa, status);
         }
 
         private void rdbNome_CheckedChanged(object sender, EventArgs e)

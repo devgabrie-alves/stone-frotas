@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GerenciadorFrotas.Model
 {
@@ -39,7 +38,7 @@ namespace GerenciadorFrotas.Model
         List<SqlParameter> parameters = new List<SqlParameter>();
         StringBuilder sql;
 
-        public DataTable Consultar(int valorSelecionado, string campoPesquisa, StatusAtivoEnum status)
+        public DataTable Consultar(int valorSelecionado, string campoPesquisa, StatusAtivoEnum status, StatusAtividadeEnum statusControle)
         {
             sql = new StringBuilder();
 
@@ -117,10 +116,19 @@ namespace GerenciadorFrotas.Model
                 if (status == StatusAtivoEnum.ATIVO)
                 {
                     sql.Append(" AND v.ativo = 1 \n");
-                
-                }else if (status == StatusAtivoEnum.INATIVO)
+
+                } else if (status == StatusAtivoEnum.INATIVO)
                 {
                     sql.Append(" AND v.ativo = 0 \n");
+                }
+
+                if (statusControle == StatusAtividadeEnum.CONCLUIDO)
+                {
+                    sql.Append(" AND v.id NOT IN (select veiculoId FROM tblControle WHERE concluido = 0) \n");
+
+                } else if (statusControle == StatusAtividadeEnum.PENDENTE)
+                {
+                    sql.Append(" AND v.id IN (select veiculoId FROM tblControle WHERE concluido = 0) \n");
                 }
 
                 dataTable = acessoDAO.Consultar(sql.ToString(), parameters);

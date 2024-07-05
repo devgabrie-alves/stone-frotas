@@ -612,7 +612,7 @@
     <value>581, 237</value>
   </data>
   <data name="grpVeiculos.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>2</value>
   </data>
   <data name="grpVeiculos.Text" xml:space="preserve">
     <value>Veículos</value>
@@ -629,6 +629,94 @@
   <data name="&gt;&gt;grpVeiculos.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="rdbPesquisaInativo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="rdbPesquisaInativo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rdbPesquisaInativo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>299, 48</value>
+  </data>
+  <data name="rdbPesquisaInativo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 17</value>
+  </data>
+  <data name="rdbPesquisaInativo.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="rdbPesquisaInativo.Text" xml:space="preserve">
+    <value>Inativo</value>
+  </data>
+  <data name="&gt;&gt;rdbPesquisaInativo.Name" xml:space="preserve">
+    <value>rdbPesquisaInativo</value>
+  </data>
+  <data name="&gt;&gt;rdbPesquisaInativo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdbPesquisaInativo.Parent" xml:space="preserve">
+    <value>grpPesquisa</value>
+  </data>
+  <data name="&gt;&gt;rdbPesquisaInativo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rdbPesquisaAtivo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdbPesquisaAtivo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rdbPesquisaAtivo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>226, 48</value>
+  </data>
+  <data name="rdbPesquisaAtivo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 17</value>
+  </data>
+  <data name="rdbPesquisaAtivo.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="rdbPesquisaAtivo.Text" xml:space="preserve">
+    <value>Ativo</value>
+  </data>
+  <data name="&gt;&gt;rdbPesquisaAtivo.Name" xml:space="preserve">
+    <value>rdbPesquisaAtivo</value>
+  </data>
+  <data name="&gt;&gt;rdbPesquisaAtivo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdbPesquisaAtivo.Parent" xml:space="preserve">
+    <value>grpPesquisa</value>
+  </data>
+  <data name="&gt;&gt;rdbPesquisaAtivo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rdbPesquisaTodos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdbPesquisaTodos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>149, 48</value>
+  </data>
+  <data name="rdbPesquisaTodos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 17</value>
+  </data>
+  <data name="rdbPesquisaTodos.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="rdbPesquisaTodos.Text" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="&gt;&gt;rdbPesquisaTodos.Name" xml:space="preserve">
+    <value>rdbPesquisaTodos</value>
+  </data>
+  <data name="&gt;&gt;rdbPesquisaTodos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdbPesquisaTodos.Parent" xml:space="preserve">
+    <value>grpPesquisa</value>
+  </data>
+  <data name="&gt;&gt;rdbPesquisaTodos.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="cboPesquisa.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 22</value>
   </data>
@@ -636,7 +724,7 @@
     <value>94, 21</value>
   </data>
   <data name="cboPesquisa.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;cboPesquisa.Name" xml:space="preserve">
     <value>cboPesquisa</value>
@@ -648,7 +736,7 @@
     <value>grpPesquisa</value>
   </data>
   <data name="&gt;&gt;cboPesquisa.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="btnPesquisar.Location" type="System.Drawing.Point, System.Drawing">
     <value>469, 19</value>
@@ -657,7 +745,7 @@
     <value>87, 23</value>
   </data>
   <data name="btnPesquisar.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="btnPesquisar.Text" xml:space="preserve">
     <value>Pesquisar</value>
@@ -672,7 +760,7 @@
     <value>grpPesquisa</value>
   </data>
   <data name="&gt;&gt;btnPesquisar.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="txtPesquisa.Location" type="System.Drawing.Point, System.Drawing">
     <value>117, 22</value>
@@ -681,7 +769,7 @@
     <value>333, 20</value>
   </data>
   <data name="txtPesquisa.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;txtPesquisa.Name" xml:space="preserve">
     <value>txtPesquisa</value>
@@ -693,7 +781,7 @@
     <value>grpPesquisa</value>
   </data>
   <data name="&gt;&gt;txtPesquisa.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="grpPesquisa.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
@@ -702,7 +790,7 @@
     <value>581, 81</value>
   </data>
   <data name="grpPesquisa.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>0</value>
   </data>
   <data name="grpPesquisa.Text" xml:space="preserve">
     <value>Pesquisa</value>
@@ -1056,7 +1144,7 @@
     <value>514, 210</value>
   </data>
   <data name="grdOficinas.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;grdOficinas.Name" xml:space="preserve">
     <value>grdOficinas</value>
@@ -1077,7 +1165,7 @@
     <value>526, 236</value>
   </data>
   <data name="grpDados.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>3</value>
   </data>
   <data name="grpDados.Text" xml:space="preserve">
     <value>Oficinas</value>
@@ -1101,7 +1189,7 @@
     <value>306, 20</value>
   </data>
   <data name="mskPesquisa.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;mskPesquisa.Name" xml:space="preserve">
     <value>mskPesquisa</value>
@@ -1203,7 +1291,7 @@
     <value>526, 81</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>1</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Dados para Pesquisa</value>
@@ -1230,7 +1318,7 @@
     <value>162, 20</value>
   </data>
   <data name="txtOrcamento.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;txtOrcamento.Name" xml:space="preserve">
     <value>txtOrcamento</value>
@@ -1284,7 +1372,7 @@
     <value>401, 72</value>
   </data>
   <data name="txtDescricao.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;txtDescricao.Name" xml:space="preserve">
     <value>txtDescricao</value>
@@ -1332,7 +1420,7 @@
     <value>497, 139</value>
   </data>
   <data name="grpManutencao.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>4</value>
   </data>
   <data name="grpManutencao.Text" xml:space="preserve">
     <value>Manutenção</value>
@@ -1359,7 +1447,7 @@
     <value>125, 111</value>
   </data>
   <data name="btnCancelar.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>5</value>
   </data>
   <data name="btnCancelar.Text" xml:space="preserve">
     <value>&amp;Cancelar</value>
@@ -1367,7 +1455,6 @@
   <data name="btnCancelar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnCancelar.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
   </data>
@@ -1393,7 +1480,7 @@
     <value>125, 111</value>
   </data>
   <data name="btnLimpar.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+    <value>6</value>
   </data>
   <data name="btnLimpar.Text" xml:space="preserve">
     <value>&amp;Limpar</value>
@@ -1416,37 +1503,37 @@
   <data name="&gt;&gt;btnLimpar.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnLiberar.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnEnviar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
-  <data name="btnLiberar.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnEnviar.Location" type="System.Drawing.Point, System.Drawing">
     <value>952, 503</value>
   </data>
-  <data name="btnLiberar.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnEnviar.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 111</value>
   </data>
-  <data name="btnLiberar.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+  <data name="btnEnviar.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
-  <data name="btnLiberar.Text" xml:space="preserve">
-    <value>&amp;Liberar</value>
+  <data name="btnEnviar.Text" xml:space="preserve">
+    <value>&amp;Enviar</value>
   </data>
-  <data name="btnLiberar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="btnEnviar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="btnLiberar.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+  <data name="btnEnviar.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
   </data>
-  <data name="&gt;&gt;btnLiberar.Name" xml:space="preserve">
-    <value>btnLiberar</value>
+  <data name="&gt;&gt;btnEnviar.Name" xml:space="preserve">
+    <value>btnEnviar</value>
   </data>
-  <data name="&gt;&gt;btnLiberar.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnEnviar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnLiberar.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnEnviar.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnLiberar.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnEnviar.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

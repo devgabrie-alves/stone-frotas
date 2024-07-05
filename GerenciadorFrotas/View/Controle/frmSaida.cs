@@ -3,7 +3,6 @@ using GerenciadorFrotas.Model.enums;
 using GerenciadorFrotas.Utils;
 using System;
 using System.Data;
-using System.Transactions;
 using System.Windows.Forms;
 
 namespace GerenciadorFrotas.View.Controle
@@ -35,7 +34,7 @@ namespace GerenciadorFrotas.View.Controle
         {
             try
             {
-                grdVeiculos.DataSource = veiculo.Consultar(escolhaConsulta, campoPesquisa, StatusAtivoEnum.ATIVO);
+                grdVeiculos.DataSource = veiculo.Consultar(escolhaConsulta, campoPesquisa, StatusAtivoEnum.ATIVO, StatusAtividadeEnum.CONCLUIDO);
                 grdVeiculos.Columns[0].Visible = false;
                 grdVeiculos.Columns[3].Visible = false;
                 grdVeiculos.Columns[4].Visible = false;
@@ -277,11 +276,6 @@ namespace GerenciadorFrotas.View.Controle
             controle.UsuarioId = DatabaseUtils.IdUsuarioLogado;
             controle.ColaboradorId = colaborador.Id;
             controle.VeiculoId = veiculo.Id;
-
-            veiculo = new Veiculo();
-            veiculo.Id = controle.VeiculoId;
-            veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS);
-            veiculo.Ativo = false;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -317,13 +311,7 @@ namespace GerenciadorFrotas.View.Controle
                     return;
                 }
 
-                using (TransactionScope transacao = new TransactionScope())
-                {
-                    controle.Gravar();
-                    veiculo.Gravar();
-
-                    transacao.Complete();
-                }
+                controle.Gravar();
 
                 MessageBox.Show("Registro feito com sucesso!", "Controle - Saída",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -355,15 +343,15 @@ namespace GerenciadorFrotas.View.Controle
             {
                 veiculo = new Veiculo();
                 veiculo.Id = Convert.ToInt32(grdVeiculos.SelectedRows[0].Cells[0].Value);
-                veiculo.Consultar(-1, "", StatusAtivoEnum.ATIVO);
+                veiculo.Consultar(-1, "", StatusAtivoEnum.ATIVO, StatusAtividadeEnum.CONCLUIDO);
                 PreencherFormularioVeiculo();
 
                 if (veiculo.Id != 0 && colaborador.Id != 0)
                 {
                     btnLiberar.Enabled = true;
                 }
-            
-            }catch (Exception ex)
+
+            } catch (Exception ex)
             {
                 MessageBox.Show("Erro-->" + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -388,8 +376,8 @@ namespace GerenciadorFrotas.View.Controle
                 {
                     btnLiberar.Enabled = true;
                 }
-            
-            }catch (Exception ex)
+
+            } catch (Exception ex)
             {
                 MessageBox.Show("Erro-->" + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);

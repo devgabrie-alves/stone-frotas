@@ -1,27 +1,13 @@
-
 USE GerenciadorFrotas
 GO 
-
-
-insert tblSexo(descricao)
-values 
-('Masculino'),
-('Feminino')
-
-
-insert tblStatus 
-(descricao)
-values
-('Ativo'),('Inativo')
 
 insert tblUsuario 
 (login,nome,email,senha,ativo)
 values
-('adm_@frotas','adm_adm','adm@adm.com.br','b09c600fddc573f117449b3723f23d64',1),
+('admin','admin','admin@admin.com.br','b09c600fddc573f117449b3723f23d64',1),
 ('arnaldo_@frotas','arnaldo_cesar_coelho','gerente@frota.com.br','cef0712f8fd489562f63d849a16cf4cc',1),
 ('galvao_bueno@frotas','galvao_bueno','gerente02@frota.com.br','cef0712f8fd489562f63d849a16cf4cc',1),
 ('drake_@frotas','drake_Aubrey','gerente03@frota.com.br','cef0712f8fd489562f63d849a16cf4cc',1)
-
 
 insert tblColaborador   
 (nome,cpf,email,dataAdmissao,
@@ -33,7 +19,6 @@ values
 ('Michael Jordan','589.625.142-78','jordan_cestinhA@fota.com.br','2022-06-02','(11) 98745-6332',1,1,3),
 ('Pele','987.456.123-45','filme_do_pele@frota.com.br','2022-06-02','(15) 96589-7458',1,1,1),
 ('Serena_Williams','116.548.972-54','atrizserena@frota.com.br','2017-12-05','(18) 95623-4785',1,1,3)
-
 
 insert tblCategoria
 (descricao,dataCadastro)
@@ -54,7 +39,6 @@ values
 ('Fiat', SYSDATETIME()),('Chevrolet',SYSDATETIME()),('Volkswagen',SYSDATETIME()),('Hyundai',SYSDATETIME()),('Toyota',SYSDATETIME()),
 ('Honda',SYSDATETIME()),('Yamaha',SYSDATETIME()),('BMW',SYSDATETIME()),('Kawasaki',SYSDATETIME()),('Mercedes-Benz',SYSDATETIME()),
 ('Ford',SYSDATETIME()),('Renault',SYSDATETIME()),('Peugeot',SYSDATETIME()),('Scania',SYSDATETIME()),('Volvo',SYSDATETIME())
-
 
 insert tblModelo (nome,ano,dataCadastro,marcaId,categoriaId) 
 values

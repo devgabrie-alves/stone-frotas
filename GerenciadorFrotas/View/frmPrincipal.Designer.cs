@@ -285,7 +285,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GerenciadorFrotas.Properties.Resources._58f13b1b_7ddc_42ab_97c9_64ef651bce8a;
+            this.BackgroundImage = global::GerenciadorFrotas.Properties.Resources.pagina_inicial_v2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.statusStrip1);

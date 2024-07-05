@@ -50,6 +50,9 @@
             this.grpVeiculos = new System.Windows.Forms.GroupBox();
             this.grdVeiculos = new System.Windows.Forms.DataGridView();
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
+            this.rdbPesquisaInativo = new System.Windows.Forms.RadioButton();
+            this.rdbPesquisaAtivo = new System.Windows.Forms.RadioButton();
+            this.rdbPesquisaTodos = new System.Windows.Forms.RadioButton();
             this.cboPesquisa = new System.Windows.Forms.ComboBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
@@ -80,7 +83,7 @@
             this.lblDescricao = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnLiberar = new System.Windows.Forms.Button();
+            this.btnEnviar = new System.Windows.Forms.Button();
             this.grpVeículo.SuspendLayout();
             this.grpStatus.SuspendLayout();
             this.grpVeiculos.SuspendLayout();
@@ -240,12 +243,35 @@
             // 
             // grpPesquisa
             // 
+            this.grpPesquisa.Controls.Add(this.rdbPesquisaInativo);
+            this.grpPesquisa.Controls.Add(this.rdbPesquisaAtivo);
+            this.grpPesquisa.Controls.Add(this.rdbPesquisaTodos);
             this.grpPesquisa.Controls.Add(this.cboPesquisa);
             this.grpPesquisa.Controls.Add(this.btnPesquisar);
             this.grpPesquisa.Controls.Add(this.txtPesquisa);
             resources.ApplyResources(this.grpPesquisa, "grpPesquisa");
             this.grpPesquisa.Name = "grpPesquisa";
             this.grpPesquisa.TabStop = false;
+            // 
+            // rdbPesquisaInativo
+            // 
+            resources.ApplyResources(this.rdbPesquisaInativo, "rdbPesquisaInativo");
+            this.rdbPesquisaInativo.Name = "rdbPesquisaInativo";
+            this.rdbPesquisaInativo.UseVisualStyleBackColor = true;
+            // 
+            // rdbPesquisaAtivo
+            // 
+            resources.ApplyResources(this.rdbPesquisaAtivo, "rdbPesquisaAtivo");
+            this.rdbPesquisaAtivo.Name = "rdbPesquisaAtivo";
+            this.rdbPesquisaAtivo.UseVisualStyleBackColor = true;
+            // 
+            // rdbPesquisaTodos
+            // 
+            resources.ApplyResources(this.rdbPesquisaTodos, "rdbPesquisaTodos");
+            this.rdbPesquisaTodos.Checked = true;
+            this.rdbPesquisaTodos.Name = "rdbPesquisaTodos";
+            this.rdbPesquisaTodos.TabStop = true;
+            this.rdbPesquisaTodos.UseVisualStyleBackColor = true;
             // 
             // cboPesquisa
             // 
@@ -456,13 +482,13 @@
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // btnLiberar
+            // btnEnviar
             // 
-            resources.ApplyResources(this.btnLiberar, "btnLiberar");
-            this.btnLiberar.Image = global::GerenciadorFrotas.Properties.Resources.check;
-            this.btnLiberar.Name = "btnLiberar";
-            this.btnLiberar.UseVisualStyleBackColor = true;
-            this.btnLiberar.Click += new System.EventHandler(this.btnLiberar_Click);
+            resources.ApplyResources(this.btnEnviar, "btnEnviar");
+            this.btnEnviar.Image = global::GerenciadorFrotas.Properties.Resources.check;
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.btnLiberar_Click);
             // 
             // frmEnviarManutencao
             // 
@@ -470,7 +496,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnLimpar);
-            this.Controls.Add(this.btnLiberar);
+            this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.grpManutencao);
             this.Controls.Add(this.grpOficina);
             this.Controls.Add(this.grpDados);
@@ -539,7 +565,7 @@
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.Button btnLiberar;
+        private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.TextBox txtQuilometragemAtual;
         private System.Windows.Forms.Label lblQuilometragemAtual;
         private System.Windows.Forms.ComboBox cboModelo;
@@ -557,5 +583,8 @@
         private System.Windows.Forms.RadioButton rdbInativo;
         private System.Windows.Forms.RadioButton rdbAtivo;
         private System.Windows.Forms.Label lblModelo;
+        private System.Windows.Forms.RadioButton rdbPesquisaInativo;
+        private System.Windows.Forms.RadioButton rdbPesquisaAtivo;
+        private System.Windows.Forms.RadioButton rdbPesquisaTodos;
     }
 }

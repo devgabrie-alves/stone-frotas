@@ -353,6 +353,26 @@ namespace GerenciadorFrotas.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pagina_inicial {
+            get {
+                object obj = ResourceManager.GetObject("pagina-inicial", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pagina_inicial_v2 {
+            get {
+                object obj = ResourceManager.GetObject("pagina-inicial-v2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap scroll2 {
             get {
                 object obj = ResourceManager.GetObject("scroll2", resourceCulture);

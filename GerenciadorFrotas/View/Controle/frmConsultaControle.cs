@@ -1,14 +1,12 @@
-﻿using GerenciadorFrotas.Model.enums;
-using GerenciadorFrotas.Model;
+﻿using GerenciadorFrotas.Model;
+using GerenciadorFrotas.Model.enums;
 using GerenciadorFrotas.Utils;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.Configuration;
 using System.Data;
-using System.Drawing;
-using System.Linq;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GerenciadorFrotas.View.Controle
@@ -54,6 +52,9 @@ namespace GerenciadorFrotas.View.Controle
                 grdDados.Columns[1].Width = 100;
                 grdDados.Columns[2].Width = 200;
                 grdDados.Columns[3].Width = 230;
+
+
+
             } catch (Exception ex)
             {
                 MessageBox.Show("Erro --> " + ex.Message, "Erro",
@@ -136,13 +137,13 @@ namespace GerenciadorFrotas.View.Controle
             if (radioButton == 1)
             {
                 return StatusAtividadeEnum.CONCLUIDO;
-            
-            }else if (radioButton == 2)
+
+            } else if (radioButton == 2)
             {
                 return StatusAtividadeEnum.PENDENTE;
             }
 
-            return StatusAtividadeEnum.TODOS; 
+            return StatusAtividadeEnum.TODOS;
 
         }
 
@@ -160,33 +161,6 @@ namespace GerenciadorFrotas.View.Controle
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void btnExcel_Click(object sender, EventArgs e)
-        {
-            if (grdDados.Rows.Count > 0)
-            {
-                Microsoft.Office.Interop.Excel.ApplicationClass MExcel = new Microsoft.Office.Interop.Excel.ApplicationClass();
-                MExcel.Application.Workbooks.Add(Type.Missing);
-                for (int i = 1; i < grdDados.Columns.Count + 1; i++)
-                {
-                    MExcel.Cells[1, i] = grdDados.Columns[i - 1].HeaderText;
-                }
-                for (int i = 0; i < grdDados.Rows.Count; i++)
-                {
-                    for (int j = 0; j < grdDados.Columns.Count; j++)
-                    {
-                        MExcel.Cells[i + 2, j + 1] = grdDados.Rows[i].Cells[j].Value.ToString();
-                    }
-                }
-                MExcel.Columns.AutoFit();
-                MExcel.Rows.AutoFit();
-                MExcel.Columns.Font.Size = 12;
-                MExcel.Visible = true;
-            } else
-            {
-                MessageBox.Show("Não há dados para exportar!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -217,11 +191,11 @@ namespace GerenciadorFrotas.View.Controle
             }
 
             //radioButton
-            if(rdbConcluido.Checked)
+            if (rdbConcluido.Checked)
             {
                 radioButton = 1;
-            
-            }else if (rdbPendente.Checked)
+
+            } else if (rdbPendente.Checked)
             {
                 radioButton = 2;
             }
@@ -235,6 +209,67 @@ namespace GerenciadorFrotas.View.Controle
             if (grdDados.Rows.Count == 0)
             {
                 return;
+            }
+        }
+
+        private void btnCsv_Click(object sender, EventArgs e)
+        {
+            if (grdDados.Rows.Count == 0)
+            {
+                MessageBox.Show("Nenhum registro localizado.", "",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            string diretorio = ConfigurationManager.AppSettings.Get("export-directory");
+
+            if (!Directory.Exists(diretorio))
+            {
+                Directory.CreateDirectory(diretorio);
+            }
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Arquivo CSV (*.csv)|*.csv| Todos os arquivos (*.*)|*.*";
+            saveFileDialog.FilterIndex = 0;
+            saveFileDialog.FileName = "Relatório-Frotas_" + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+            saveFileDialog.DefaultExt = ".csv";
+            saveFileDialog.InitialDirectory = diretorio;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter writer = new StreamWriter(saveFileDialog.FileName, false, Encoding.UTF8))
+                {
+                    StringBuilder csv = new StringBuilder();
+                    StringBuilder cabecalho = new StringBuilder();
+                    StringBuilder corpo = new StringBuilder();
+
+
+                    cabecalho.Append("Data Saída, Veículo, Colaborador, Data Entrada, Km's Rodados, Concluído, Placa, ");
+                    cabecalho.Append("Chassi, Nome Colaborador, CPF Colaborador, Celular Colaborador\n");
+
+                    DataTable dataTable = (DataTable)grdDados.DataSource;
+                    List<int> indexes = new List<int> { 1, 2, 3, 4, 5, 6, 10, 11, 13, 14, 15 };
+
+
+                    for (int i = 0; i < grdDados.Rows.Count; i++)
+                    {
+                        foreach (int index in indexes)
+                        {
+                            corpo.Append(dataTable.Rows[i][index]);
+                            corpo.Append(", ");
+                        }
+
+                        corpo.Length -= 2;
+                        corpo.Append("\n");
+                    }
+
+                    corpo.Length -= 1;
+
+                    csv.Append(cabecalho.ToString());
+                    csv.Append(corpo.ToString());
+
+                    writer.Write(csv.ToString());
+                }
             }
         }
     }

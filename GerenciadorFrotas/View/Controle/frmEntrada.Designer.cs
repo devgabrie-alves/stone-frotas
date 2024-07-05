@@ -74,7 +74,7 @@
             this.btnRecepcionar.Location = new System.Drawing.Point(445, 617);
             this.btnRecepcionar.Name = "btnRecepcionar";
             this.btnRecepcionar.Size = new System.Drawing.Size(114, 45);
-            this.btnRecepcionar.TabIndex = 23;
+            this.btnRecepcionar.TabIndex = 4;
             this.btnRecepcionar.Text = "Confirmar Recepção";
             this.btnRecepcionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRecepcionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -87,7 +87,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(168, 81);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(99, 39);
-            this.btnLimpar.TabIndex = 22;
+            this.btnLimpar.TabIndex = 4;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -101,7 +101,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(29, 628);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(106, 45);
-            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -117,7 +117,7 @@
             this.grpControle.Location = new System.Drawing.Point(12, 359);
             this.grpControle.Name = "grpControle";
             this.grpControle.Size = new System.Drawing.Size(581, 252);
-            this.grpControle.TabIndex = 20;
+            this.grpControle.TabIndex = 2;
             this.grpControle.TabStop = false;
             this.grpControle.Text = "Controle";
             // 
@@ -137,7 +137,7 @@
             this.txtQuilometragem.MaxLength = 10;
             this.txtQuilometragem.Name = "txtQuilometragem";
             this.txtQuilometragem.Size = new System.Drawing.Size(75, 20);
-            this.txtQuilometragem.TabIndex = 20;
+            this.txtQuilometragem.TabIndex = 0;
             this.txtQuilometragem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuilometragem_KeyPress);
             // 
             // grpColaborador
@@ -287,7 +287,7 @@
             this.grpDados.Location = new System.Drawing.Point(12, 155);
             this.grpDados.Name = "grpDados";
             this.grpDados.Size = new System.Drawing.Size(581, 197);
-            this.grpDados.TabIndex = 19;
+            this.grpDados.TabIndex = 1;
             this.grpDados.TabStop = false;
             this.grpDados.Text = "Dados";
             // 
@@ -321,7 +321,7 @@
             this.grpPesquisa.Location = new System.Drawing.Point(12, 12);
             this.grpPesquisa.Name = "grpPesquisa";
             this.grpPesquisa.Size = new System.Drawing.Size(581, 126);
-            this.grpPesquisa.TabIndex = 18;
+            this.grpPesquisa.TabIndex = 0;
             this.grpPesquisa.TabStop = false;
             this.grpPesquisa.Text = "Pesquisa";
             // 
@@ -330,14 +330,14 @@
             this.mskPesquisaColaborador.Location = new System.Drawing.Point(117, 50);
             this.mskPesquisaColaborador.Name = "mskPesquisaColaborador";
             this.mskPesquisaColaborador.Size = new System.Drawing.Size(333, 20);
-            this.mskPesquisaColaborador.TabIndex = 25;
+            this.mskPesquisaColaborador.TabIndex = 3;
             // 
             // btnPesquisar
             // 
             this.btnPesquisar.Location = new System.Drawing.Point(285, 81);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(101, 39);
-            this.btnPesquisar.TabIndex = 23;
+            this.btnPesquisar.TabIndex = 5;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
@@ -367,7 +367,7 @@
             this.cboPesquisaColaborador.Location = new System.Drawing.Point(17, 49);
             this.cboPesquisaColaborador.Name = "cboPesquisaColaborador";
             this.cboPesquisaColaborador.Size = new System.Drawing.Size(94, 21);
-            this.cboPesquisaColaborador.TabIndex = 4;
+            this.cboPesquisaColaborador.TabIndex = 2;
             // 
             // cboPesquisaVeiculo
             // 
@@ -376,14 +376,14 @@
             this.cboPesquisaVeiculo.Location = new System.Drawing.Point(17, 22);
             this.cboPesquisaVeiculo.Name = "cboPesquisaVeiculo";
             this.cboPesquisaVeiculo.Size = new System.Drawing.Size(94, 21);
-            this.cboPesquisaVeiculo.TabIndex = 2;
+            this.cboPesquisaVeiculo.TabIndex = 0;
             // 
             // txtPesquisaVeiculo
             // 
             this.txtPesquisaVeiculo.Location = new System.Drawing.Point(117, 22);
             this.txtPesquisaVeiculo.Name = "txtPesquisaVeiculo";
             this.txtPesquisaVeiculo.Size = new System.Drawing.Size(333, 20);
-            this.txtPesquisaVeiculo.TabIndex = 0;
+            this.txtPesquisaVeiculo.TabIndex = 1;
             // 
             // frmEntrada
             // 

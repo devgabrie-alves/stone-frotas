@@ -26,7 +26,7 @@ namespace GerenciadorFrotas.View
         {
             try
             {
-                grdDados.DataSource = veiculo.Consultar(escolhaConsulta, campoPesquisa, Model.enums.StatusAtivoEnum.TODOS);
+                grdDados.DataSource = veiculo.Consultar(escolhaConsulta, campoPesquisa, Model.enums.StatusAtivoEnum.TODOS, StatusAtividadeEnum.TODOS);
                 grdDados.Columns[0].Visible = false;
                 grdDados.Columns[3].Visible = false;
                 grdDados.Columns[4].Visible = false;
@@ -136,7 +136,7 @@ namespace GerenciadorFrotas.View
                 {
                     Veiculo v = new Veiculo();
                     v.Placa = txtPlaca.Text;
-                    v.Consultar(6, v.Placa, StatusAtivoEnum.TODOS);
+                    v.Consultar(6, v.Placa, StatusAtivoEnum.TODOS, StatusAtividadeEnum.TODOS);
                     if (veiculo.Id == 0 && v.Id != 0 ||
                         veiculo.Id != 0 && v.Id != 0 && veiculo.Id != v.Id)
                     {
@@ -281,7 +281,7 @@ namespace GerenciadorFrotas.View
             {
                 veiculo = new Veiculo();
                 veiculo.Id = Convert.ToInt32(grdDados.SelectedRows[0].Cells[0].Value);
-                veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS);
+                veiculo.Consultar(-1, "", StatusAtivoEnum.TODOS, StatusAtividadeEnum.TODOS);
 
                 if(veiculo.VerificaManutencaoOuControle())
                 {

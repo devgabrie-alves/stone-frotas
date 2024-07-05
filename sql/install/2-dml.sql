@@ -1,7 +1,7 @@
 USE GerenciadorFrotas
 GO
 
---tblEstadoS
+--ESTADOS
 INSERT INTO tblEstado (uf) VALUES ('AC')
 INSERT INTO tblEstado (uf) VALUES ('AL')
 INSERT INTO tblEstado (uf) VALUES ('AM')
@@ -5621,3 +5621,18 @@ INSERT INTO tblCidade (cidade, estadoId) VALUES ('TUPIRAMA',27)
 INSERT INTO tblCidade (cidade, estadoId) VALUES ('TUPIRATINS',27)
 INSERT INTO tblCidade (cidade, estadoId) VALUES ('WANDERLANDIA',27)
 INSERT INTO tblCidade (cidade, estadoId) VALUES ('XAMBIOA',27)
+
+--SEXO
+insert tblSexo(descricao)
+values 
+('Masculino'),
+('Feminino'),
+('Prefiro não informar')
+
+--STATUS
+insert tblStatus 
+(descricao)
+values
+('Ativo'),
+('Inativo'),
+('Pendente')
