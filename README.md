@@ -54,7 +54,7 @@ Esse menu é construído para fechar a aplicação.
 ## Softwares necessários:
 
  - Sistema Operacional Windows (não é .NET Core)
- - SQL Server
+ - SQL Server (pode ser configurado via Docker)
 
 ## Inicialização do projeto COM Docker
 
@@ -87,23 +87,27 @@ Esse menu é construído para fechar a aplicação.
    ![image](https://github.com/user-attachments/assets/d5bd6eba-80ad-41b8-b97d-0911169ad457)
 
 
-#### OBS: As configurações estarão contidas no arquivo `GerenciadorFrotas.exe.config`, porém, no caso acima, não é necessário configurar.
+#### OBS1: As configurações estarão contidas no arquivo `GerenciadorFrotas.exe.config`, porém, no caso acima, não é necessário configurar.
+#### OBS2: Para reiniciar o estado do banco de dados, execute o `configuration.bat` na opção `INSTALL` novamente. O script derruba o banco e refaz a instalação inicial. 
 
 <br/>
 
 ## Inicialização do projeto SEM Docker (configuração manual)
 
-1. Crie um novo banco de dados com o nome `GerenciadorFrotas`;
+1. No SQL Server, crie um novo banco de dados com o nome `GerenciadorFrotas`;
 
-2. Execute os scripts contidos em `./sql/install/` na seguinte ordem:
+2. No novo banco de dados, execute os scripts contidos em `./sql/install/` na seguinte ordem:
 
    1. 1-ddl.sql
    2. 2-dml.sql
    3. 3-massa-de-dados.sql
 
-3. Verifique se a propriedade `servidor` está correta em `GerenciadorFrotas.exe.config`;
+3. Acesse o arquivo `GerenciadorFrotas.exe.config` com um editor de texto e logo após:
 
-4. Inicialize a aplicação com o executável `GerenciadorFrotas.exe`.
+   1. Troque o valor da propriedade `isDocker` para `NAO`;
+   2. Verifique se a propriedade `servidor` está com o valor correto;
+
+5. Inicialize a aplicação com o executável `GerenciadorFrotas.exe`.
 
     - Usuário: `admin`
     - Senha: `admin`
