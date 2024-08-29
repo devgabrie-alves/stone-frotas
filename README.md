@@ -104,7 +104,7 @@ Esse menu é construído para fechar a aplicação.
 
 3. Acesse o arquivo `GerenciadorFrotas.exe.config` com um editor de texto e logo após:
 
-   1. Troque o valor da propriedade `isDocker` para `NAO`;
+   1. Troque o valor da propriedade `usarUsuarioSenhaBanco` para `NAO` caso não haja obrigatoriedade de usuário e senha;
    2. Verifique se a propriedade `servidor` está com o valor correto;
 
 5. Inicialize a aplicação com o executável `GerenciadorFrotas.exe`.

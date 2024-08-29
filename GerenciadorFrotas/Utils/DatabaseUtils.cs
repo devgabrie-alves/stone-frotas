@@ -12,27 +12,27 @@ namespace GerenciadorFrotas.Utils
     {
         public static string Conexao = string.Empty;
         public static string Servidor = string.Empty;
-        public static string IsDocker = string.Empty;
-        public static string UsuarioBancoDocker = string.Empty;
-        public static string SenhaBancoDocker = string.Empty;
         public static string Banco = string.Empty;
+        public static string UsarUsuarioSenhaBanco = string.Empty;
+        public static string UsuarioBanco = string.Empty;
+        public static string SenhaBanco = string.Empty;
         public static int IdUsuarioLogado = 0;
 
         public static void LerAppConfig()
         {
             Servidor = ConfigurationManager.AppSettings.Get("servidor");
             Banco = ConfigurationManager.AppSettings.Get("banco");
-            IsDocker = ConfigurationManager.AppSettings.Get("isDocker");
-            UsuarioBancoDocker = ConfigurationManager.AppSettings.Get("usuarioBancoDocker");
-            SenhaBancoDocker = ConfigurationManager.AppSettings.Get("senhaBancoDocker");
+            UsarUsuarioSenhaBanco = ConfigurationManager.AppSettings.Get("usarUsuarioSenhaBanco");
+            UsuarioBanco = ConfigurationManager.AppSettings.Get("usuarioBanco");
+            SenhaBanco = ConfigurationManager.AppSettings.Get("senhaBanco");
 
-            if (IsDocker != "SIM")
+            if (UsarUsuarioSenhaBanco == "SIM")
             {
-                Conexao = $"Data Source={Servidor};Initial Catalog={Banco};Integrated Security=true;";
+                Conexao = $"Server={Servidor};Database={Banco};User Id={UsuarioBanco}; Password={SenhaBanco}; Encrypt=False";
             }
             else
             {
-                Conexao = $"Server={Servidor};Database={Banco};User Id={UsuarioBancoDocker}; Password={SenhaBancoDocker}; Encrypt=False";
+                Conexao = $"Data Source={Servidor};Initial Catalog={Banco};Integrated Security=true;";
             }
         }
 
