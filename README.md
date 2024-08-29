@@ -58,14 +58,6 @@ Esse menu é construído para fechar a aplicação.
 
 ## Inicialização do projeto COM Docker
 
-De modo a facilitar o teste da aplicação, foi disponibilizado o executável já compilado dentro do repositório.
-Mesmo assim, se faz necessária a configuração dos componentes referentes ao banco de dados SQL Server.
-<br/>
-<br/>
-Segue o passo-a-passo da configuração:
-<br/>
-<br/>
-
 1. Após clonar o repositório, entre na pasta `app` e execute o arquivo `configuration.bat`;
   
     ![image](https://github.com/user-attachments/assets/e9227b57-d665-4a9d-b6f6-8d1b5bfef31d)
@@ -109,11 +101,9 @@ Segue o passo-a-passo da configuração:
    2. 2-dml.sql
    3. 3-massa-de-dados.sql
 
-3. Verifique se a propriedade `servidor` está correta;
+3. Verifique se a propriedade `servidor` está correta em `GerenciadorFrotas.exe.config`;
 
 4. Inicialize a aplicação com o executável `GerenciadorFrotas.exe`.
 
     - Usuário: `admin`
     - Senha: `admin`
-
-  <br/>
