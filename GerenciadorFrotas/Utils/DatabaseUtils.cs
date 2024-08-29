@@ -12,6 +12,9 @@ namespace GerenciadorFrotas.Utils
     {
         public static string Conexao = string.Empty;
         public static string Servidor = string.Empty;
+        public static string IsDocker = string.Empty;
+        public static string UsuarioBancoDocker = string.Empty;
+        public static string SenhaBancoDocker = string.Empty;
         public static string Banco = string.Empty;
         public static int IdUsuarioLogado = 0;
 
@@ -19,9 +22,18 @@ namespace GerenciadorFrotas.Utils
         {
             Servidor = ConfigurationManager.AppSettings.Get("servidor");
             Banco = ConfigurationManager.AppSettings.Get("banco");
+            IsDocker = ConfigurationManager.AppSettings.Get("isDocker");
+            UsuarioBancoDocker = ConfigurationManager.AppSettings.Get("usuarioBancoDocker");
+            SenhaBancoDocker = ConfigurationManager.AppSettings.Get("senhaBancoDocker");
 
-            //Conexao = $"Data Source={Servidor};Initial Catalog={Banco};Integrated Security=true;";
-            Conexao = $"Server=localhost;Database=GerenciadorFrotas;User Id=sa; Password=dev0@local; Encrypt=False";
+            if (IsDocker != "SIM")
+            {
+                Conexao = $"Data Source={Servidor};Initial Catalog={Banco};Integrated Security=true;";
+            }
+            else
+            {
+                Conexao = $"Server=localhost;Database={Banco};User Id={UsuarioBancoDocker}; Password={SenhaBancoDocker}; Encrypt=False";
+            }
         }
 
         public static DataTable ConsultarCidades(int estadoId)
