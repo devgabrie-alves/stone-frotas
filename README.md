@@ -89,10 +89,11 @@ Esse menu é construído para fechar a aplicação.
 
 #### OBS1: As configurações estarão contidas no arquivo `GerenciadorFrotas.exe.config`, porém, no caso acima, não é necessário configurar.
 #### OBS2: Para reiniciar o estado do banco de dados, execute o `configuration.bat` na opção `INSTALL` novamente. O script derruba o banco e refaz a instalação inicial. 
+#### OBS3: Como alterativa ao .bat, também é possível subir o SQL Server executando o comando `docker-compose up` na raiz do projeto. Nesse caso é necessário criar o banco de dados `GerenciadorFrotas` e executar os scripts contidos em `./sql/install/` manualmente. Lembre-se de seguir a ordem correta de execução: 1-ddl.sql, 2-dml.sql e 3-massa-de-dados.sql.
 
 <br/>
 
-## Inicialização do projeto SEM Docker (configuração manual)
+## Inicialização do projeto SEM Docker
 
 1. No SQL Server, crie um novo banco de dados com o nome `GerenciadorFrotas`;
 
