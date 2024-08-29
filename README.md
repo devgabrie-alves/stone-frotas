@@ -111,3 +111,10 @@ Esse menu é construído para fechar a aplicação.
 
     - Usuário: `admin`
     - Senha: `admin`
+
+<br/>
+
+# DER
+
+![image](https://github.com/user-attachments/assets/7ed5cf74-3480-47a4-abb8-9e62d2046e2d)
+
