@@ -32,7 +32,7 @@ namespace GerenciadorFrotas.Utils
             }
             else
             {
-                Conexao = $"Server=localhost;Database={Banco};User Id={UsuarioBancoDocker}; Password={SenhaBancoDocker}; Encrypt=False";
+                Conexao = $"Server={Servidor};Database={Banco};User Id={UsuarioBancoDocker}; Password={SenhaBancoDocker}; Encrypt=False";
             }
         }
 

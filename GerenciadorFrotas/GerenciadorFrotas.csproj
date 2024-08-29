@@ -225,15 +225,6 @@
     <None Include="Resources\eraser2.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logo-1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\app-logo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\data_delete.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -264,12 +255,6 @@
     <None Include="Resources\car_13260.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MicrosoftTeams-image %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Captura de tela 2024-06-19 210626 1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\exit.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -294,28 +279,10 @@
     <None Include="Resources\bookmark_blue_down.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\microsoft_excel_icon_132212.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\microsoft_excel_icon_132212.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\magnifier-1_icon-icons.com_56924.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\_58f13b1b-7ddc-42ab-97c9-64ef651bce8a.jfif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\table_96649.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\table_96649 %281%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\table_96649 %282%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pagina-inicial.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pagina-inicial-v2.png" />
